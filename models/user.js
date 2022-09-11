@@ -1,16 +1,9 @@
-const mongoose = require('mongoose');
-const { isEmail } = require('validator');
+const mongoose = require ('mongoose');
+const { isEmail } = require ('validator');
+const bcrypt = require ('bcrypt');
 
-const userSchema = new mongoose.Schema(
+const userSchema = mongoose.Schema(
     {
-        lastName: {
-            type: String,
-            required: true,
-        },
-        firstName: {
-            type: String,
-            required: true,
-        },
         pseudo: {
             type: String,
             required: true,
@@ -29,13 +22,40 @@ const userSchema = new mongoose.Schema(
         password: {
             type: String,
             required: true,
-            max: 100,
+            max: 200,
             minLength: 6
         },
+        picture: {
+            type: String,
+            default: "../images/image_default.png"
+        },
+        lastName: {
+            type: String,
+        },
+        firstName: {
+            type: String,
+        },               
         description: {
             type: String,
             maxLength: 1000,
             trim:true
+        },
+        likes: {
+            type: [String]
+        },dislikes: {
+            type: [String]
         }
+    },
+    {
+        timestamps: true,
     }
-)
+);
+
+// Use the function before saving the set
+userSchema.pre("save", async function(next) {
+    const salt = await bcrypt.genSalt();
+    this.password = await bcrypt.hash(this.password, salt);
+    next();
+}); 
+
+module.exports = mongoose.model('user', userSchema);
