@@ -1,3 +1,4 @@
+// Dependency used and Schema used
 const bcrypt = require('bcrypt');
 const UserModel = require('../models/user');
 
