@@ -152,3 +152,96 @@ exports.deleteUser = (req, res, next) => {
 //         return res.status(500).json({ message: err});
 //     }
 // }
+
+// business logic concerning the creation of a Status Like
+exports.createLikeStatus = (req, res) => {
+    console.log(req.body);
+    User.findOne({_id: req.params})
+        .then(user => {
+            try{
+                if(!(user.usersLiked.includes(req.body._id)) && req.body.like === 1){ // The "includes" method will check whether the data is present or not in the parameter defined
+                    console.log('Adding like !');
+                    User.updateOne(
+                        {_id: req.params.id},
+                        {
+                            $inc: {likes: 1}, // Operator "$inc" will increment a value to an existing data
+                            $push: {usersLiked: req.body._id} // The operator "$push" will add a data to an existing array
+                        }
+                    )
+                        .then(() => {
+                            res.status(201)
+                            .json( 'LikeStatus created ! ')
+                        })
+                        .catch((err) =>{
+                            res.status(400)
+                            .json({ error: err })
+                        });
+                    console.log('like used = 1 !');
+
+                }else if(!(user.usersDisliked.includes(req.body._id)) && req.body.like === -1){
+                    console.log('The user dislike !');
+                    User.updateOne(
+                        {_id: req.params.id},
+                        {
+                            $inc: {dislikes: 1},
+                            $push: {usersDisliked: req.body._id}
+                        }
+                    )
+                        .then(() => {
+                            res.status(201)
+                            .json( 'DislikedStatus created ! ')
+                        })
+                        .catch((err) => {
+                            res.status(400)
+                            .json({ error: err })
+                        });
+                    console.log('like used = -1 !');
+
+                }else if(user.usersLiked.includes(req.body._id) && req.body.like === 0){ //The user cancels his "like"
+                    console.log('canceled like !');
+                    User.updateOne(
+                        {_id: req.params.id},
+                        {
+                            $inc: {likes: -1},
+                            $pull: {usersLiked: req.body._id} // The operator "$pull" removes the data as a parameter
+                        }
+                    )
+                        .then(() => {
+                            res.status(201)
+                            .json('likeStatus has been successfully updated !')
+                        })
+                        .catch((err) => {
+                            res.status(400)
+                            .json({ error: err })
+                        });
+
+                    copnsole.log('Canceled like !');
+
+                }else if(user.usersDisliked.includes(req.body._id) && req.body.like === 0){
+                    console.log('Canceled dislike !');
+                    User.updateOne(
+                        {_id: req.params.id},
+                        {
+                            $inc: {dislikes: -1},
+                            $pull: {usersDisliked: req.body._id}
+                        }
+                    )
+                        .then(() => {
+                            res.status(200)
+                            .json('DislikedStatus has been successfully updated !')
+                        })
+                        .catch((err) => {
+                            res.status(400)
+                            .json({ error: err })
+                        });
+                    console.log('Canceled dislike !');
+                }
+            }catch(e){
+                console.log('There is an error when the user wants to like or to dislike and is not present in the usersLiked or usersDisliked array' + 'error:' + e)
+            }
+        })
+        .catch((err) => {
+            res.status(500)
+            .json({ error: err })
+        });
+};
