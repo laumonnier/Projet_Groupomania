@@ -22,3 +22,15 @@ exports.signUpErrors = (err) => {
 
     return errors;
 }
+
+exports.uploadErrors = (err) => {
+    const errors = { format: '', maxSize: ''};
+
+    if(err.message.includes('invalid file'))
+        errors.format = "Le format n'est pas compatible !";
+
+    if(err.message.includes('max size'))
+        errors.maxSize = "Le fichier est trop grand (taille maximale: 400ko)!";
+
+    return errors;
+}

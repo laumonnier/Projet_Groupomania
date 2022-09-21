@@ -15,7 +15,7 @@ app.use(cookieParser());
 
 // Additions of the various endpoints (Additions the differents routes)
 app.use('/api/user', userRoutes);
-app.use('api/post', postRoutes);
+app.use('/api/post', postRoutes);
 
 // Listening on port
 app.listen(process.env.MY_PORT, () => {

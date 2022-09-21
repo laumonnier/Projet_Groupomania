@@ -76,81 +76,81 @@ exports.deleteUser = (req, res, next) => {
         })
 } 
 
-// exports.followUser = (req, res, next) => {
-//     console.log('Nous sommes bien sur la middleware followUser');
-//     if (!ObjectId.isValid(req.params.id) || !ObjectId.isValid(req.body.idToFollow))
-//         return res.status(400).json('Id unknown : ' + req.params.id)
+exports.followUser = (req, res, next) => {
+    console.log('Nous sommes bien sur la middleware followUser');
+    if (!ObjectId.isValid(req.params.id) || !ObjectId.isValid(req.body.idToFollow))
+        return res.status(400).json('Id unknown : ' + req.params.id)
 
-//     try{
+    try{
 
-//         User.findByIdAndUpdate(
-//             req.params.id,
-//             { $addToSet: { following: req.body.idToFollow}},
-//             { new: true, upsert: true}
-//         )
-//             .then((data) => {
-//                 res.json(data)
-//             })
-//             .catch((err) => {
-//                 res.status(400)
-//                 .json({ error: err })
-//             });
+        User.findByIdAndUpdate(
+            req.params.id,
+            { $addToSet: { following: req.body.idToFollow}},
+            { new: true, upsert: true}
+        )
+            .then((data) => {
+                res.json(data)
+            })
+            .catch((err) => {
+                res.status(400)
+                .json({ error: err })
+            });
         
-//         User.findByIdAndUpdate(
-//             req.body.idToFollow,
-//             { $addToSet: { followers: req.params.id}},
-//             { new: true, upsert: true}
-//         )
-//             .then((data) => {
-//                 res.status(201)
-//                 .json(data)
-//             })
-//             .catch((err) => {
-//                 res.status(400)
-//                 .json({ error: err })
-//             }); 
-//     } catch (err) {
-//         return res.status(500).json({ message: err});
-//     } 
-// }
+        User.findByIdAndUpdate(
+            req.body.idToFollow,
+            { $addToSet: { followers: req.params.id}},
+            { new: true, upsert: true}
+        )
+            .then((data) => {
+                res.status(201)
+                .json(data)
+            })
+            .catch((err) => {
+                res.status(400)
+                .json({ error: err })
+            }); 
+    } catch (err) {
+        return res.status(500).json({ message: err});
+    } 
+}
 
-// exports.unfollowUser = (req, res, next) => {
-//     console.log('Nous sommes bien sur la middleware unfollowUser');
-//     if (!ObjectId.isValid(req.params.id) || !ObjectId.isValid(req.body.idToUnfollow))
-//         return res.status(400).json('Id unknown : ' + req.params.id)
+exports.unfollowUser = (req, res, next) => {
+    console.log('Nous sommes bien sur la middleware unfollowUser');
+    if (!ObjectId.isValid(req.params.id) || !ObjectId.isValid(req.body.idToUnfollow))
+        return res.status(400).json('Id unknown : ' + req.params.id)
 
-//     try{
+    try{
 
-//         User.findByIdAndUpdate(
-//             req.params.id,
-//             { $pull: { following: req.body.idToUnfollow}},
-//             { new: true, upsert: true}
-//         )
-//             .then((data) => {
-//                 res.json(data)
-//             })
-//             .catch((err) => {
-//                 res.status(400)
-//                 .json({ error: err })
-//             });
+        User.findByIdAndUpdate(
+            req.params.id,
+            { $pull: { following: req.body.idToUnfollow}},
+            { new: true, upsert: true}
+        )
+            .then((data) => {
+                res.json(data)
+            })
+            .catch((err) => {
+                res.status(400)
+                .json({ error: err })
+            });
             
-//         User.findByIdAndUpdate(
-//             req.body.idToUnfollow,
-//             { $pull: { followers: req.params.id}},
-//             { new: true, upsert: true}
-//         )
-//             .then((data) => {
-//                 res.status(201)
-//                 .json(data)
-//             })
-//             .catch((err) => {
-//                 res.status(400)
-//                 .json({ error: err })
-//             }); 
-//     } catch (err) {
-//         return res.status(500).json({ message: err});
-//     }
-// }
+        User.findByIdAndUpdate(
+            req.body.idToUnfollow,
+            { $pull: { followers: req.params.id}},
+            { new: true, upsert: true}
+        )
+            .then((data) => {
+                res.status(201)
+                .json(data)
+            })
+            .catch((err) => {
+                res.status(400)
+                .json({ error: err })
+            }); 
+    } catch (err) {
+        return res.status(500).json({ message: err});
+    }
+}
 
 // business logic concerning the creation of a Status Like
 exports.createLikeStatus = (req, res) => {

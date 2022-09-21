@@ -46,18 +46,8 @@ const UserSchema = mongoose.Schema(
             trim: true
         },
         likes: {
-            type: Number,
+            type: [String],
             default: 0
-        },
-        dislikes: {
-            type: Number,
-            default: 0
-        },
-        usersLiked: {
-            type: [String]
-        },
-        usersDisliked: {
-            type: [String]
         }
     },
     {
