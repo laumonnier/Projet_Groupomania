@@ -1,16 +1,53 @@
 const Post = require('../models/post');
 const User = require('../models/user');
+const fs = require('fs');
+const { promisify } = require('util');
+const pipeline = promisify(require('stream').pipeline);
 const ObjectId = require('mongoose').Types.ObjectId;
 
 // Additions of the various endpoints
 // business logic for creating a post account
 exports.createPost = (req, res, next) => {
     let fileName;
+
+    const MIME_TYPES = {
+        'image/jpg': 'jpg',
+        'image/jpeg': 'jpg',
+        'image/png': 'png'
+    };
     
+    if(req.file !== null){
+        if(
+            req.file.detectedMimeType !== "image/jpg" &&
+            req.file.detectedMimeType !== "image/jpeg" &&
+            req.file.detectedMimeType !== "image/png" 
+         ){
+         return res.status(404)
+         .json("Le format n'est pas compatible !");
+         }
+ 
+         if(req.file.size > 400000){
+         return res.status(404)
+         .json("Le fichier est trop gros (taille maximale: 400ko)!");
+         }else{
+            fileName = (req, file, callback) => {
+                const name = file.originalname.split(' ').join('_');
+                const extension = MIME_TYPES[file.mimetype];
+                callback(null, name + Date.now() + '.' + extension);
+            }
+
+            pipeline(
+                req.file.stream,
+                fs.createWriteStream(
+                    `${__dirname}/../client/public/uploads/posts/${fileName}`
+                )
+            );
+         }
+    }
     const newPost = new Post({
         posterId: req.body.posterId,
         message: req.body.message,
-        // picture: req.body.picture,
+        picture: req.file !== null ? "./uploads/posts/" + fileName : "",
         video: req.body.video,
         usersLiked: [],
         comments: []
