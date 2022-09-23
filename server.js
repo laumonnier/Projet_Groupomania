@@ -1,45 +1,49 @@
-// Dependency used and tools of library concerning the server
-const express = require('express');
-const helmet = require('helmet');
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const cors = require('cors');
+const http = require('http');
+const app = require('./app');
+const dotenv = require('dotenv');
+dotenv.config();
 
-// router require
-const userRoutes = require('./routes/user.routes');
-const postRoutes = require('./routes/post.routes');
+const normalizePort = val => {
+    const port = parseInt(val, 10);
 
-require('dotenv').config({path: './config/.env'});
-require('./config/db');
+    if (isNaN(port)) {
+        return val;
+    }
+    if (port >= 0) {
+        return port;
+    }
+    return false;
+};
+const port = normalizePort(process.env.PORT || process.env.MY_PORT);
+app.set('port', port);
 
+const errorHandler = error => {
+    if (error.syscall !== 'listen') {
+        throw error;
+    }
+    const address = server.address();
+    const bind = typeof address === 'string' ? 'pipe' + address : 'port: ' + port;
+    switch (error.code) {
+        case 'EACCES':
+            console.error(bind + ' requires elevated privileges.');
+            process.exit(1);
+            break;
+        case 'EADDRINUSE':
+            console.error(bind + ' is already in use.');
+            process.exit(1);
+            break;
+        default:
+            throw error;
+    }
+};
 
+const server = http.createServer(app);
 
-const app = express();
-
-//Helmet helps us secure our Express applications by defining various HTTP headers
-//Helmet helps us secure our applications against XSS attacks
-app.use(helmet());
-
-// Addition of "headers" allowing communication between different port servers
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', process.env.CLIENT_URL);
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
-    res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
-    next();
+server.on('error', errorHandler);
+server.on('listening', () => {
+    const address = server.address();
+    const bind = typeof address === 'string' ? 'pipe ' + address : 'port ' + port;
+    console.log('Listening on ' + bind);
 });
 
-// BodyParser will allow us to transfer requests from one point to another
-// cookieParser will be used to read cookies properly and can be decoded 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(cookieParser());
-
-// Additions of the various endpoints (Additions the differents routes)
-app.use('/api/user', userRoutes);
-app.use('/api/post', postRoutes);
-
-// Listening on port
-app.listen(process.env.MY_PORT, () => {
-    console.log(`Listening on port ${process.env.MY_PORT}`);
-})
+server.listen(process.env.PORT || process.env.MY_PORT);

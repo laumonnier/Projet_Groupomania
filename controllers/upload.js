@@ -1,8 +1,9 @@
 const User = require('../models/user');
 const fs = require('fs');
-const { promisify } = require('util');
-const pipeline = promisify(require('stream').pipeline);
+const { promisify } = require('util');// used to convert a method that returns responses using a callback function to return responses in a promise object
+const pipeline = promisify(require('stream').pipeline);//The stream.pipeline() method is a module method that is used to the pipe by linking the streams passing on errors and accurately cleaning up and providing a callback function when the pipeline is done. 
 
+// Download an image for the User
 exports.uploadUserProfil = (req, res, next) => { 
     const MIME_TYPES = {
         'image/jpg': 'jpg',
@@ -10,14 +11,19 @@ exports.uploadUserProfil = (req, res, next) => {
         'image/png': 'png'
     };
 
-    if(
-        req.file.detectedMimeType !== "image/jpg" &&
-        req.file.detectedMimeType !== "image/jpeg" &&
-        req.file.detectedMimeType !== "image/png" 
-    ){
-        return res.status(404)
-        .json("Le format n'est pas compatible !");
-    }
+    const fileFilter = (req, file, callback) => {
+        if(
+            (file.mimetype).includes('jpeg') ||
+            (file.mimetype).includes('jpg') ||
+            (file.mimetype).includes('png') 
+        ){
+            callback(null, true);
+        } else{
+            callback(null, false);
+        }
+    };
+
+    
 
     if(req.file.size > 400000){
         return res.status(404)
@@ -58,3 +64,6 @@ exports.uploadUserProfil = (req, res, next) => {
         res.status(500).json({ error: err })
     }
 }
+// let upload = multer({ storage: storage, fileFilter: fileFilter});
+
+// exports = upload.single('picture')
