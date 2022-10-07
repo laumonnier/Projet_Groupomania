@@ -6,11 +6,13 @@ import Connection from "./pages/Connection";
 import Profil from "./pages/Profil";
 import Error from "./components/Error";
 import Header from "./components/Header";
+import GlobalStyleRegister from "./style/GlobalStyleRegister";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
+      <GlobalStyleRegister />
       <Header />
       <Routes>
         <Route exact path="/" element={<Connection />} />

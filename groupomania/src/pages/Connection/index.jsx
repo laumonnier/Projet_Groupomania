@@ -3,8 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import Login from "../../components/Login";
 // import Suscribe from "../../components/Suscribe";
-import logo from "../../assets/images/icon-left-font.png";
-// import GlobalStyleRegister from "../../style/GlobalStyleRegister";
+import logo from "../../assets/images/icon-left-font-monochrome-white.png";
 
 const HomeLogo = styled.img`
   display: flex;
@@ -19,7 +18,6 @@ const ConnectionContainer = styled.div`
   align-items: start;
   margin: ;
   padding: ;
-  z-index: 2;
 `;
 
 const Connection = () => {
