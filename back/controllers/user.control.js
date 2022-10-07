@@ -21,7 +21,7 @@ exports.getOneUser = (req, res, next) => {
     if (!ObjectId.isValid(req.params.id)){
         return (
             res.status(400)
-            .json('Id unknown : ' + req.params.id)
+            .json("L'id ne correspond pas :" + req.params.id)
         )
     }else{
         User.findById(req.params.id).select('-password')
@@ -40,7 +40,30 @@ exports.getOneUser = (req, res, next) => {
 // Business logic for adding or changing a User’s data
 exports.updateUser = (req, res, next) => {
     if (!ObjectId.isValid(req.params.id))
-        return res.status(400).json('Id unknown : ' + req.params.id)
+        return res.status(400).json("L'id ne correspond pas :" + req.params.id)
+        
+    try {
+        User.findOneAndUpdate(
+            {_id: req.params.id},
+            {
+                $set: {
+                    description: req.body.description
+                }
+            },
+            { new: true, upsert: true, setDefaultsOnInsert: true}
+        )
+            .then((data) => res.status(200).json(data))
+            .catch((err) => res.status(400).json({ message: err }));
+    } catch (err) {
+        return res.status(500).json({ message: err});  
+    }
+};
+
+// Business logic for adding or changing a User’s role
+exports.updateRole = (req, res, next) => {// A refaire
+    if (!ObjectId.isValid(req.params.id))
+        return res.status(400).json("L'id ne correspond pas :" + req.params.id)
+    const { role, id } = req.body
         
     try {
         User.findOneAndUpdate(
@@ -63,15 +86,15 @@ exports.updateUser = (req, res, next) => {
 exports.deleteUser = (req, res, next) => {
     console.log('Nous sommes bien sur la middleware deleteUser');
     if (!ObjectId.isValid(req.params.id))
-        return res.status(400).json('Id unknown : ' + req.params.id)
+        return res.status(400).json("L'id ne correspond pas :" + req.params.id)
     
     User.remove({_id: req.params.id})
         .then(() => {
             res.status(200)
-            .json({ message: "Successfully user deleted ! "})
+            .json({ message: "L'utilisateur a bien été supprimer !", user })
         })
         .catch((err) => {
-            res.status(500)
+            res.status(400)
             .json({ error: err })
         })
 } 
@@ -79,7 +102,7 @@ exports.deleteUser = (req, res, next) => {
 exports.followUser = (req, res, next) => {
     console.log('Nous sommes bien sur la middleware followUser');
     if (!ObjectId.isValid(req.params.id) || !ObjectId.isValid(req.body.idToFollow))
-        return res.status(400).json('Id unknown : ' + req.params.id)
+        return res.status(400).json("L'id ne correspond pas :" + req.params.id)
 
     try{
 
@@ -117,7 +140,7 @@ exports.followUser = (req, res, next) => {
 exports.unfollowUser = (req, res, next) => {
     console.log('Nous sommes bien sur la middleware unfollowUser');
     if (!ObjectId.isValid(req.params.id) || !ObjectId.isValid(req.body.idToUnfollow))
-        return res.status(400).json('Id unknown : ' + req.params.id)
+        return res.status(400).json("L'id ne correspond pas :" + req.params.id)
 
     try{
 

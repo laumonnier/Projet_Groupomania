@@ -1,7 +1,8 @@
 // Dependency used and tools of library
 const express = require('express');
 const router = express.Router();
-const auth = require('../middleware/auth');
+// const { userAuth } = require('../middleware/auth'); // Provides "basic" user access rights
+// const { adminAuth } = require('../middleware/auth');// Provides "admin" user access rights
 const registerUser = require ('../controllers/user.register');
 const uploadControl = require ('../controllers/upload');
 const userControl = require ('../controllers/user.control');
@@ -14,15 +15,16 @@ const password = require ('../middleware/password');
 // Additions of the various endpoints
 router.post('/signup', password, registerUser.signUp);
 router.post('/login', userLog.login);
-router.get('/logout', userLog.logout);
+router.get('/logout', userLog.logout); // userAuth
 
 // Additions of the various parameters concerning the routes of the user in the site
-router.get('/', auth, userControl.getAllUsers);
-router.get('/:id', auth, userControl.getOneUser);
-router.put('/:id', auth, userControl.updateUser);
-router.delete('/:id', auth, userControl.deleteUser);
-router.patch('/follow/:id', userControl.followUser);
-router.patch('/unfollow/:id', userControl.unfollowUser);
+router.get('/', userControl.getAllUsers); // adminAuth
+router.get('/:id', userControl.getOneUser); // adminAuth
+router.put('/:id',  userControl.updateUser); // userAuth
+router.put('/:id', userControl.updateRole); // adminAuth
+router.delete('/:id', userControl.deleteUser); // adminAuth
+// router.patch('/follow/:id', userControl.followUser);
+// router.patch('/unfollow/:id', userControl.unfollowUser);
 // router.post('/:id/like', auth, userControl.createLikeStatus);
 
 // Additions of different parameters for image download routes

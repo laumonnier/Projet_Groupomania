@@ -11,19 +11,15 @@ exports.uploadUserProfil = (req, res, next) => {
         'image/png': 'png'
     };
 
-    const fileFilter = (req, file, callback) => {
-        if(
-            (file.mimetype).includes('jpeg') ||
-            (file.mimetype).includes('jpg') ||
-            (file.mimetype).includes('png') 
-        ){
-            callback(null, true);
-        } else{
-            callback(null, false);
-        }
-    };
-
     
+    if(
+        !(file.mimetype).includes('jpeg') &&
+        !(file.mimetype).includes('jpg') &&
+        !(file.mimetype).includes('png') 
+    ){
+        return res.status(400)
+        .json("Le fichier n'est pas au bon format")
+    }
 
     if(req.file.size > 400000){
         return res.status(404)
@@ -49,7 +45,7 @@ exports.uploadUserProfil = (req, res, next) => {
             {
                 $set: {picture: "./uploads/profil/" + fileName}
             },
-            { new: true, upsert: true, setDefaultsOnInsert: false }
+            { new: true, upsert: true, setDefaultsOnInsert: true }
         )
             .then((data) => {
                 res.status(201)
@@ -64,6 +60,3 @@ exports.uploadUserProfil = (req, res, next) => {
         res.status(500).json({ error: err })
     }
 }
-// let upload = multer({ storage: storage, fileFilter: fileFilter});
-
-// exports = upload.single('picture')

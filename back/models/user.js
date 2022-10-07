@@ -28,6 +28,11 @@ const UserSchema = mongoose.Schema(
             max: 200,
             minlength: 6
         },
+        role: {
+           type: String,
+           required: true,
+           default: "basic" 
+        },
         picture: {
             type: String,
             default: "../images/image_default.png"
