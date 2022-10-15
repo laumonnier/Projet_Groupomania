@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import colors from "../../style/colors";
 import axios from "axios";
 
 const FormContainer = styled.form`
@@ -10,7 +11,7 @@ const FormContainer = styled.form`
   text-align: start;
   width: 700px;
   height: 680px;
-  background-color: #c9c1c2;
+  background-color: ${colors.tertiary_bg_formulary};
   border: 3px solid black;
   border-radius: 12px;
 `;
@@ -56,7 +57,7 @@ const StyledSubmit = styled.button`
   color: white;
   margin-bottom: 15px;
   border-radius: 9px;
-  background-color: #d4444b;
+  background-color: ${colors.primary_button};
 `;
 
 const Subscribe = () => {

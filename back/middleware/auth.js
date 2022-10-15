@@ -1,22 +1,60 @@
 const jwt = require ('jsonwebtoken');
-const secretJwt = process.env.TOKEN;
+const User = require('../models/user');
 
 
 // Verifying a user's authentification on the account
-exports.auth = (req, res, next) => {
-    try{
-        const token = req.headers.authorization.split(' ')[1];
-        const decodedToken = jwt.verify(token, secretJwt);
-        const userId = decodedToken._id;
-        req.auth = {
-           _id: userId
-        };
-    next();
-    } catch(err){
-        res.status(401)
-        .json({ Message: 'unauthorized request'});
+// exports.auth = (req, res, next) => {
+//     try{ 
+//     const token = req.headers.authorization.split('')[1];
+//     const decodedToken = jwt.verify(token, process.env.TOKEN);
+//     const userId = decodedToken.userId;
+//     req.auth = { userId: userId };
+//     next();
+//     }catch(error){
+//         res.status(401).json({error:error});
+//     }
+// };
+
+// Verifying a user's authentification on the account
+exports.checkUser = (req, res, next) => {
+    const token = req.cookies.jwt;
+    if(token){
+        jwt.verify(token, process.env.TOKEN, (err, decodedToken) => {
+            if(err) {
+                res.locals.user = null;
+                res.cookie('jwt', '', {maxAge: 1});
+                next();
+            }else{
+                let user = User.findById(decodedToken.id);
+                res.locals.user = user;
+                console.log(res.locals.user);
+                next();
+            }
+        })
+    }else{
+        res.locals.user = null;
+        next();
     }
 };
+
+
+// Verifying a user's authentification on the account
+exports.requireAuth = (req, res, next) => {
+    const token = req.cookies.jwt;
+    if(token){
+        jwt.verify(token, process.env.TOKEN, (err, decodedToken) => {
+            if(err) {
+                console.log(err);
+            } else {
+                console.log(decodedToken.id);
+                next();
+            }
+        });
+    } else {
+        console.log('No token');
+    }
+};
+        
 
 // Verifying a admin user's authentification on the account
 exports.adminAuth = (req, res, next) => {

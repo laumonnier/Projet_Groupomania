@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import colors from "../../style/colors";
 import axios from "axios";
 
 const FormContainer = styled.form`
@@ -10,7 +11,7 @@ const FormContainer = styled.form`
   text-align: start;
   width: 700px;
   height: 330px;
-  background-color: #c9c1c2;
+  background-color: ${colors.tertiary_bg_formulary};
   border: 3px solid black;
   border-radius: 12px;
 `;
@@ -56,27 +57,30 @@ const StyledSubmit = styled.button`
   color: white;
   margin-bottom: 15px;
   border-radius: 9px;
-  background-color: #d4444b;
+  background-color: ${colors.primary_button};
 `;
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const emailError = document.querySelector(".emailError");
-  const passwordError = document.querySelector(".passwordError");
 
   const handleLogin = (e) => {
-    e.PreventDefault();
+    e.preventDefault();
+    const emailError = document.querySelector(".email.error");
+    const passwordError = document.querySelector(".password.error");
+
     axios({
       method: "post",
-      url: `${process.env.REACT_APP_URL_API}api/user/login`,
+      url: `${process.env.REACT_APP_API_URL}api/user/login`,
       withCredentials: true,
       data: {
-        email: email,
-        password: password,
+        email,
+        password,
       },
     })
       .then((res) => {
+        console.log(res.data);
+        console.log(res);
         if (res.data.errors) {
           emailError.innerHTML = res.data.errors.email;
           passwordError.innerHTML = res.data.errors.password;
@@ -100,7 +104,7 @@ const Login = () => {
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
-        <StyledError className="emailError"></StyledError>
+        <StyledError className="email error"></StyledError>
       </StyledIdentify>
       <StyledIdentify>
         <StyledName htmlFor="mdp"> Mot de passe </StyledName>
@@ -111,11 +115,9 @@ const Login = () => {
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
-        <StyledError className="passwordError"></StyledError>
+        <StyledError className="password error"></StyledError>
       </StyledIdentify>
-      <StyledSubmit type="submit" value="login">
-        Se connecter
-      </StyledSubmit>
+      <StyledSubmit type="submit">Se connecter</StyledSubmit>
     </FormContainer>
   );
 };

@@ -18,7 +18,7 @@ root.render(
         <Route exact path="/" element={<Connection />} />
         <Route path="/home" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
-        <Route element={<Error />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </Router>
   </React.StrictMode>

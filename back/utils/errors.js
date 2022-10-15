@@ -24,7 +24,7 @@ exports.signUpErrors = (err) => {
 }
 
 exports.uploadErrors = (err) => {
-    const errors = { format: '', maxSize: ''};
+    let errors = { format: '', maxSize: ''};
 
     if(err.message.includes('invalid file'))
         errors.format = "Le format n'est pas compatible !";

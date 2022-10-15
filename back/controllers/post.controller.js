@@ -130,7 +130,7 @@ exports.deletePost = (req, res, next) => {
     if(!ObjectId.isValid(req.params.id))
         return res.status(400).json('PostId Unknown : ' + req.params.id)
    
-    Post.remove({_id: req.params.id})
+    Post.findByIdAndRemove({_id: req.params.id})
         .then((post) => {
             res.status(201)
             .json('Successfully post deleted :' + req.params.id)
@@ -232,7 +232,7 @@ exports.commentPost = (req, res, next) => {
                         commenterId: req.body.commenterId,
                         commenterPseudo: req.body.commenterPseudo,
                         comment: req.body.comment,
-                        time: new Date().getTime()
+                        timestamp: new Date().getTime()
                     }
                 }
             },
@@ -255,7 +255,7 @@ exports.commentPost = (req, res, next) => {
 }
 
 // Business logic for editing comments in Posts
-exports.editComment = (req, res, next) => {
+exports.editCommentPost = (req, res, next) => {
     if(!ObjectId.isValid(req.params.id))
         return res.status(400).json('PostId Unknown : ' + req.params.id)
 
@@ -283,14 +283,14 @@ exports.editComment = (req, res, next) => {
         )
     }
     catch (err) {
-        res.status(500).json({ error: err })
+       return res.status(500).json({ error: err })
     }
 }
 
 
 
 // Business logic for deleting comments in Posts
-exports.deleteComment = (req, res, next) => {
+exports.deleteCommentPost = (req, res, next) => {
     if(!ObjectId.isValid(req.params.id))
         return res.status(400).json('PostId Unknown : ' + req.params.id)
 
@@ -304,7 +304,7 @@ exports.deleteComment = (req, res, next) => {
                     }
                 }
             },
-            { new: true, upsert: true }
+            { new: true }
         )
             .then((data) => {
                 res.status(201)

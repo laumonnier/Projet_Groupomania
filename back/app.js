@@ -3,19 +3,20 @@ const express = require('express');// Ability to access the body of the query
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-
+const path =require('path');
+const { checkUser, requireAuth } = require('./middleware/auth');
+const cors = require('cors');
+const app = express();
 
 // router require
 const userRoutes = require('./routes/user.routes');
 const postRoutes = require('./routes/post.routes');
 
-const path =require('path');
+
 
 // connecting the Database and the environment variable
 require('dotenv').config({path: './config/.env'});
 require('./config/db');
-
-const app = express();
 
 // Ability to access the body of the query
 app.use(express.json());
@@ -24,20 +25,29 @@ app.use(express.json());
 //Helmet helps us secure our applications against XSS attacks
 app.use(helmet());
 
+// Accepts all clients at the site
 // Addition of "headers" allowing communication between different port servers
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', process.env.CLIENT_URL);
-    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
-    res.setHeader('Cross-Origin-Resource-Policy', 'cross-origin');
-    next();
-});
+const corsOptions = {
+    origin: process.env.CLIENT_URL,
+    credentials: true,
+    'allowedHeaders': ['sessionId', 'Content-Type'],
+    'exposedHeaders': ['sessionId'],
+    'methods': 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    'preflightContinue': false
+}
+app.use(cors(corsOptions));
 
 // BodyParser will allow us to transfer requests from one point to another
 // cookieParser will be used to read cookies properly and can be decoded 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
+
+//Each time we make a request, this will allow us to check whether the user is entitled or not
+app.get('*', checkUser);
+app.get('/jwtid', requireAuth, (req, res) => {
+    res.status(201).json(res.locals.user._id)
+});
 
 // Additions of the various endpoints (Additions the differents routes)
 app.use('/api/user', userRoutes);
