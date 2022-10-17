@@ -79,7 +79,6 @@ const Login = () => {
       },
     })
       .then((res) => {
-        console.log(res.data);
         console.log(res);
         if (res.data.errors) {
           emailError.innerHTML = res.data.errors.email;

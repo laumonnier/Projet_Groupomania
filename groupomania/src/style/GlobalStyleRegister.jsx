@@ -7,7 +7,7 @@ const StyledConnection = createGlobalStyle`
   }
 
   body {
-    background-image: linear-gradient(rgba(209, 13, 59,0.6),rgba(209, 13, 59,0.6)), url(./images/social-media.jpg) ;
+    background-image: linear-gradient(rgba(209, 13, 59,0.3),rgba(209, 13, 59,0.3)), url(./images/social-media.jpg) ;
   }
 `;
 

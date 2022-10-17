@@ -1,5 +1,5 @@
 exports.signUpErrors = (err) => {
-   const errors = { pseudo: '', lastName: '', firstName: '', email: ''}
+   let errors = { pseudo: '', lastName: '', firstName: '', email: ''}
 
     if (err.message.includes('pseudo'))
         errors.pseudo = "Pseudo incorrect, minimum 3 caractères !";
@@ -21,6 +21,19 @@ exports.signUpErrors = (err) => {
         
 
     return errors;
+}
+
+exports.loginErrors = (err) => {
+    let errors = { email: '', password: ''};
+
+    if (err.message.includes("email"))
+        errors.email = "L'email est incorrect !";
+    
+    if (err.message.includes("password"))
+        errors.password = "Le mot de passe est incorrect !";
+    
+    return errors;
+    
 }
 
 exports.uploadErrors = (err) => {
