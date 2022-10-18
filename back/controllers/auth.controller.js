@@ -39,14 +39,17 @@ exports.login = async (req, res, next) => {
     const { email, password } = req.body
     try{
         const user = await User.login(email, password);
-        const token = createToken(user._id);
-        res.cookie('jwt', {value:token}, {httpOnly: true, maxAge: 1000*24*60*60});//maxAge 
+        const token = jwt.sign(
+            {userId: user._id}, 
+            process.env.TOKEN,
+            // {expiresIn: '24h'}
+            )
+        res.cookie('jwt', token, {httpOnly: true});//maxAge 
         res.status(200).json({
             message: "L'utilisateur est bien connecté !",
             userId: user._id
             })
     } catch (err){
-        console.log(err);
         const errors = loginErrors(err)
         res.status(401).json({ errors })
     }
