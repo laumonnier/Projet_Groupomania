@@ -1,56 +1,45 @@
-const User = require ('../models/user');
+const UserModel = require('../models/user.model');
 const ObjectId = require ('mongoose').Types.ObjectId;
 
 // Business logic for obtaining all Users
-exports.getAllUsers = (req, res, next) => {
-    console.log("Nous sommes sur la middleware getAllUsers !");
-    User.find().select('-password')
-        .then((users) => {
-            res.status(200)
-            .json(users)
-        })
-        .catch((err) => {
-            res.status(400)
-            .json({ error: err })
-        });
+exports.getAllUsers = async (req, res) => {
+    const users = await UserModel.find().select('-password')
+            res.status(200).json(users)
 };
 
 // Business logic for obtaining a single User
-exports.getOneUser = (req, res, next) => {
-    console.log(req.params);
+exports.getOneUser = (req, res) => {
     if (!ObjectId.isValid(req.params.id)){
-        return (
-            res.status(400)
-            .json("L'id ne correspond pas :" + req.params.id)
-        )
-    }else{
-        User.findById(req.params.id).select('-password')
-            .then((data) => { 
-                res.status(200)
-                .json(data)
-            })
-            .catch((err) => {
-                res.status(500)
-                .json({ error : err })
-            });
-        
+        return res.status(400).json("L'id ne correspond pas :" + req.params.id)    
     }
-};
+        
+    UserModel.findById(req.params.id).select('-password')
+            .then((data) => { 
+                res.status(200).json(data)
+            })
+            .catch ((err) => {
+                res.status(400).json({ error : err })
+            });   
+    };
+
 
 // Business logic for adding or changing a User’s data
-exports.updateUser = (req, res, next) => {
+exports.updateUser = async (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).json("L'id ne correspond pas :" + req.params.id)
         
     try {
-        User.findOneAndUpdate(
-            {_id: req.params.id},
+        await UserModel.findByIdAndUpdate(
+            { _id: req.params.id},
             {
                 $set: {
                     description: req.body.description
                 }
             },
-            { new: true, upsert: true, setDefaultsOnInsert: true}
+            { new: true,
+              upsert: true, 
+              setDefaultsOnInsert: true
+            }
         )
             .then((data) => res.status(200).json(data))
             .catch((err) => res.status(400).json({ message: err }));
@@ -66,7 +55,7 @@ exports.updateRole = (req, res, next) => {// A refaire
     const { role, id } = req.body
         
     try {
-        User.findOneAndUpdate(
+        UserModel.findOneAndUpdate(
             {_id: req.params.id},
             {
                 $set: {
@@ -83,20 +72,16 @@ exports.updateRole = (req, res, next) => {// A refaire
 };
 
 // Business logic concerning the deletion of a user
-exports.deleteUser = (req, res, next) => {
-    console.log('Nous sommes bien sur la middleware deleteUser');
+exports.deleteUser = async (req, res) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400).json("L'id ne correspond pas :" + req.params.id)
     
-    User.remove({_id: req.params.id})
-        .then(() => {
-            res.status(200)
-            .json({ message: "L'utilisateur a bien été supprimer !", user })
-        })
-        .catch((err) => {
-            res.status(400)
-            .json({ error: err })
-        })
+    try{
+        await UserModel.remove({_id: req.params.id}).exec();
+            res.status(200).json({ message: "L'utilisateur a bien été supprimer !"}) // Attention res et user
+    } catch (err) {
+            res.status(400).json({ error: err })
+        }
 } 
 
 exports.followUser = (req, res, next) => {
@@ -106,7 +91,7 @@ exports.followUser = (req, res, next) => {
 
     try{
 
-        User.findByIdAndUpdate(
+        UserModel.findByIdAndUpdate(
             req.params.id,
             { $addToSet: { following: req.body.idToFollow}},
             { new: true, upsert: true}
@@ -119,7 +104,7 @@ exports.followUser = (req, res, next) => {
                 .json({ error: err })
             });
         
-        User.findByIdAndUpdate(
+        UserModel.findByIdAndUpdate(
             req.body.idToFollow,
             { $addToSet: { followers: req.params.id}},
             { new: true, upsert: true}
@@ -144,7 +129,7 @@ exports.unfollowUser = (req, res, next) => {
 
     try{
 
-        User.findByIdAndUpdate(
+        UserModel.findByIdAndUpdate(
             req.params.id,
             { $pull: { following: req.body.idToUnfollow}},
             { new: true, upsert: true}
@@ -157,7 +142,7 @@ exports.unfollowUser = (req, res, next) => {
                 .json({ error: err })
             });
             
-        User.findByIdAndUpdate(
+        UserModel.findByIdAndUpdate(
             req.body.idToUnfollow,
             { $pull: { followers: req.params.id}},
             { new: true, upsert: true}
@@ -173,7 +158,7 @@ exports.unfollowUser = (req, res, next) => {
     } catch (err) {
         return res.status(500).json({ message: err});
     }
-}
+}           
 
 // // business logic concerning the creation of a Status Like
 // exports.createLikeStatus = (req, res) => {

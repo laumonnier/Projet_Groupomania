@@ -23,7 +23,7 @@ exports.signUpErrors = (err) => {
     return errors;
 }
 
-exports.loginErrors = (err) => {
+exports.signInErrors = (err) => {
     let errors = { email: '', password: ''};
 
     if (err.message.includes('email'))

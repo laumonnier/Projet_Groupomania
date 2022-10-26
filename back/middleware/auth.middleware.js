@@ -1,11 +1,11 @@
 const jwt = require ('jsonwebtoken');
-const User = require('../models/user');
+const UserModel = require('../models/user.model');
 
 
 // Verifying a user's authentification on the account
 // exports.auth = (req, res, next) => {
 //     try{ 
-//     const token = req.headers.authorization.split('')[1];
+//     const token = req.headers.authorization.split(' ')[1];
 //     const decodedToken = jwt.verify(token, process.env.TOKEN);
 //     const userId = decodedToken.userId;
 //     req.auth = { userId: userId };
@@ -16,26 +16,74 @@ const User = require('../models/user');
 // };
 
 // Verifying a user's authentification on the account
-exports.checkUser = (req, res, next) => {
+exports.checkUser = (req, res, next) => { 
     const token = req.cookies.jwt;
     if(token){
-        jwt.verify(token, process.env.TOKEN, (err, decodedToken) => {
+        jwt.verify(token, process.env.TOKEN, async (err, decodedToken) => {
             if(err) {
                 res.locals.user = null;
-                res.cookie('jwt', '', {maxAge: 1});
+                res.cookie('jwt', '', { maxAge: 1});
                 next();
             }else{
-                let user = User.findById(decodedToken.id);
+                let user = await UserModel.findById(decodedToken.id);
                 res.locals.user = user;
-                console.log(res.locals.user);
                 next();
             }
         })
-    }else{
+    } else {
         res.locals.user = null;
         next();
     }
-};
+} 
+//                 ));
+//         const userId = decodedToken.userId;
+//         req.auth = { userId: userId };
+//         if(decodedToken){
+//             const user = UserModel.findById(decodedToken.id);
+//             res.locals.user = user;
+//             console.log(res.locals.user);
+//             next()
+//         }else{
+//             res.locals.user = null;
+//             res.cookie('jwt', '', {maxAge: 1});
+//             next()
+//         }
+//         res.locals.user = null;
+//         next();
+//     }
+// } else { 
+
+// }
+//     const decodedToken = jwt.verify(token, process.env.TOKEN);
+//     const userId = decodedToken.userId;
+//     req.auth = { userId: userId };
+//     next();
+//     }catch(error){
+//         res.status(401).json({error:error});
+//     }
+// };
+
+// Verifying a user's authentification on the account
+// exports.checkUser = (req, res, next) => {
+//     const token = req.cookies.jwt;
+//     if(token){
+//         jwt.verify(token, process.env.TOKEN, (err, decodedToken) => {
+//             if(err) {
+//                 res.locals.user = null;
+//                 res.cookie('jwt', '', {maxAge: 1});
+//                 next();
+//             }else{
+//                 let user = User.findById(decodedToken.id);
+//                 res.locals.user = user;
+//                 console.log(res.locals.user);
+//                 next();
+//             }
+//         })
+//     }else{
+//         res.locals.user = null;
+//         next();
+//     }
+// };
 
 
 // Verifying a user's authentification on the account
@@ -45,6 +93,7 @@ exports.requireAuth = (req, res, next) => {
         jwt.verify(token, process.env.TOKEN, (err, decodedToken) => {
             if(err) {
                 console.log(err);
+                res.status(200).json('No Token')
             } else {
                 console.log(decodedToken.id);
                 next();
@@ -100,5 +149,4 @@ exports.userAuth = (req, res, next) => {
         return res.status(401)
         .json({ message: "Vous n'êtes pas authorisé, le token n'ai pas valable ou plus valable"})
     }
-};
-        
+}

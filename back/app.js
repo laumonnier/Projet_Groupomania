@@ -4,7 +4,7 @@ const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path =require('path');
-const { checkUser, requireAuth } = require('./middleware/auth');
+const { checkUser, requireAuth } = require('./middleware/auth.middleware');
 const cors = require('cors');
 const app = express();
 
@@ -46,7 +46,7 @@ app.use(cookieParser());
 //Each time we make a request, this will allow us to check whether the user is entitled or not
 app.get('*', checkUser);
 app.get('/jwtid', requireAuth, (req, res) => {
-    res.status(201).json(res.locals.user._id)
+    res.status(201).send(res.locals.user._id)
 });
 
 // Additions of the various endpoints (Additions the differents routes)

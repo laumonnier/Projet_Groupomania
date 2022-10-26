@@ -1,5 +1,5 @@
-const Post = require('../models/post');
-const User = require('../models/user');
+const PostModel = require('../models/post.model');
+const UserModel = require('../models/user.model');
 const fs = require('fs');
 const { promisify } = require('util');
 const pipeline = promisify(require('stream').pipeline);
@@ -44,7 +44,7 @@ exports.createPost = (req, res, next) => {
             );
          }
     }
-    const newPost = new Post({
+    const newPost = new PostModel({
         posterId: req.body.posterId,
         message: req.body.message,
         picture: req.file !== null ? "./uploads/posts/" + fileName : "",
@@ -67,7 +67,7 @@ exports.createPost = (req, res, next) => {
 
 // Business logic for obtaining all posts
 exports.getAllPost = (req, res, next) => {
-    Post.find().sort({ createdAt: -1 })
+    PostModel.find().sort({ createdAt: -1 })
         .then((data) => {
             res.status(201)
             .json(data)
@@ -86,7 +86,7 @@ exports.getOnePost = (req, res, next) => {
             .json('PostId unknown : ' + req.params.id)
         )
     }else{
-    Post.findById(
+    PostModel.findById(
         req.params.id
     )
         .then((post) => {
@@ -107,7 +107,7 @@ exports.updatePost = (req, res, next) => {
         .json('PostId unknown : ' + req.params.id)
     
     try{
-        Post.findOneAndUpdate(
+        PostModel.findOneAndUpdate(
             {_id: req.params.id},
             {
                 $set: {
@@ -130,7 +130,7 @@ exports.deletePost = (req, res, next) => {
     if(!ObjectId.isValid(req.params.id))
         return res.status(400).json('PostId Unknown : ' + req.params.id)
    
-    Post.findByIdAndRemove({_id: req.params.id})
+    PostModel.findByIdAndRemove({_id: req.params.id})
         .then((post) => {
             res.status(201)
             .json('Successfully post deleted :' + req.params.id)
@@ -147,7 +147,7 @@ exports.likedPostStatus = (req, res) => {
         return res.status(400).json('PostId Unknown : ' + req.params.id)
 
     try{
-        Post.findByIdAndUpdate(
+        PostModel.findByIdAndUpdate(
              req.params.id,
              {
                 $addToSet: { usersLiked: req.body.id },
@@ -159,7 +159,7 @@ exports.likedPostStatus = (req, res) => {
             res.status(400)
             .json({ error: err })
         })
-        User.findByIdAndUpdate(
+        UserModel.findByIdAndUpdate(
              req.body.id,
              {
                 $addToSet: { likes: req.params.id }
@@ -186,7 +186,7 @@ exports.unLikedPostStatus = (req, res) => {
         return res.status(400).json('PostId Unknown : ' + req.params.id)
 
     try{
-        Post.findByIdAndUpdate(
+        PostModel.findByIdAndUpdate(
              req.params.id,
              {
                 $pull: { usersLiked: req.body.id },
@@ -198,7 +198,7 @@ exports.unLikedPostStatus = (req, res) => {
             res.status(400)
             .json({ error: err })
         })
-        User.findByIdAndUpdate(
+        UserModel.findByIdAndUpdate(
             req.body.id,
              {
                 $pull: { likes: req.params.id }
@@ -224,7 +224,7 @@ exports.commentPost = (req, res, next) => {
     if(!ObjectId.isValid(req.params.id))
         return res.status(400).json('PostId Unknown : ' + req.params.id)
     try{
-        Post.findByIdAndUpdate(
+        PostModel.findByIdAndUpdate(
             req.params.id,
             {
                 $push: {
@@ -260,7 +260,7 @@ exports.editCommentPost = (req, res, next) => {
         return res.status(400).json('PostId Unknown : ' + req.params.id)
 
     try{
-        return Post.findById(
+        return PostModel.findById(
             req.params.id,
             (err, data) => {
                 const theComment = data.comments.find((txt) => 
@@ -295,7 +295,7 @@ exports.deleteCommentPost = (req, res, next) => {
         return res.status(400).json('PostId Unknown : ' + req.params.id)
 
     try{
-        Post.findByIdAndUpdate(
+        PostModel.findByIdAndUpdate(
             req.params.id,
             {
                 $pull: {

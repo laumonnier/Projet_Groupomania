@@ -1,4 +1,4 @@
-const User = require('../models/user');
+const UserModel = require('../models/user.model.js');
 const fs = require('fs');
 const { promisify } = require('util');// used to convert a method that returns responses using a callback function to return responses in a promise object
 const { uploadErrors } = require('../utils/errors');
@@ -54,7 +54,7 @@ exports.uploadUserProfil = async (req, res, next) => {
     }
 
     try {
-         User.findByIdAndUpdate(
+         UserModel.findByIdAndUpdate(
             req.body.userId,
             {
                 $set: {picture: "./uploads/profil/" + fileName}

@@ -1,0 +1,21 @@
+.general-connection {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: auto;
+}
+
+.connection-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: auto;
+}
+
+#groupomaniaLogo {
+    display: flex;
+    height: 520px;
+    margin: auto;
+    margin-top: -200px;
+    padding-bottom: 120px;
+}

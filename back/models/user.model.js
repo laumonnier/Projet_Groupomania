@@ -18,7 +18,7 @@ const userSchema = mongoose.Schema(
             type: String,
             required: true,
             validate: [isEmail],
-            lowercase: true,
+            // lowercase: true,
             unique: true,
             trim: true
         },
@@ -63,8 +63,8 @@ const userSchema = mongoose.Schema(
 // Use the function before saving the set
 // This function allows the salting of the password so that it is more difficult to decrypt
 userSchema.pre("save", function(next) {
-    const salt = bcrypt.genSaltSync(15);
-    this.password = bcrypt.hash(this.password, salt);
+    const salt =  bcrypt.genSaltSync(15);
+    this.password =  bcrypt.hash(this.password, salt);
     next();
 });
 
@@ -72,15 +72,12 @@ userSchema.statics.login = async function(email, password) {
     const user = await this.findOne({ email });
     if(user){
         const auth = await bcrypt.compare(password, user.password);
-    
         if (auth) {
             return user;
         }
-        throw Error("Le Mot de passe est incorrect !!!");
+        throw "Mot de passe incorrect !!!";
     }
-    throw Error("L'email est incorrect !!!");
+    throw "L'email est incorrect !!!";
 };
 
-
-
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('user', userSchema);

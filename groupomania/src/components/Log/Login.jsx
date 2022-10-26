@@ -1,64 +1,6 @@
 import React, { useState } from "react";
-import styled from "styled-components";
-import colors from "../../style/colors";
 import axios from "axios";
-
-const FormContainer = styled.form`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-item: flex-end;
-  text-align: start;
-  width: 700px;
-  height: 330px;
-  background-color: ${colors.tertiary_bg_formulary};
-  border: 3px solid black;
-  border-radius: 12px;
-`;
-
-const StyledIdentify = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const StyledName = styled.label`
-  display: flex;
-  text-align: start;
-  align-items: flex-end;
-  margin-left: 15px;
-  height: 40px;
-  font-size: 23px;
-`;
-
-const StyledField = styled.input`
-  width: 96%;
-  height: 40px;
-  border-radius: 12px;
-  margin: auto;
-  font-size: 22px;
-`;
-
-const StyledError = styled.div`
-  height: 25px;
-  font-size: 18px;
-  font-weight: bold;
-  color: red;
-  font-style: italic;
-  margin-left: 12px;
-  margin-top: 8px;
-`;
-
-const StyledSubmit = styled.button`
-  width: 98%;
-  height: 60px;
-  margin: auto;
-  font-size: 22px;
-  font-weight: bold;
-  color: white;
-  margin-bottom: 15px;
-  border-radius: 9px;
-  background-color: ${colors.primary_button};
-`;
+import "../../style/Login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -66,8 +8,8 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const emailError = document.querySelector(".email.error");
-    const passwordError = document.querySelector(".password.error");
+    const emailError = document.querySelector(".emailError");
+    const passwordError = document.querySelector(".passwordError");
 
     axios({
       method: "post",
@@ -79,7 +21,7 @@ const Login = () => {
       },
     })
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
         if (res.data.errors) {
           emailError.innerHTML = res.data.errors.email;
           passwordError.innerHTML = res.data.errors.password;
@@ -93,31 +35,33 @@ const Login = () => {
   };
 
   return (
-    <FormContainer action="" onSubmit={handleLogin}>
-      <StyledIdentify>
-        <StyledName htmlFor="mail">Adresse mail</StyledName>
-        <StyledField
-          type="mail"
+    <form className="form-login-container" action="" onSubmit={handleLogin}>
+      <div className="mail-container">
+        <label htmlFor="mail">Adresse mail</label>
+        <input
+          type="email"
           name="mail"
           id="mail"
           onChange={(e) => setEmail(e.target.value)}
           value={email}
         />
-        <StyledError className="email error"></StyledError>
-      </StyledIdentify>
-      <StyledIdentify>
-        <StyledName htmlFor="mdp"> Mot de passe </StyledName>
-        <StyledField
+        <div className="emailError"></div>
+      </div>
+      <div className="password-container">
+        <label htmlFor="mdp"> Mot de passe </label>
+        <input
           type="password"
           name="mdp"
           id="mdp"
           onChange={(e) => setPassword(e.target.value)}
           value={password}
         />
-        <StyledError className="password error"></StyledError>
-      </StyledIdentify>
-      <StyledSubmit type="submit">Se connecter</StyledSubmit>
-    </FormContainer>
+        <div className="passwordError"></div>
+      </div>
+      <button type="submit" className="submit-form-login">
+        Se connecter
+      </button>
+    </form>
   );
 };
 

@@ -1,103 +1,151 @@
-import React from "react";
-import styled from "styled-components";
-import colors from "../../style/colors";
+import React, { useState } from "react";
 import axios from "axios";
-
-const FormContainer = styled.form`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-item: flex-end;
-  text-align: start;
-  width: 700px;
-  height: 680px;
-  background-color: ${colors.tertiary_bg_formulary};
-  border: 3px solid black;
-  border-radius: 12px;
-`;
-
-const StyledIdentify = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
-const StyledName = styled.label`
-  display: flex;
-  text-align: start;
-  align-items: flex-end;
-  margin-left: 15px;
-  height: 40px;
-  font-size: 23px;
-`;
-
-const StyledField = styled.input`
-  width: 96%;
-  height: 40px;
-  border-radius: 12px;
-  margin: auto;
-  font-size: 22px;
-`;
-
-const StyledError = styled.div`
-  height: 21px;
-  font-size: 17px;
-  font-weight: bold;
-  color: red;
-  font-style: italic;
-  margin-left: 12px;
-  margin-top: 3px;
-`;
-
-const StyledSubmit = styled.button`
-  width: 98%;
-  height: 60px;
-  margin: auto;
-  font-size: 22px;
-  font-weight: bold;
-  color: white;
-  margin-bottom: 15px;
-  border-radius: 9px;
-  background-color: ${colors.primary_button};
-`;
+import Login from "./Login";
+import "../../style/Subscribe.css";
 
 const Subscribe = () => {
-  const pseudoError = document.querySelector(".pseudoError");
-  const lastNameError = document.querySelector(".lNameError");
-  const firstNameError = document.querySelector(".fNameError");
-  const emailError = document.querySelector(".emailError");
-  const passwordError = document.querySelector(".passwordError");
+  const [pseudo, setPseudo] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [ctrlPassword, setCtrlPassword] = useState("");
+  const [formSubmit, setFormSubmit] = useState(false);
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    const pseudoError = document.querySelector(".pseudoError");
+    const lNameError = document.querySelector(".lNameError");
+    const fNameError = document.querySelector(".fNameError");
+    const emailError = document.querySelector(".emailError");
+    const passwordError = document.querySelector(".passwordError");
+    const controlPasswordError = document.querySelector(
+      ".controlPasswordError"
+    );
+
+    controlPasswordError.innerHTML = "";
+
+    if (password !== ctrlPassword) {
+      controlPasswordError.innerHTML =
+        "Les mots de passe ne sont pas identique !!!";
+    } else {
+      await axios({
+        method: "post",
+        url: `${process.env.REACT_APP_API_URL}api/user/register`,
+        data: {
+          pseudo,
+          lastName,
+          firstName,
+          email,
+          password,
+        },
+      })
+        .then((res) => {
+          console.log(res);
+          if (res.data.errors) {
+            pseudoError.innerHTML = res.data.errors.pseudo;
+            lNameError.innerHTML = res.data.errors.lastName;
+            fNameError.innerHTML = res.data.errors.firstName;
+            emailError.innerHTML = res.data.errors.email;
+            passwordError.innerHTML = res.data.errors.password;
+          } else {
+            setFormSubmit(true);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  };
 
   return (
-    <FormContainer>
-      <StyledIdentify>
-        <StyledName htmlFor="pseudo">Pseudo</StyledName>
-        <StyledField type="text" name="pseudo" id="pseudo" />
-        <StyledError className="pseudoError"></StyledError>
-      </StyledIdentify>
-      <StyledIdentify>
-        <StyledName htmlFor="lastName"> Nom de Famille </StyledName>
-        <StyledField type="text" name="lName" id="lastName" />
-        <StyledError className="lNameError"></StyledError>
-      </StyledIdentify>
-      <StyledIdentify>
-        <StyledName htmlFor="firstName"> Prénom </StyledName>
-        <StyledField type="text" name="fName" id="firstName" />
-        <StyledError className="fNameError"></StyledError>
-      </StyledIdentify>
-      <StyledIdentify>
-        <StyledName htmlFor="mail"> Adresse mail </StyledName>
-        <StyledField type="mail" name="mail" id="mail" />
-        <StyledError className="emailError"></StyledError>
-      </StyledIdentify>
-      <StyledIdentify>
-        <StyledName htmlFor="pswrd"> Mot de passe </StyledName>
-        <StyledField type="password" name="pswrd" id="pswrd" />
-        <StyledError className="passwordError"></StyledError>
-      </StyledIdentify>
-      <StyledSubmit type="Submit" value="Subscribe">
-        S'inscrire
-      </StyledSubmit>
-    </FormContainer>
+    <>
+      {formSubmit ? (
+        <>
+          <Login />
+          <h3 className="Success">
+            {" "}
+            Inscription réussi, vous pouvez vous connecter !!!
+          </h3>
+        </>
+      ) : (
+        <form
+          className="form-subscribe-container"
+          action=""
+          onSubmit={handleRegister}
+        >
+          <div className="pseudo-container">
+            <label htmlFor="pseudo">Pseudo</label>
+            <input
+              type="text"
+              name="pseudo"
+              id="pseudo"
+              onChange={(e) => setPseudo(e.target.value)}
+              value={pseudo}
+            />
+            <div className="pseudoError"></div>
+          </div>
+          <div className="lName-container">
+            <label htmlFor="lastName"> Nom de Famille </label>
+            <input
+              type="text"
+              name="lName"
+              id="lastName"
+              onChange={(e) => setLastName(e.target.value)}
+              value={lastName}
+            />
+            <div className="lNameError"></div>
+          </div>
+          <div className="fName-container">
+            <label htmlFor="firstName"> Prénom </label>
+            <input
+              type="text"
+              name="fName"
+              id="firstName"
+              onChange={(e) => setFirstName(e.target.value)}
+              value={firstName}
+            />
+            <div className="fNameError"></div>
+          </div>
+          <div className="mail-container">
+            <label htmlFor="mail"> Adresse mail </label>
+            <input
+              type="email"
+              name="mail"
+              id="mail"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+            />
+            <div className="emailError"></div>
+          </div>
+          <div className="password-container">
+            <label htmlFor="pswrd"> Mot de passe </label>
+            <input
+              type="password"
+              name="pswrd"
+              id="pswrd"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+            />
+            <div className="passwordError"></div>
+          </div>
+          <div className="ctrlPswrd-container">
+            <label htmlFor="ctrlPswrd">Confirmation Mot de passe</label>
+            <input
+              type="password"
+              name="ctrlPswrd"
+              id="ctrlPswrd"
+              onChange={(e) => setCtrlPassword(e.target.value)}
+              value={ctrlPassword}
+            />
+            <div className="controlPasswordError"></div>
+          </div>
+          <button type="submit" className="submit-subscribe">
+            S'inscrire
+          </button>
+        </form>
+      )}
+    </>
   );
 };
 
