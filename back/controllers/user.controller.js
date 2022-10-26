@@ -30,7 +30,7 @@ exports.updateUser = async (req, res) => {
         
     try {
         await UserModel.findByIdAndUpdate(
-            { _id: req.params.id},
+            { $id: req.params.id},
             {
                 $set: {
                     description: req.body.description

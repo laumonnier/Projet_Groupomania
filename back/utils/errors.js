@@ -24,15 +24,15 @@ exports.signUpErrors = (err) => {
 }
 
 exports.signInErrors = (err) => {
-    let errors = { email: '', password: ''};
+    let errors = { email: '', password: ''}
 
     if (err.message.includes('email'))
         errors.email = "L'email est incorrect !";
     
     if (err.message.includes('password'))
-        errors.password = "Le mot de passe est incorrect !";
+        errors.password = "Le mot de passe est incorrect !"
     
-    return errors;
+    return errors
     
 }
 
