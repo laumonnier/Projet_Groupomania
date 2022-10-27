@@ -1,5 +1,6 @@
 exports.signUpErrors = (err) => {
-   let errors = { pseudo: '', lastName: '', firstName: '', email: ''}
+    
+   let errors = { pseudo: '', email: '', password: ''}
 
     if (err.message.includes('pseudo'))
         errors.pseudo = "Pseudo incorrect, minimum 3 caractères !";
@@ -7,17 +8,14 @@ exports.signUpErrors = (err) => {
     if (err.code === 11000 && Object.keys(err.keyValue)[0].includes('pseudo'))
         errors.pseudo = "Ce pseudo a déjà été enregistré dans la base de données !";
 
-    if (err.message.includes('lastName'))
-        errors.lastName = "Nom de famille obligatoire !";
-
-    if (err.message.includes('firstName'))
-        errors.firstName = "Prénom obligatoire !";
-
     if (err.message.includes('email'))
         errors.email = "Email incorrect !";
 
     if (err.code === 11000 && Object.keys(err.keyValue)[0].includes('email'))
         errors.email = "Cet email a déjà été enregistré dans la base de données !";
+    
+    if (err.message.includes('password'))
+        errors.password = "Ce mot de passe ne correspond pas ('min 8 car. , max 35 car.') !"
         
 
     return errors;

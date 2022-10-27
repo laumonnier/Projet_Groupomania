@@ -25,8 +25,8 @@ const userSchema = mongoose.Schema(
         password: {
             type: String,
             required: true,
-            max: 200,
-            minlength: 6
+            maxlength: 35,
+            minlength: 8
         },
         role: {
            type: String,
@@ -36,14 +36,6 @@ const userSchema = mongoose.Schema(
         picture: {
             type: String,
             default: "../images/image_default.png"
-        },
-        lastName: {
-            type: String,
-            required: true
-        },
-        firstName: {
-            type: String,
-            required: true
         },               
         description: {
             type: String,

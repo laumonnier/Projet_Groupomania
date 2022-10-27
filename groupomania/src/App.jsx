@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
@@ -7,21 +7,37 @@ import Profile from "./pages/Profile";
 import Error from "./components/Error";
 import Navbar from "./components/Header";
 import GlobalStyle from "./utils/style/GlobalStyle";
-// import { UserIdProvider } from "./utils/context";
+import { UserIdContext } from "./utils/context";
+import axios from "axios";
 
 const App = () => {
+  const [userId, setUserId] = useState(null);
+
+  useEffect(() => {
+    const fetchToken = async () => {
+      axios({
+        method: "get",
+        url: `${process.env.REACT_APP_API_URL}jwtid`,
+        withCredentials: true,
+      })
+        .then((res) => setUserId(res.data))
+        .catch((err) => console.log("No Token"));
+    };
+    fetchToken();
+  }, [userId]);
+
   return (
     <Router>
-      {/* <UserIdProvider> */}
-      <GlobalStyle />
-      <Navbar />
-      <Routes>
-        <Route exact path="/" element={<Connection />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="*" element={<Error />} />
-      </Routes>
-      {/* </UserIdProvider> */}
+      <UserIdContext.Provider value={userId}>
+        <GlobalStyle />
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Connection />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
+      </UserIdContext.Provider>
     </Router>
   );
 };

@@ -13,7 +13,7 @@ const upload = multer();
 const password = require ('../middleware/password');
 
 // Additions of the various endpoints
-router.post('/register', password, registerUser.signUp);
+router.post('/register', registerUser.signUp);
 router.post('/login', registerUser.signIn);
 router.get('/logOut', registerUser.logOut); // userAuth
 

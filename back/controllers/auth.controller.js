@@ -13,13 +13,14 @@ const createToken = (id) => {
 // business logic for creating a user account
 exports.signUp = async (req, res, next) => {
     console.log(req.body);
-    const {pseudo, lastName, firstName, email, password} = req.body;
+    const {pseudo, email} = req.body;
+    const {password} = req.body;
     try{
-        const user = await UserModel.create({pseudo, lastName, firstName, email, password});
+        const user = await UserModel.create({pseudo, email, password});
         res.status(201).json({ user: user._id })
     }catch(err){
         const errors = signUpErrors(err);
-        res.status(200).json({ errors });
+        res.status(200).json({ errors }); 
     }
     // try {
         // UserModel.create({ 

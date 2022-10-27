@@ -2,7 +2,7 @@
     flex-direction: column;
     margin: auto;
     margin-top: -250px;
-    border: 2px solid black;
+    border: 0px solid black;
 }
 
 .modal-container {
@@ -13,8 +13,9 @@
     margin: auto;
     width: 700px;
     height: 280px;
+    margin-top: 0px;
     background-color: #c9c1c2;
-    border: 0px solid black;
+    border: 0px solid rgb(235, 11, 11);
     border-radius: 12px;
 }
 
@@ -22,6 +23,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: -280px;
     width: 100%;
     border: 0px solid black;
 }
@@ -32,5 +34,5 @@ button {
     font-size: 20px;
     border-radius: 9px;
     margin-bottom: 7px;
-    border: 0px solid red;
+    border: 2px solid black;
 }

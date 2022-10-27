@@ -5,8 +5,6 @@ import "../../style/Subscribe.css";
 
 const Subscribe = () => {
   const [pseudo, setPseudo] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [firstName, setFirstName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [ctrlPassword, setCtrlPassword] = useState("");
@@ -15,8 +13,6 @@ const Subscribe = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     const pseudoError = document.querySelector(".pseudoError");
-    const lNameError = document.querySelector(".lNameError");
-    const fNameError = document.querySelector(".fNameError");
     const emailError = document.querySelector(".emailError");
     const passwordError = document.querySelector(".passwordError");
     const controlPasswordError = document.querySelector(
@@ -34,8 +30,6 @@ const Subscribe = () => {
         url: `${process.env.REACT_APP_API_URL}api/user/register`,
         data: {
           pseudo,
-          lastName,
-          firstName,
           email,
           password,
         },
@@ -44,8 +38,6 @@ const Subscribe = () => {
           console.log(res);
           if (res.data.errors) {
             pseudoError.innerHTML = res.data.errors.pseudo;
-            lNameError.innerHTML = res.data.errors.lastName;
-            fNameError.innerHTML = res.data.errors.firstName;
             emailError.innerHTML = res.data.errors.email;
             passwordError.innerHTML = res.data.errors.password;
           } else {
@@ -84,28 +76,6 @@ const Subscribe = () => {
               value={pseudo}
             />
             <div className="pseudoError"></div>
-          </div>
-          <div className="lName-container">
-            <label htmlFor="lastName"> Nom de Famille </label>
-            <input
-              type="text"
-              name="lName"
-              id="lastName"
-              onChange={(e) => setLastName(e.target.value)}
-              value={lastName}
-            />
-            <div className="lNameError"></div>
-          </div>
-          <div className="fName-container">
-            <label htmlFor="firstName"> Prénom </label>
-            <input
-              type="text"
-              name="fName"
-              id="firstName"
-              onChange={(e) => setFirstName(e.target.value)}
-              value={firstName}
-            />
-            <div className="fNameError"></div>
           </div>
           <div className="mail-container">
             <label htmlFor="mail"> Adresse mail </label>

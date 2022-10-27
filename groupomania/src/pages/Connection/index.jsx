@@ -14,7 +14,7 @@ const Connection = () => {
           src={logo}
           alt="Logo de l'entreprise Groupomania"
         />
-        <Log />
+        <Log signIn={false} signUp={true} />
       </div>
     </div>
   );

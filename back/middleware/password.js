@@ -19,7 +19,7 @@ module.exports = (req, res, next) => {
     if(passwordSchema.validate(req.body.password)){
         next();
     }else{
-        return res.status(400)
+        return res.status(200)
         .json({error: `The password is not developed enough or is not allowed : ${passwordSchema.validate('req.body.password', { list: true })}`});
     }
 }
