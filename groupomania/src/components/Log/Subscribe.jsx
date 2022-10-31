@@ -61,7 +61,7 @@ const Subscribe = () => {
           </p>
         </>
       ) : (
-        <form id="form-subscribe-container" action="" onSubmit={handleRegister}>
+        <form action="" onSubmit={handleRegister} id="form-subscribe-container">
           <div className="pseudo-container">
             <label htmlFor="pseudo">Pseudo</label>
             <input

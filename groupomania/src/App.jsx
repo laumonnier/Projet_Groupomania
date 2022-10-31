@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Connection from "./pages/Connection";
 import Profile from "./pages/Profile";
 import Error from "./components/Error";
-import Navbar from "./components/Header";
+import Navbar from "./components/Navbar";
 import GlobalStyle from "./utils/style/GlobalStyle";
 import { UserIdContext } from "./utils/context";
 import axios from "axios";
