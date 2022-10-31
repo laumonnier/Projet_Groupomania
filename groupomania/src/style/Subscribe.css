@@ -1,4 +1,4 @@
-.form-subscribe-container {
+#form-subscribe-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -8,6 +8,16 @@
     background-color: #c9c1c2;
     border: 3px solid black;
     border-radius: 12px;
+}
+
+.success {
+    height: 30px;
+    font-size: 26px;
+    font-weight: bold;
+    color: black;
+    font-style: italic;
+    margin: auto;
+    margin-top: 8px;
 }
 
 .mail-container, .password-container {

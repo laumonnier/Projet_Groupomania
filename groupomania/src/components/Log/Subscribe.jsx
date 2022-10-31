@@ -55,17 +55,13 @@ const Subscribe = () => {
       {formSubmit ? (
         <>
           <Login />
-          <h3 className="Success">
+          <p className="success">
             {" "}
             Inscription réussi, vous pouvez vous connecter !!!
-          </h3>
+          </p>
         </>
       ) : (
-        <form
-          className="form-subscribe-container"
-          action=""
-          onSubmit={handleRegister}
-        >
+        <form id="form-subscribe-container" action="" onSubmit={handleRegister}>
           <div className="pseudo-container">
             <label htmlFor="pseudo">Pseudo</label>
             <input

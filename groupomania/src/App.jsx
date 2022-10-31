@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Connection from "./pages/Connection";
@@ -15,7 +14,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchToken = async () => {
-      axios({
+      await axios({
         method: "get",
         url: `${process.env.REACT_APP_API_URL}jwtid`,
         withCredentials: true,

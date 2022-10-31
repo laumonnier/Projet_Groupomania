@@ -1,14 +1,14 @@
 .general-connection {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     margin: auto;
 }
 
 .connection-container {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
     margin: auto;
 }
 
