@@ -68,4 +68,5 @@ input:hover {
     margin-bottom: 15px;
     border-radius: 9px;
     background-color: #bd153c;
+    cursor: pointer;
 }

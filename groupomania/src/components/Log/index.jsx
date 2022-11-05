@@ -6,6 +6,7 @@ import "../../style/Log.css";
 const Log = () => {
   const [loginModal, setLoginModal] = useState(true);
   const [subscribeModal, setSubscribeModal] = useState(false);
+  // let colorModal = "#bd153c";
 
   const handleModals = (e) => {
     if (e.target.id === "subscribe") {
@@ -18,7 +19,7 @@ const Log = () => {
   };
 
   return (
-    <div className="connection-container">
+    <div className="profile-container">
       <div className="button-container">
         <button type="button" onClick={handleModals} id="login">
           Se connecter

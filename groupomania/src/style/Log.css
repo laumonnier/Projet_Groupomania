@@ -1,4 +1,14 @@
-.connection-container {
+#login:active, #subscribe:active {
+    cursor: pointer;
+    background-color: #bd153c;
+}
+
+.choiceModal {
+    background-color: #bd153c;
+}
+
+
+.profile-container {
     flex-direction: column;
     margin: auto;
     margin-top: -250px;

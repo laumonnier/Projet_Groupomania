@@ -20,66 +20,6 @@
     margin-top: 8px;
 }
 
-.mail-container, .password-container {
-    display: flex;
-    flex-direction: column;  
-}
-
-.mail-container:hover, .password-container:hover {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    box-shadow: 2px 2px 10px #4E5166;
-}
-
-label {
-    display: flex;
-    text-align: start;
-    align-items: flex-end;
-    margin-left: 15px;
-    height: 40px;
-    font-size: 23px;
-}
-
-input {
-    width: 96%;
-    height: 40px;
-    border-radius: 12px;
-    margin: auto;
-    font-size: 22px;
-}
-input:hover {
-    width: 96%;
-    height: 40px;
-    border-radius: 12px;
-    margin: auto;
-    font-size: 22px;
-    cursor: pointer;
-    border-color: #fd2d01;
-}
-
-.email.error, .password.error {
-    height: 25px;
-    font-size: 18px;
-    font-weight: bold;
-    color: red;
-    font-style: italic;
-    margin-left: 12px;
-    margin-top: 8px;
-}
-
-.submit-form-login {
-    width: 98%;
-    height: 60px;
-    margin: auto;
-    font-size: 22px;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 15px;
-    border-radius: 9px;
-    background-color: #bd153c;
-}
-
 .pseudo-container, .lName-container, .fName-container, .email-container, .password-container, .ctrlPswrd-container {
     display: flex;
     flex-direction: column;
@@ -138,4 +78,5 @@ input:hover {
     margin-bottom: 15px;
     border-radius: 9px;
     background-color: #bd153c;
+    cursor: pointer;
 }

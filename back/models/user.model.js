@@ -4,7 +4,7 @@ const { isEmail } = require ('validator');
 const bcrypt = require ('bcrypt');
 
 // This corresponds to the typical model that each user will use and will be saved in the database
-const userSchema = mongoose.Schema(
+const userSchema = new mongoose.Schema(
     {
         pseudo: {
             type: String,
@@ -25,7 +25,7 @@ const userSchema = mongoose.Schema(
         password: {
             type: String,
             required: true,
-            maxlength: 35,
+            maxlength: 150,
             minlength: 8
         },
         role: {
@@ -35,7 +35,7 @@ const userSchema = mongoose.Schema(
         },
         picture: {
             type: String,
-            default: "../images/image_default.png"
+            default: "./images/photo-profile.jpg"
         },               
         description: {
             type: String,
@@ -43,8 +43,13 @@ const userSchema = mongoose.Schema(
             trim: true
         },
         likes: {
-            type: [String],
-            default: 0
+            type: [String]
+        },
+        followers: {
+            type: [String]
+        },
+        following: {
+            type: [String]
         }
     },
     {
@@ -54,9 +59,9 @@ const userSchema = mongoose.Schema(
 
 // Use the function before saving the set
 // This function allows the salting of the password so that it is more difficult to decrypt
-userSchema.pre("save", function(next) {
-    const salt =  bcrypt.genSaltSync(15);
-    this.password =  bcrypt.hash(this.password, salt);
+userSchema.pre("save", async function(next) {
+    const salt = await bcrypt.genSaltSync(15);
+    this.password = await bcrypt.hash(this.password, salt);
     next();
 });
 

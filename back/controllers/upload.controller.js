@@ -5,73 +5,68 @@ const { uploadErrors } = require('../utils/errors');
 const pipeline = promisify(require('stream').pipeline);//The stream.pipeline() method is a module method that is used to the pipe by linking the streams passing on errors and accurately cleaning up and providing a callback function when the pipeline is done. 
 
 // Download an image for the User
-exports.uploadUserProfil = async (req, res, next) => { 
-    // const MIME_TYPES = {
-    //     'image/jpg': 'jpg',
-    //     'image/jpeg': 'jpg',
-    //     'image/png': 'png'
-    // };
+exports.uploadUserProfile = async (req, res, next) => { 
+    console.log(req.file.mimetype)
+    // try{
 
-    // const storage= multer.diskStorage({
-    //     destination:(req, file, callback) => {
-    //         callback(null, 'images');
-    //     },
-    //     filename: ( req, file, callback) => {
-    //         const name= file.originalname.split(' ').join('_');
-    //         const extension = MIME_TYPES[file.mimetype];
-    //         callback(null, name + Date.now() + '.' + extension);
-    //     }
-    // });
-    try{    
-    if(
-        (req.file.detectedMimeType !== "image/jpg") &&
-        (req.file.detectedMimeType !== "image/jpeg") &&
-        (req.file.detectedMimeType !== "image/png") 
-    ){
-        return res.status(401)
-        .json("Le fichier n'est pas au bon format"); 
-    }else
-
-    if(req.file.size > 400000){
-        return res.status(404)
-        .json("Le fichier est trop gros (taille maximale: 400ko)!");
-    }}catch(err){
+    // if (req.file.size > 300000) throw Error("max size");    
+        
+    // if(
+    //     req.file.mimetype !== "image/jpeg" && 
+    //     req.file.mimetype !== "image/jpg" && 
+    //     req.file.mimetype !== "image/png"
+    // ){
+    //     throw Error("invalid file");
+    
+    // }
+    try{
+        await UserModel.findByIdAndUpdate(req.body.userId,{$set:{picture:`${req.protocol}://${req.get("host")}/images/${req.file.filename}`}},{ new: true, upsert: true, setDefaultsOnInsert: true })
+        .then((data) => res.send(data))
+        .catch((err) => res.status(500).send({ message: err }));
+    } catch(err){
         const errors = uploadErrors(err);
-        return res.status(400).json({errors});
+        return res.status(201).json({ errors });
     }
-        const fileName = (req, file, callback) => {
-        const name = file.originalname.split(' ').join('_');
-        const extension = MIME_TYPES[file.mimetype];
-        callback(null, name + Date.now() + '.' + extension);
-    }
+    //     const fileName = (req, file, callback) => {
+    //     const name = file.originalname.split(' ').join('_');
+    //     const extension = MIME_TYPES[file.mimetype];
+    //     callback(null, name + Date.now() + '.' + extension);
+    // }
 
+    const fileName = req.body.name + ".jpg";
+    // console.log(req.body.userId),
+    // console.log(req.body.userId),
         await pipeline(
+            // console.log(req.body.userId),
             req.file.stream,
+            // console.log(req.body.use,rId)
             fs.createWriteStream(
-                `${__dirname}/../groupomania/public/uploads/profil/${fileName}`
-            )
+                `${__dirname}/../../groupomania/public/uploads/profile/${fileName}`
+            ),
+            // console.log(req.body.userId)
+            
         );
-    }
-
+        res.send("Fichier téléchargé :" + fileName);
+        
     try {
-         UserModel.findByIdAndUpdate(
+         await UserModel.findByIdAndUpdate(
             req.body.userId,
+            console.log(req.body.userId),
             {
-                $set: {picture: "./uploads/profil/" + fileName}
+                $set: {picture: "./uploads/profile/" + fileName}
             },
-            { new: true, upsert: true, setDefaultsOnInsert: true }
-            .then((data) => {
-                res.status(201)
-                .json(data)
-            })
-            .catch((err) => {
-                res.status(500)
-                .json({ error: err })
-            })
-         )
+            { new: true, upsert: true, setDefaultsOnInsert: true },
+            console.log(req.body.userId)  
+        )
+         .then((data) => {
+            res.status(201).json(data)
+         })
+         .catch((err) => {
+            res.status(400)
+            .json({ error: err })
+         });
     }
-    catch{(err) => {
-        res.status(500).json({ error: err });
+    catch(err){
+        res.status(500).send({ message: err });
     }
-
-    }
+}

@@ -9,18 +9,14 @@ const postSchema = mongoose.Schema(
         },
         message: {
             type: String,
-            trim: true,
-            maxlength: 400
+            maxlength: 300,
+            trim: true
         },
         picture: {
             type: String
         },
         video: {
             type: String
-        },
-        likes: {
-            type: Number,
-            default: 0
         },
         usersLiked: {
             type: [String],
@@ -32,7 +28,7 @@ const postSchema = mongoose.Schema(
                     commenterId: String,
                     commenterPseudo: String,
                     comment: String,
-                    time: Number
+                    timestamp: Number
                 }
             ],
             required: true

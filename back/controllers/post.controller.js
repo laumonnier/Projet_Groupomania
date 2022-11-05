@@ -2,47 +2,48 @@ const PostModel = require('../models/post.model');
 const UserModel = require('../models/user.model');
 const fs = require('fs');
 const { promisify } = require('util');
+const { uploadErrors } = require('../utils/errors');
 const pipeline = promisify(require('stream').pipeline);
 const ObjectId = require('mongoose').Types.ObjectId;
 
 // Additions of the various endpoints
 // business logic for creating a post account
-exports.createPost = (req, res, next) => {
+exports.createPost = async (req, res) => {
     let fileName;
-
-    const MIME_TYPES = {
-        'image/jpg': 'jpg',
-        'image/jpeg': 'jpg',
-        'image/png': 'png'
-    };
-    
+    console.log(req.file.mimetype)
     if(req.file !== null){
+        try{
         if(
             req.file.detectedMimeType !== "image/jpg" &&
             req.file.detectedMimeType !== "image/jpeg" &&
             req.file.detectedMimeType !== "image/png" 
-         ){
-         return res.status(404)
-         .json("Le format n'est pas compatible !");
-         }
- 
-         if(req.file.size > 400000){
-         return res.status(404)
-         .json("Le fichier est trop gros (taille maximale: 400ko)!");
-         }else{
-            fileName = (req, file, callback) => {
+         )
+         throw Error('invalid file')
+    
+         if(req.file.size > 300000) throw Error('max size');
+        } catch (err){
+            const errors = uploadErrors(err);
+            return res.status(201).json({ errors });
+        }
+
+        const MIME_TYPES = {
+        'image/jpg': 'jpg',
+        'image/jpeg': 'jpg',
+        'image/png': 'png'
+        };
+    
+        fileName = (req, file, callback) => {
                 const name = file.originalname.split(' ').join('_');
                 const extension = MIME_TYPES[file.mimetype];
                 callback(null, name + Date.now() + '.' + extension);
-            }
+        }
 
-            pipeline(
+        await pipeline(
                 req.file.stream,
                 fs.createWriteStream(
-                    `${__dirname}/../client/public/uploads/posts/${fileName}`
+                    `${__dirname}/../groupomania/public/uploads/posts/${fileName}`
                 )
-            );
-         }
+        );
     }
     const newPost = new PostModel({
         posterId: req.body.posterId,
@@ -53,17 +54,13 @@ exports.createPost = (req, res, next) => {
         comments: []
     });
 
-    newPost.save()
-        .then((post) => {
-            res.status(201)
-            .json(post)
-        })
-        .catch((err) => {
-            res.status(400)
-            .json({ error: err })
-        });
-    
-}
+    try {
+        const post = await newPost.save();
+        return res.status(201).json(post);
+    } catch (err) {
+        return res.status(401).json(err);
+    }
+};
 
 // Business logic for obtaining all posts
 exports.getAllPost = (req, res, next) => {
@@ -83,7 +80,7 @@ exports.getOnePost = (req, res, next) => {
     if(!ObjectId.isValid(req.params.id)){
         return (
             res.status(400)
-            .json('PostId unknown : ' + req.params.id)
+            .json("L'Id du Post n'existe pas : " + req.params.id)
         )
     }else{
     PostModel.findById(
@@ -104,17 +101,17 @@ exports.getOnePost = (req, res, next) => {
 exports.updatePost = (req, res, next) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400)
-        .json('PostId unknown : ' + req.params.id)
+        .json("L'Id du Post n'existe pas : " + req.params.id)
     
+    const updatedRecord = {
+        message: req.body.message
+    }    
+
     try{
         PostModel.findOneAndUpdate(
-            {_id: req.params.id},
-            {
-                $set: {
-                    message: req.body.message
-                }
-            },
-            { new: true, upsert: true}
+            req.params.id,
+            { $set: {message: req.body.message }},
+            { new: true },
         )
             .then((data) => res.status(201).json(data))
             .catch((err) => res.status(400).json({ error: err }));
@@ -126,14 +123,14 @@ exports.updatePost = (req, res, next) => {
 }
 
 // Business logic concerning the deletion of a post
-exports.deletePost = (req, res, next) => {
+exports.deletePost = (req, res) => {
     if(!ObjectId.isValid(req.params.id))
-        return res.status(400).json('PostId Unknown : ' + req.params.id)
+        return res.status(400).json("L'Id du Post n'existe pas : " + req.params.id)
    
     PostModel.findByIdAndRemove({_id: req.params.id})
         .then((post) => {
             res.status(201)
-            .json('Successfully post deleted :' + req.params.id)
+            .json("Le post à été supprimé avec succès !" + req.params.id)
         })
         .catch((err) => {
             res.status(400)
@@ -142,29 +139,28 @@ exports.deletePost = (req, res, next) => {
 }
 
 // business logic concerning the liking of a Status Like of posts
-exports.likedPostStatus = (req, res) => {
+exports.likedPostStatus = async (req, res) => {
     if(!ObjectId.isValid(req.params.id))
-        return res.status(400).json('PostId Unknown : ' + req.params.id)
+        return res.status(400).json("L'Id du Post n'existe pas : " + req.params.id)
 
     try{
-        PostModel.findByIdAndUpdate(
+        await PostModel.findByIdAndUpdate(
              req.params.id,
              {
                 $addToSet: { usersLiked: req.body.id },
-                $inc: { likes: 1 }
              },
-             { new: true, upsert: true }
-        )
-        .catch((err) =>{
-            res.status(400)
-            .json({ error: err })
-        })
-        UserModel.findByIdAndUpdate(
+             { new: true })
+             .catch((err) => {
+                res.status(400)
+                .json({ error: err })
+            })
+        
+        await UserModel.findByIdAndUpdate(
              req.body.id,
              {
                 $addToSet: { likes: req.params.id }
              },
-             { new: true, upsert: true }
+             { new: true }
         )
             .then((data) => {
                 res.status(201)
@@ -175,35 +171,34 @@ exports.likedPostStatus = (req, res) => {
                 .json({ error: err })
             })
         
-    }catch{
-        return res.status(500).json({ error: err });
+    }catch (err){
+        return res.status(400).json({ error: err });
     }
 } 
 
 // business logic concerning the unliking of a Status Like of posts
-exports.unLikedPostStatus = (req, res) => {
+exports.unlikedPostStatus = async (req, res) => {
     if(!ObjectId.isValid(req.params.id))
-        return res.status(400).json('PostId Unknown : ' + req.params.id)
+        return res.status(400).json("L'Id du Post n'existe pas : " + req.params.id)
 
     try{
-        PostModel.findByIdAndUpdate(
+        await PostModel.findByIdAndUpdate(
              req.params.id,
              {
                 $pull: { usersLiked: req.body.id },
-                $inc: { likes: -1 }
              },
-             { new: true, upsert: true }
+             { new: true })
+             .catch((err) => {
+                res.status(400)
+                .json({ error: err })
+            }
         )
-        .catch((err) =>{
-            res.status(400)
-            .json({ error: err })
-        })
-        UserModel.findByIdAndUpdate(
+        await UserModel.findByIdAndUpdate(
             req.body.id,
              {
                 $pull: { likes: req.params.id }
              },
-             { new: true, upsert: true }
+             { new: true }
         )
             .then((data) => {
                 res.status(201)
@@ -214,17 +209,17 @@ exports.unLikedPostStatus = (req, res) => {
                 .json({ error: err })
             })
         
-    }catch{
-        return res.status(500).json({ error: err });
+    }catch (err) {
+        return res.status(401).json({ error: err });
     }
 }
 
 // Business logic regarding comments put in Posts
 exports.commentPost = (req, res, next) => {
     if(!ObjectId.isValid(req.params.id))
-        return res.status(400).json('PostId Unknown : ' + req.params.id)
+        return res.status(400).json("L'Id du Post n'existe pas : " + req.params.id)
     try{
-        PostModel.findByIdAndUpdate(
+        return PostModel.findByIdAndUpdate(
             req.params.id,
             {
                 $push: {
@@ -249,7 +244,7 @@ exports.commentPost = (req, res, next) => {
 
     }
     catch (err) {
-        res.status(500).json({ error: err })
+        res.status(401).json({ error: err })
     }
 
 }
@@ -257,20 +252,20 @@ exports.commentPost = (req, res, next) => {
 // Business logic for editing comments in Posts
 exports.editCommentPost = (req, res, next) => {
     if(!ObjectId.isValid(req.params.id))
-        return res.status(400).json('PostId Unknown : ' + req.params.id)
+        return res.status(400).json("L'Id du Post n'existe pas : " + req.params.id)
 
     try{
         return PostModel.findById(
             req.params.id,
             (err, data) => {
-                const theComment = data.comments.find((txt) => 
-                txt._id.equals(req.body.commentId)
+                const theComment = data.comments.find((comment) => 
+                comment._id.equals(req.body.commentId)
                 )
 
                 if(!theComment) return res.status(400).json('Le commentaire n\'est pas trouvé')
                 theComment.comment = req.body.comment;
 
-                return data.save(err)
+                return data.save()
                     .then((data) => {
                         res.status(201)
                         .json(data)
@@ -283,7 +278,7 @@ exports.editCommentPost = (req, res, next) => {
         )
     }
     catch (err) {
-       return res.status(500).json({ error: err })
+       return res.status(400).json({ error: err })
     }
 }
 
@@ -292,10 +287,10 @@ exports.editCommentPost = (req, res, next) => {
 // Business logic for deleting comments in Posts
 exports.deleteCommentPost = (req, res, next) => {
     if(!ObjectId.isValid(req.params.id))
-        return res.status(400).json('PostId Unknown : ' + req.params.id)
+        return res.status(400).json("L'Id du Post n'existe pas : " + req.params.id)
 
     try{
-        PostModel.findByIdAndUpdate(
+        return PostModel.findByIdAndUpdate(
             req.params.id,
             {
                 $pull: {

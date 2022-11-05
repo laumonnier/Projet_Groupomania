@@ -5,7 +5,7 @@ mongoose
         'mongodb+srv://' + process.env.SECRET_DB_USER + '@cluster0.ek70vk2.mongodb.net/Projet_Groupomania',
     {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
     }
     )
     .then(() => console.log("Connected to MongoDB !"))
