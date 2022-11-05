@@ -24,7 +24,7 @@ export const uploadPicture = (data, id) => {
       .post(`${process.env.REACT_APP_API_URL}api/user/upload`, data) //First part we will send the image data to the database
       .then((res) => {
         return axios //Then during the second part we will warn the "reducer" to change the data accordingly
-          .get(`${process.env.REACT_APP_API_URL}api/auth/${id}`)
+          .get(`${process.env.REACT_APP_API_URL}api/user/${id}`)
           .then((res) => {
             dispatch({ type: UPLOAD_PICTURE, payload: res.data.picture }); //We will send to the "reducer" this part "UPLOAD_PICTURE", with as data "payload" "res.data.picture" for the "store"
           });

@@ -8,7 +8,25 @@ const authController = require ('../controllers/auth.controller');
 const uploadController = require ('../controllers/upload.controller');
 const userController = require ('../controllers/user.controller');
 const multer = require ('multer');
-const upload = multer();
+
+const MIME_TYPES = {
+    'image/jpg': 'jpg',
+    'image/jpeg': 'jpg',
+    'image/png': 'png'
+}; 
+
+const storage = multer.diskStorage({
+    destination: (req, file, callback) => {
+        callback(null, "../groupomania/public/uploads/profile");
+    },
+    filename: (req, file, callback) => {
+        console.log(file);
+        const name = file.originalname.split(' ').join('_');
+        const extension = MIME_TYPES[file.mimetype];
+        callback(null, name + Date.now() + '.' + extension);
+    }
+});
+const upload = multer({ storage: storage });
 // Importing the password middleware
 const password = require ('../middleware/password');
 

@@ -28,10 +28,12 @@ const UploadImg = () => {
         type="file"
         id="file"
         name="file"
-        accept="jpeg jpg png" //Does not protect against other formats, but accepts quoted formats
+        accept=".jpeg, .jpg, .png" //Does not protect against other formats, but accepts quoted formats
         onChange={(e) => setFile(e.target.files[0])}
       />
-      <button className="picture-change" type="submit"></button>
+      <button className="picture-change" type="submit">
+        Changer mon Profil !
+      </button>
     </form>
   );
 };

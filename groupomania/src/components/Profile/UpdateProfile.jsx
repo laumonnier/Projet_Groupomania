@@ -25,8 +25,7 @@ const UpdateProfile = () => {
                 {userData.description}
               </p>
               <button onClick={() => setUpdateForm(!updateForm)}>
-                {" "}
-                Modifier description !!{" "}
+                Modifier description !!
               </button>
             </>
           )}
