@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { uploadPicture } from "../../redux/actions/user.actions";
+import "../../style/UploadImg.css";
 
 //Will change the profile images
 const UploadImg = () => {
@@ -23,17 +24,17 @@ const UploadImg = () => {
       onSubmit={handlePicture}
       className="upload-picture-container"
     >
-      <label htmlFor="file">Changer mon image !</label>
-      <input
-        type="file"
-        id="file"
-        name="file"
-        accept=".jpeg, .jpg, .png" //Does not protect against other formats, but accepts quoted formats
-        onChange={(e) => setFile(e.target.files[0])}
-      />
-      <button className="picture-change" type="submit">
-        Changer mon Profil !
-      </button>
+      <div className="file-change">
+        <label htmlFor="file"> Changer mon image ! </label>
+        <input
+          type="file"
+          id="file"
+          name="file"
+          accept=".jpeg, .jpg, .png" //Does not protect against other formats, but accepts quoted formats
+          onChange={(e) => setFile(e.target.files[0])}
+        />
+      </div>
+      <input className="picture-change" type="submit" value="Envoyer !" />
     </form>
   );
 };

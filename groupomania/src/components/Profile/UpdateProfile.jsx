@@ -12,23 +12,25 @@ const UpdateProfile = () => {
       <div className="update-container">
         <div className="profile-photo">
           <h3>Photo de profil</h3>
-          <img src="{userData.picture}" alt="user_photo" />
+          <img id="user-photo" src="{userData.picture}" alt="user_photo" />
           <UploadImg />
           {/* <p>{errors.maxSize}</p>
         <p>{errors.format}</p> */}
         </div>
-        <div>
+        <div className="description-container">
           <h3> Description </h3>
-          {updateForm === false && (
-            <>
-              <p onClick={() => setUpdateForm(!updateForm)}>
-                {userData.description}
-              </p>
-              <button onClick={() => setUpdateForm(!updateForm)}>
-                Modifier description !!
-              </button>
-            </>
-          )}
+          <div className="text-description">
+            {updateForm === false && (
+              <>
+                <p onClick={() => setUpdateForm(!updateForm)}>
+                  {userData.description}
+                </p>
+                <button onClick={() => setUpdateForm(!updateForm)}>
+                  Modifier description !!
+                </button>
+              </>
+            )}
+          </div>
         </div>
       </div>
     </div>

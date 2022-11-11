@@ -1,0 +1,104 @@
+.upload-picture-container {
+    border: 4px solid purple;
+}
+
+.file-change {
+    
+    flex-direction: row;
+}
+
+label {
+    display: block;
+    position: relative;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    width: 315px;
+    height: 35px;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+    padding-top: 10px;
+    border-radius: 20px;
+    background-color: #bd153c;
+    cursor: pointer;
+    z-index: 2;
+    transform: scale(1);
+    border: 3px solid green;
+}
+
+label:hover {
+    background-color: rgba(207, 60, 94);
+}
+
+label:active {
+    transform: scale(0.92);
+}
+
+#file {
+    display: block;
+    font-size: 16px;
+    position: relative;
+    bottom: 60px;
+    left: 171px;
+    width: 295px;
+    height: 35px;
+    text-align: center;
+    margin: auto;
+    margin-top: 10px;
+    padding-top: 7px;
+    border-radius: 20px;
+    background-color: beige;
+    z-index: 1;
+    border: 3px solid #bd153c;
+}
+
+.picture-change {
+    display: block;
+    color: white;
+    font-weight: 700;
+    width: 315px;
+    height: 50px;
+    text-align: center;
+    margin: auto;
+    margin-top: -30px;
+    margin-bottom: 10px;
+    padding-top: 4px;
+    border-radius: 20px;
+    background-color: rgb(155, 32, 61);
+    transform: scale(1);
+    border: 3px solid green;
+}
+
+.picture-change:hover {
+    display: block;
+    color: white;
+    font-weight: 700;
+    width: 315px;
+    height: 50px;
+    text-align: center;
+    margin: auto;
+    margin-top: -30px;
+    margin-bottom: 10px;
+    padding-top: 4px;
+    border-radius: 20px;
+    background-color: rgba(155, 32, 61, 0.83);
+    border: 3px solid green;
+}
+
+.picture-change:active {
+    display: block;
+    color: white;
+    font-weight: 700;
+    width: 315px;
+    height: 50px;
+    text-align: center;
+    margin: auto;
+    margin-top: -30px;
+    margin-bottom: 10px;
+    padding-top: 4px;
+    border-radius: 20px;
+    background-color: rgba(155, 32, 61, 0.83);
+    transform: scale(0.92);
+    border: 3px solid green;
+}
