@@ -160,12 +160,12 @@ exports.unfollowUser = async (req, res) => {
 // business logic concerning the creation of a Status Like
 exports.createLikeStatus = (req, res) => {
     console.log(req.body);
-    User.findOne({_id: req.params})
+    UserModel.findOne({_id: req.params})
         .then(user => {
             try{
                 if(!(user.usersLiked.includes(req.body._id)) && req.body.like === 1){ // The "includes" method will check whether the data is present or not in the parameter defined
                     console.log('Adding like !');
-                    User.updateOne(
+                    UserModel.updateOne(
                         {_id: req.params.id},
                         {
                             $inc: {likes: 1}, // Operator "$inc" will increment a value to an existing data
@@ -184,7 +184,7 @@ exports.createLikeStatus = (req, res) => {
 
                 }else if(!(user.usersDisliked.includes(req.body._id)) && req.body.like === -1){
                     console.log('The user dislike !');
-                    User.updateOne(
+                    UserModel.updateOne(
                         {_id: req.params.id},
                         {
                             $inc: {dislikes: 1},
@@ -203,7 +203,7 @@ exports.createLikeStatus = (req, res) => {
 
                 }else if(user.usersLiked.includes(req.body._id) && req.body.like === 0){ //The user cancels his "like"
                     console.log('canceled like !');
-                    User.updateOne(
+                    UserModel.updateOne(
                         {_id: req.params.id},
                         {
                             $inc: {likes: -1},
@@ -223,7 +223,7 @@ exports.createLikeStatus = (req, res) => {
 
                 }else if(user.usersDisliked.includes(req.body._id) && req.body.like === 0){
                     console.log('Canceled dislike !');
-                    User.updateOne(
+                    UserModel.updateOne(
                         {_id: req.params.id},
                         {
                             $inc: {dislikes: -1},

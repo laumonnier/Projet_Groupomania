@@ -41,7 +41,7 @@ exports.uploadErrors = (err) => {
         errors.format = "Le format n'est pas compatible !";
 
     if(err.message.includes('max size'))
-        errors.maxSize = "Le fichier est trop grand (taille maximale: 400ko)!";
+        errors.maxSize = "Le fichier est trop grand (taille maximale: 600ko)!";
 
     return errors;
 }

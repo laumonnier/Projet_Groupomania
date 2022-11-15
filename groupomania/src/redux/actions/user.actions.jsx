@@ -2,6 +2,7 @@ import axios from "axios";
 
 export const GET_USER = "GET_USER";
 export const UPLOAD_PICTURE = "UPLOAD_PICTURE";
+export const UPDATE_DESCRIPTION = "UPDATE_DESCRIPTION";
 // export const;
 
 export const getUser = (userId) => {
@@ -28,6 +29,20 @@ export const uploadPicture = (data, id) => {
           .then((res) => {
             dispatch({ type: UPLOAD_PICTURE, payload: res.data.picture }); //We will send to the "reducer" this part "UPLOAD_PICTURE", with as data "payload" "res.data.picture" for the "store"
           });
+      })
+      .catch((err) => console.log(err));
+  };
+};
+
+export const updateDescription = (userId, description) => {
+  return (dispatch) => {
+    return axios({
+      method: "put",
+      url: `${process.env.REACT_APP_API_URL}api/user/` + userId,
+      data: { description },
+    })
+      .then((res) => {
+        dispatch({ type: UPDATE_DESCRIPTION, payload: description });
       })
       .catch((err) => console.log(err));
   };

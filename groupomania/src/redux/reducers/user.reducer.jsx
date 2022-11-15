@@ -1,4 +1,8 @@
-import { GET_USER, UPLOAD_PICTURE } from "../actions/user.actions";
+import {
+  GET_USER,
+  UPDATE_DESCRIPTION,
+  UPLOAD_PICTURE,
+} from "../actions/user.actions";
 
 const initialState = {};
 
@@ -11,6 +15,11 @@ export default function userReducer(state = initialState, action) {
       return {
         ...state, //The "spread" operator makes it possible not to overwrite the user’s data and keep them. And then to change our "picture" data in our "reducer".
         picture: action.payload,
+      };
+    case UPDATE_DESCRIPTION:
+      return {
+        ...state,
+        description: action.payload,
       };
     default:
       return state;

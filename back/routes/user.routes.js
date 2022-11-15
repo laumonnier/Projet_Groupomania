@@ -23,7 +23,10 @@ const storage = multer.diskStorage({
         console.log(file);
         const name = file.originalname.split(' ').join('_');
         const extension = MIME_TYPES[file.mimetype];
-        callback(null, name + Date.now() + '.' + extension);
+        callback(null, name + '.' + extension);
+        // const name = req.body.name;
+        // const extension = MIME_TYPES[file.mimetype];
+        // callback(null, name + '.' + extension);
     }
 });
 const upload = multer({ storage: storage });
