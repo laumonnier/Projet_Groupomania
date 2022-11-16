@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateDescription } from "../../redux/actions/user.actions";
 import "../../style/UpdateProfile.css";
+import { dateParser } from "../../utils/date";
 import UploadImg from "./UploadImg";
 
 const UpdateProfile = () => {
   const [description, setDescription] = useState("");
   const [updateForm, setUpdateForm] = useState(false);
   const userData = useSelector((state) => state.userReducer);
+  // Recovers all user data from the useSelector
+  const usersData = useSelector((state) => state.usersReducer);
+  const [followingPopup, setFollowingPopup] = useState(false);
+  const [followersPopup, setFollowersPopup] = useState(false);
   const dispatch = useDispatch();
 
   const handleUpdate = () => {
@@ -45,6 +50,7 @@ const UpdateProfile = () => {
             {updateForm && (
               <>
                 <textarea
+                  placeholder="Indiquer ici votre déscription !"
                   type="text"
                   defaultValue={userData.description}
                   onChange={(e) => setDescription(e.target.value)}
@@ -55,8 +61,54 @@ const UpdateProfile = () => {
               </>
             )}
           </div>
+          <div className="follow-profile">
+            <p className="following" onClick={() => setFollowingPopup(true)}>
+              {" "}
+              Following(s):{" "}
+              {userData.fallowing ? userData.following.length : "0"}
+            </p>
+            <p className="followers" onClick={() => setFollowersPopup(true)}>
+              {" "}
+              Follower(s):{" "}
+              {userData.followers ? userData.followers.length : "0"}
+            </p>
+          </div>
+          <div id="profile-time">
+            <p className="text-time">Membre depuis le: </p>
+            <p className="date-time">{dateParser(userData.createdAt)}</p>
+          </div>
         </div>
       </div>
+      {followingPopup && (
+        <div className="popup-profile-container">
+          <div className="modal">
+            <p className="following-profile-title"> Following </p>
+            <span className="close" onClick={() => setFollowingPopup(false)}>
+              &#10005;
+            </span>
+            <ul>
+              {usersData.map((user) => {
+                for (let i = 0; i < userData.following.length; i++) {
+                  if (user._id === userData.following[i]) {
+                    return (
+                      <li className="user-summary" key={user._id}>
+                        <img
+                          id="user-image-profile"
+                          src={user.picture}
+                          alt="User_image"
+                        />
+                        <p id="pseudo-following">{user.pseudo}</p>
+                        <p>FOLLOW HANDLER</p>
+                      </li>
+                    );
+                  }
+                }
+              })}
+            </ul>
+          </div>
+        </div>
+      )}
+      {followersPopup && <div className=""></div>}
     </div>
   );
 };

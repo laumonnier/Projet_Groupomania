@@ -43,6 +43,7 @@ const userSchema = new mongoose.Schema(
             trim: true
         },
         likes: {
+            type: Number,
             type: [String]
         },
         followers: {

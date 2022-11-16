@@ -26,8 +26,8 @@ const Navbar = () => {
         </div>
 
         <p id="welcome-profile">
-          Bienvenue {userData.pseudo} sur le réseau social
-          <br /> de Groupomania
+          Bienvenue {userData.pseudo} sur
+          <br /> "Groupévoumania"
         </p>
         {userId ? (
           <>

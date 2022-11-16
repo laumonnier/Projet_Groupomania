@@ -1,3 +1,22 @@
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: -280px;
+    width: 700px;
+    border: 0px solid black;
+}
+
+#login, #subscribe {
+    width: 49.6%;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 9px;
+    margin-bottom: 7px;
+    border: 2px solid black;
+}
+
 #login:active, #subscribe:active {
     cursor: pointer;
     background-color: #bd153c;
@@ -9,7 +28,6 @@
 
 
 .profile-container {
-    flex-direction: column;
     margin: auto;
     margin-top: -250px;
     border: 0px solid black;
@@ -21,28 +39,8 @@
     justify-content: space-between;
     text-align: start;
     margin: auto;
-    width: 700px;
-    height: 280px;
+    width: 100%;
     margin-top: 0px;
-    background-color: #c9c1c2;
     border: 0px solid rgb(235, 11, 11);
     border-radius: 12px;
-}
-
-.button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: -280px;
-    width: 100%;
-    border: 0px solid black;
-}
-
-button {
-    width: 49.6%;
-    height: 60px;
-    font-size: 20px;
-    border-radius: 9px;
-    margin-bottom: 7px;
-    border: 2px solid black;
 }

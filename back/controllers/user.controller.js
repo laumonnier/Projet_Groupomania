@@ -88,7 +88,7 @@ exports.followUser = async (req, res) => {
     console.log('Nous sommes bien sur la middleware followUser');
     if (!ObjectId.isValid(req.params.id) || !ObjectId.isValid(req.body.idToFollow))
         return res.status(400).json("L'id ne correspond pas :" + req.params.id)
-
+    
     try{
         //Add a follower to your list
         await UserModel.findByIdAndUpdate(
@@ -115,7 +115,10 @@ exports.followUser = async (req, res) => {
             //     res.status(201)
             //     .json(data)
             // })
-            if (err) return res.status(400).json({ error: err })
+            .catch((err) => {
+                res.status(400)
+                .json({ error: err })
+            });
              
     } catch (err) {
         return res.status(500).json({ message: err});
@@ -151,7 +154,10 @@ exports.unfollowUser = async (req, res) => {
             //     res.status(201)
             //     .json(data)
             // })
-            if (err) return res.status(400).json({ error: err }) 
+            .catch((err) => {
+                res.status(400)
+                .json({ error: err })
+            }); 
     } catch (err) {
         return res.status(500).json({ message: err});
     }

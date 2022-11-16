@@ -8,6 +8,7 @@ import rootReducers from "./redux/reducers/index";
 
 //Corresponds to the tools allowing us to follow our "store"
 import { composeWithDevTools } from "redux-devtools-extension";
+import { getUsers } from "./redux/actions/users.actions";
 // import logger from "redux-logger";
 
 //Creation of a "Store" to store the desired data thanks to "Redux"
@@ -17,6 +18,7 @@ const store = configureStore(
   //Do not forget to remove "composeWithDevTools()" during development. This is used for development
   composeWithDevTools(applyMiddleware(thunk))
 );
+store.dispatch(getUsers());
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
