@@ -21,10 +21,10 @@ const Log = () => {
   return (
     <div className="profile-container">
       <div className="button-container">
-        <button type="button" onClick={handleModals} id="login">
+        <button onClick={handleModals} id="login">
           Se connecter
         </button>
-        <button type="button" onClick={handleModals} id="subscribe">
+        <button onClick={handleModals} id="subscribe">
           S'inscrire
         </button>
       </div>

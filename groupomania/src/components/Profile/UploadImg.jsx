@@ -25,7 +25,10 @@ const UploadImg = () => {
       className="upload-picture-container"
     >
       <div className="file-change">
-        <label htmlFor="file"> Changer mon image ! </label>
+        <label className="file-change-choice" htmlFor="file">
+          {" "}
+          Changer mon image !{" "}
+        </label>
         <input
           type="file"
           id="file"

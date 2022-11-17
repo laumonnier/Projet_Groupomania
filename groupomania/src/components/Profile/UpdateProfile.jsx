@@ -82,7 +82,7 @@ const UpdateProfile = () => {
       {followingPopup && (
         <div className="popup-profile-container">
           <div className="modal">
-            <p className="following-profile-title"> Following </p>
+            <p className="follow-profile-title"> Following </p>
             <span className="close" onClick={() => setFollowingPopup(false)}>
               &#10005;
             </span>
@@ -97,7 +97,7 @@ const UpdateProfile = () => {
                           src={user.picture}
                           alt="User_image"
                         />
-                        <p id="pseudo-following">{user.pseudo}</p>
+                        <p id="pseudo-follow">{user.pseudo}</p>
                         <p>FOLLOW HANDLER</p>
                       </li>
                     );
@@ -108,7 +108,35 @@ const UpdateProfile = () => {
           </div>
         </div>
       )}
-      {followersPopup && <div className=""></div>}
+      {followersPopup && (
+        <div className="popup-profile-container">
+          <div className="modal">
+            <p className="follow-profile-title"> Followers </p>
+            <span className="close" onClick={() => setFollowersPopup(false)}>
+              &#10005;
+            </span>
+            <ul>
+              {usersData.map((user) => {
+                for (let i = 0; i < userData.followers.length; i++) {
+                  if (user._id === userData.followers[i]) {
+                    return (
+                      <li className="user-summary" key={user._id}>
+                        <img
+                          id="user-image-profile"
+                          src={user.picture}
+                          alt="User_image"
+                        />
+                        <p id="pseudo-follow">{user.pseudo}</p>
+                        <p>FOLLOW HANDLER</p>
+                      </li>
+                    );
+                  }
+                }
+              })}
+            </ul>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

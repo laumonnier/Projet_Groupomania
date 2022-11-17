@@ -3,20 +3,28 @@
     flex-direction: row;
     justify-content: space-between;
     margin: auto;
-    margin-top: -280px;
-    width: 700px;
-    border: 0px solid black;
+    margin-top: -340px;
+    width: 71%;
+    padding-left: 10px;
+    border: 2px solid black;
 }
 
-#login, #subscribe {
-    width: 49.6%;
+#login {
+    width: 49%;
     height: 60px;
     font-size: 20px;
     border-radius: 9px;
     margin-bottom: 7px;
     border: 2px solid black;
 }
-
+#subscribe {
+    width: 49%;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 9px;
+    margin-bottom: 7px;
+    border: 2px solid black;
+}
 #login:active, #subscribe:active {
     cursor: pointer;
     background-color: #bd153c;
@@ -30,7 +38,7 @@
 .profile-container {
     margin: auto;
     margin-top: -250px;
-    border: 0px solid black;
+    border: 5px solid red;
 }
 
 .modal-container {

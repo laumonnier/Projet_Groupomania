@@ -7,14 +7,14 @@
     flex-direction: column;
 }
 
-label {
+.file-change-choice {
     display: block;
     position: relative;
     font-size: 20px;
     color: white;
     font-weight: bold;
     width: 315px;
-    height: 35px;
+    height: 28px;
     text-align: center;
     margin: auto;
     margin-top: 30px;
@@ -27,11 +27,11 @@ label {
     border: 3px solid red;
 }
 
-label:hover {
+.file-change-choice:hover {
     background-color: rgba(207, 60, 94);
 }
 
-label:active {
+.file-change-choice:active {
     transform: scale(0.98);
 }
 

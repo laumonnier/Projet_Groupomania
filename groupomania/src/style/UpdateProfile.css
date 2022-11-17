@@ -93,9 +93,12 @@ button {
     display: block;
     position: relative;
     float: right;
+    font-size: 18px;
     margin: 10px 10px 0 0;
     height: 35px;
     width: 250px;
+    border: 3px ridge #4E5166;
+    border-radius: 7px;
     transform: scale(1);
 }
 
@@ -173,7 +176,7 @@ button:active {
     border: 2px solid purple;
 }
 
-.following-profile-title{
+.follow-profile-title{
     text-align: center;
     font-size: 30px;
     font-weight: bold;
@@ -214,7 +217,7 @@ button:active {
     border-radius: 8px;
 }
 
-#pseudo-following{
+#pseudo-follow{
     font-size: 25px;
     font-weight: 700;
 }

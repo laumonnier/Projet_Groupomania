@@ -62,9 +62,12 @@ const Subscribe = () => {
         </>
       ) : (
         <form action="" onSubmit={handleRegister} id="form-subscribe-container">
-          <div className="pseudo-container">
-            <label htmlFor="pseudo">Pseudo</label>
+          <div className="suscribe-pseudo-container">
+            <label className="subscribe-label" htmlFor="pseudo">
+              Pseudo
+            </label>
             <input
+              className="subscribe-input"
               type="text"
               name="pseudo"
               id="pseudo"
@@ -73,9 +76,13 @@ const Subscribe = () => {
             />
             <div className="pseudoError"></div>
           </div>
-          <div className="mail-container">
-            <label htmlFor="mail"> Adresse mail </label>
+          <div className="suscribe-mail-container">
+            <label className="subscribe-label" htmlFor="mail">
+              {" "}
+              Adresse mail{" "}
+            </label>
             <input
+              className="subscribe-input"
               type="email"
               name="mail"
               id="mail"
@@ -84,9 +91,13 @@ const Subscribe = () => {
             />
             <div className="emailError"></div>
           </div>
-          <div className="password-container">
-            <label htmlFor="pswrd"> Mot de passe </label>
+          <div className="suscribe-password-container">
+            <label className="subscribe-label" htmlFor="pswrd">
+              {" "}
+              Mot de passe{" "}
+            </label>
             <input
+              className="subscribe-input"
               type="password"
               name="pswrd"
               id="pswrd"
@@ -95,9 +106,12 @@ const Subscribe = () => {
             />
             <div className="passwordError"></div>
           </div>
-          <div className="ctrlPswrd-container">
-            <label htmlFor="ctrlPswrd">Confirmation Mot de passe</label>
+          <div className="suscribe-ctrlPswrd-container">
+            <label className="subscribe-label" htmlFor="ctrlPswrd">
+              Confirmation Mot de passe
+            </label>
             <input
+              className="subscribe-input"
               type="password"
               name="ctrlPswrd"
               id="ctrlPswrd"

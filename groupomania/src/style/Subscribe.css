@@ -3,8 +3,10 @@
     flex-direction: column;
     justify-content: space-between;
     text-align: start;
-    width: 700px;
-    height: 830px;
+    margin: auto;
+    width: 70%;
+    height: 550px;
+    padding-top: 15px;
     background-color: #c9c1c2;
     border: 3px solid black;
     border-radius: 12px;
@@ -20,52 +22,45 @@
     margin-top: 8px;
 }
 
-.pseudo-container, .lName-container, .fName-container, .email-container, .password-container, .ctrlPswrd-container {
+.suscribe-pseudo-container, .suscribe-mail-container, .suscribe-password-container, .suscribe-ctrlPswrd-container {
     display: flex;
     flex-direction: column;
 }
 
-.pseudo-container:hover, .lName-container:hover, .fName-container:hover, .email-container:hover, .password-container:hover, .ctrlPswrd-container:hover {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    box-shadow: 2px 2px 10px #4E5166;
-}
-
-label {
+.subscribe-label {
     display: flex;
     text-align: start;
     align-items: flex-end;
     margin-left: 15px;
-    height: 40px;
+    height: 28px;
     font-size: 23px;
 }
 
-input {
+.subscribe-input {
     width: 96%;
     height: 40px;
     border-radius: 12px;
     margin: auto;
-    font-size: 22px;
-}
-input:hover {
-    width: 96%;
-    height: 40px;
-    border-radius: 12px;
-    margin: auto;
+    background-color: rgb(231, 225, 225);
     font-size: 22px;
     cursor: pointer;
+}
+
+.subscribe-input:focus{
+    background-color: white;
+}
+
+.subscribe-input:hover {    
     border-color: #fd2d01;
 }
 
-.pseudoError, .lNameError, .fNameError, .emailError, .passwordError, .controlPasswordError {
+.pseudoError, .emailError, .passwordError, .controlPasswordError {
     height: 25px;
     font-size: 18px;
     font-weight: bold;
     color: red;
     font-style: italic;
-    margin-left: 12px;
-    margin-top: 8px;
+    margin: 8px 0 0 12px;
 }
 
 .submit-subscribe {

@@ -1,9 +1,9 @@
-#form-login-container {
+.form-login-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: start;
-    width: 700px;
+    width: 70%;
     height: 330px;
     margin: auto;
     background-color: #c9c1c2;
@@ -11,19 +11,12 @@
     border-radius: 12px;
 }
 
-.mail-container, .password-container {
+.login-mail-container, .login-password-container {
     display: flex;
     flex-direction: column;  
 }
 
-.mail-container:hover, .password-container:hover {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    box-shadow: 2px 2px 10px #4E5166;
-}
-
-label {
+.login-label {
     display: flex;
     text-align: start;
     align-items: flex-end;
@@ -32,24 +25,25 @@ label {
     font-size: 23px;
 }
 
-input {
+.login-input {
     width: 96%;
     height: 40px;
     border-radius: 12px;
     margin: auto;
     font-size: 22px;
-}
-input:hover {
-    width: 96%;
-    height: 40px;
-    border-radius: 12px;
-    margin: auto;
-    font-size: 22px;
+    background-color: rgb(231, 225, 225);
     cursor: pointer;
+}
+
+.login-input:focus {
+    background-color: white;
+}
+
+.login-input:hover {
     border-color: #fd2d01;
 }
 
-.emailError, .passwordError {
+.login-emailError, .login-passwordError {
     height: 25px;
     font-size: 18px;
     font-weight: bold;

@@ -35,10 +35,13 @@ const Login = () => {
   };
 
   return (
-    <form action="" onSubmit={handleLogin} id="form-login-container">
-      <div className="mail-container">
-        <label htmlFor="mail">Adresse mail</label>
+    <form action="" onSubmit={handleLogin} className="form-login-container">
+      <div className="login-mail-container">
+        <label className="login-label" htmlFor="mail">
+          Adresse mail
+        </label>
         <input
+          className="login-input"
           type="email"
           name="mail"
           id="mail"
@@ -47,9 +50,13 @@ const Login = () => {
         />
         <div className="emailError"></div>
       </div>
-      <div className="password-container">
-        <label htmlFor="mdp"> Mot de passe </label>
+      <div className="login-password-container">
+        <label className="login-label" htmlFor="mdp">
+          {" "}
+          Mot de passe{" "}
+        </label>
         <input
+          className="login-input"
           type="password"
           name="mdp"
           id="mdp"

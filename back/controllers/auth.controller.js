@@ -34,7 +34,7 @@ exports.signIn = async (req, res) => {
             user: user._id
             })
     } catch (err){
-        console.log(err);
+        // console.log(err);
         const errors = signInErrors(err)
         res.status(200).json({ errors })
     }
@@ -43,6 +43,5 @@ exports.signIn = async (req, res) => {
 // Allows the user to logOut to the company’s social site
 exports.logOut = (req, res) => {
 res.cookie('jwt', '', {maxAge: 1});
-res.status(200).json({ message: "La session est terminée !"})
 res.redirect('/')   
 };
