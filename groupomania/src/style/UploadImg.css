@@ -55,9 +55,10 @@
     opacity: 0;
 }
 
-.picture-change {
+.profile-picture-change {
     display: block;
     color: white;
+    font-size: 22px;
     font-weight: 700;
     width: 315px;
     height: 50px;
@@ -72,7 +73,7 @@
     border: 3px solid red;
 }
 
-.picture-change:hover {
+.profile-picture-change:hover {
     display: block;
     color: white;
     font-weight: 700;
@@ -88,7 +89,7 @@
     border: 3px solid red;
 }
 
-.picture-change:active {
+.profile-picture-change:active {
     display: block;
     color: white;
     font-weight: 700;

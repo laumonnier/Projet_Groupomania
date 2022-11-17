@@ -37,7 +37,11 @@ const UploadImg = () => {
           onChange={(e) => setFile(e.target.files[0])}
         />
       </div>
-      <input className="picture-change" type="submit" value="Envoyer !" />
+      <input
+        className="profile-picture-change"
+        type="submit"
+        value="Envoyer !"
+      />
     </form>
   );
 };

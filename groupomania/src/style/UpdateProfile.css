@@ -222,6 +222,10 @@ button:active {
     font-weight: 700;
 }
 
+.follow-handler{
+    
+}
+
 #profile-time {
     display: flex;
     flex-direction: row;

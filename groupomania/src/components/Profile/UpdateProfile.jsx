@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateDescription } from "../../redux/actions/user.actions";
 import "../../style/UpdateProfile.css";
 import { dateParser } from "../../utils/date";
+import FollowHandler from "./FollowHandler";
 import UploadImg from "./UploadImg";
 
 const UpdateProfile = () => {
@@ -98,7 +99,9 @@ const UpdateProfile = () => {
                           alt="User_image"
                         />
                         <p id="pseudo-follow">{user.pseudo}</p>
-                        <p>FOLLOW HANDLER</p>
+                        <div className="follow-handler">
+                          <FollowHandler idToFollow={user._id} />
+                        </div>
                       </li>
                     );
                   }
@@ -127,7 +130,9 @@ const UpdateProfile = () => {
                           alt="User_image"
                         />
                         <p id="pseudo-follow">{user.pseudo}</p>
-                        <p>FOLLOW HANDLER</p>
+                        <div className="follow-handler">
+                          <FollowHandler idToFollow={user._id} />
+                        </div>
                       </li>
                     );
                   }
