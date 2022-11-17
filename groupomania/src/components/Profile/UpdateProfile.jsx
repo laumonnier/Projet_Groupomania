@@ -66,7 +66,7 @@ const UpdateProfile = () => {
             <p className="following" onClick={() => setFollowingPopup(true)}>
               {" "}
               Following(s):{" "}
-              {userData.fallowing ? userData.following.length : "0"}
+              {userData.following ? userData.following.length : "0"}
             </p>
             <p className="followers" onClick={() => setFollowersPopup(true)}>
               {" "}
