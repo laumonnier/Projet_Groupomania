@@ -4,8 +4,29 @@ const router = express.Router();
 // const { userAuth } = require('../middleware/auth'); // Provides "basic" user access rights
 // const { adminAuth } = require('../middleware/auth'); // Provides "admin" user access rights
 const postController = require('../controllers/post.controller');
-const multer = require('multer');
-const upload = multer();
+const multer = require ('multer');
+
+const MIME_TYPES = {
+    'image/jpg': 'jpg',
+    'image/jpeg': 'jpg',
+    'image/png': 'png'
+}; 
+
+const storage = multer.diskStorage({
+    destination: (req, file, callback) => {
+        callback(null, "../groupomania/public/uploads/posts");
+    },
+    filename: (req, file, callback) => {
+        console.log(file);
+        const name = file.originalname.split(' ').join('_');
+        const extension = MIME_TYPES[file.mimetype];
+        callback(null, name + '.' + extension);
+        // const name = req.body.name;
+        // const extension = MIME_TYPES[file.mimetype];
+        // callback(null, name + '.' + extension);
+    }
+});
+const upload = multer({ storage: storage });
 
 // Additions of the various endpoints
 router.post('/', upload.single('file'), postController.createPost); // userAuth

@@ -1,9 +1,6 @@
 const UserModel = require('../models/user.model.js');
-const fs = require('fs');
-const { promisify } = require('util');// used to convert a method that returns responses using a callback function to return responses in a promise object
 const { uploadErrors } = require('../utils/errors');
-const pipeline = promisify(require('stream').pipeline);//The stream.pipeline() method is a module method that is used to the pipe by linking the streams passing on errors and accurately cleaning up and providing a callback function when the pipeline is done. 
-const multer = require('multer');
+
 
 // Download an image for the User
 exports.uploadUserProfile = async (req, res, next) => { 
@@ -24,9 +21,7 @@ exports.uploadUserProfile = async (req, res, next) => {
     console.log(req.body.name);
 
         // await pipeline(
-        //     // console.log(req.body.userId),
         //     req.file.stream,
-        //     // console.log(req.body.use,rId)
         //     fs.createWriteStream(
         //         `${__dirname}/../../groupomania/public/uploads/profile/${fileName}`
         //     ),

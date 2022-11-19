@@ -1,66 +1,72 @@
 const PostModel = require('../models/post.model');
 const UserModel = require('../models/user.model');
-const fs = require('fs');
-const { promisify } = require('util');
 const { uploadErrors } = require('../utils/errors');
-const pipeline = promisify(require('stream').pipeline);
 const ObjectId = require('mongoose').Types.ObjectId;
 
 // Additions of the various endpoints
 // business logic for creating a post account
 exports.createPost = async (req, res) => {
-    let fileName;
-    console.log(req.file.mimetype)
-    if(req.file !== null){
+    console.log(req.file)
+    console.log("Salut");
+    console.log(req.body.posterId);
+    if(req.file !== undefined){
         try{
+            console.log("Salut");
         if(
-            req.file.detectedMimeType !== "image/jpg" &&
-            req.file.detectedMimeType !== "image/jpeg" &&
-            req.file.detectedMimeType !== "image/png" 
+            req.file.mimetype !== "image/jpg" &&
+            req.file.mimetype !== "image/jpeg" &&
+            req.file.mimetype !== "image/png" 
          )
          throw Error('invalid file')
-    
-         if(req.file.size > 300000) throw Error('max size');
-        } catch (err){
+            
+         console.log("Salut");
+         if(req.file.size > 600000) throw Error('max size');
+        }
+        catch (err){
             const errors = uploadErrors(err);
             return res.status(201).json({ errors });
         }
-
-        const MIME_TYPES = {
-        'image/jpg': 'jpg',
-        'image/jpeg': 'jpg',
-        'image/png': 'png'
-        };
+    }else{ 
+        console.log("Salut");
+    console.log(req.body.posterId);
+        // const MIME_TYPES = {
+        // 'image/jpg': 'jpg',
+        // 'image/jpeg': 'jpg',
+        // 'image/png': 'png'
+        // };
     
-        fileName = (req, file, callback) => {
-                const name = file.originalname.split(' ').join('_');
-                const extension = MIME_TYPES[file.mimetype];
-                callback(null, name + Date.now() + '.' + extension);
-        }
+        // fileName = (req, file, callback) => {
+        //         const name = file.originalname.split(' ').join('_');
+        //         const extension = MIME_TYPES[file.mimetype];
+        //         callback(null, name + Date.now() + '.' + extension);
+        // }
 
-        await pipeline(
-                req.file.stream,
-                fs.createWriteStream(
-                    `${__dirname}/../groupomania/public/uploads/posts/${fileName}`
-                )
-        );
-    }
+        // await pipeline(
+        //         req.file.stream,
+        //         fs.createWriteStream(
+        //             `${__dirname}/../groupomania/public/uploads/posts/${fileName}`
+        //         )
+        // );
+    
     const newPost = new PostModel({
         posterId: req.body.posterId,
         message: req.body.message,
-        picture: req.file !== null ? "./uploads/posts/" + fileName : "",
+        picture: req.file !== undefined ? `uploads/posts/${req.file.filename}` : "",
         video: req.body.video,
         usersLiked: [],
         comments: []
     });
 
-    try {
-        const post = await newPost.save();
-        return res.status(201).json(post);
-    } catch (err) {
-        return res.status(401).json(err);
+        try {
+            const post = await newPost.save();
+            return res.status(201).json(post);
+        } catch (err) {
+            return res.status(401).json(err);
+        }
     }
 };
+    
+
 
 // Business logic for obtaining all posts
 exports.getAllPost = (req, res, next) => {

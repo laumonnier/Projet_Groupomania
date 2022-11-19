@@ -1,0 +1,100 @@
+:root{
+    --primary_color: lightcoral;
+    --secondary_color: lightgreen;
+    --third_color: lightblue;
+    --grey_color: #424040, #808080, #8b8a8a, #dbd8d8, #f6f4f4,;
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    margin-top: 13%;
+    z-index: 5;
+    border: 0px solid green;
+}
+
+.loading-spinner-sector{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    left: calc(50% - 0.75rem);
+    top: calc(50% - 0.79rem);
+    /* background: linear-gradient(0deg, var(--third_color), var(--secondary_color), var(--primary_color)); */
+    border: 0.8rem solid transparent;
+    mix-blend-mode: overlay;    
+}
+
+.loading-spinner-sector-red{
+    width: 8rem;
+    height: 8rem;
+    left: calc(50% - 4rem);
+    top: calc(50% - 4rem);
+    border-right-color: var(--primary_color);
+    border-top-color: var(--primary_color);
+    box-sizing: border-box;
+    animation: spin 3100ms infinite linear;
+    animation-fill-mode: forwards;
+}
+
+.loading-spinner-sector-blue{
+    width: 8rem;
+    height: 8rem;
+    left: calc(50% - 4rem);
+    top: calc(50% - 4rem);
+    border-right-color: var(--third_color);
+    border-top-color: var(--third_color);
+    box-sizing: border-box;
+    animation: spin-inv 1750ms infinite linear;
+    animation-fill-mode: forwards;    
+}
+
+.loading-spinner-sector-green {
+    width: 8rem;
+    height: 8rem;
+    left: calc(50% - 4rem);
+    top: calc(50% - 4rem);
+    border-right-color: var(--secondary_color);
+    border-top-color: var(--secondary_color);
+    box-sizing: border-box;
+    animation: spin 3800ms infinite linear;
+    animation-fill-mode: forwards;    
+}
+
+
+
+@keyframes spin{
+    0%{
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    70%{
+        transform: rotate(230deg);
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(360deg);
+        opacity: 1;
+    }
+}
+@keyframes spin-inv{
+    0%{
+        transform: rotate(0deg);
+        opacity: 1;
+    }
+    50%{
+        transform: rotate(-180deg);
+        opacity: 1;
+    }
+    100%{
+        transform: rotate(-360deg);
+        opacity: 1;
+    }
+}
