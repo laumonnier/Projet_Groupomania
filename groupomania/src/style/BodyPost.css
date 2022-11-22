@@ -1,0 +1,16 @@
+.post-body-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-body-message {
+    font-size: 20px;
+    text-align: justify;
+    width: 90%;
+    margin: auto;
+    padding: 20px 0 20px 0;
+}
+
+.post-body-picture {
+    width: 90%;
+}
