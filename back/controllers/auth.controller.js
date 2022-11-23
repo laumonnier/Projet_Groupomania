@@ -12,9 +12,9 @@ const createToken = (id) => {
 // Additions of the various endpoints
 // business logic for creating a user account
 exports.signUp = async (req, res) => {
-    const {pseudo, email, password, role} = req.body;//destructuring
+    const {pseudo, email, password} = req.body;//destructuring
     try{
-        const user = await UserModel.create({pseudo, email, password, role});
+        const user = await UserModel.create({pseudo, email, password});
         res.status(201).json({ user: user._id })
     }catch(err){
         const errors = signUpErrors(err);
@@ -34,7 +34,7 @@ exports.signIn = async (req, res) => {
             user: user._id
             })
     } catch (err){
-        // console.log(err);
+        console.log(err);
         const errors = signInErrors(err)
         res.status(200).json({ errors })
     }
