@@ -28,7 +28,7 @@ const LikeButton = ({ post }) => {
       {userId && liked === false && (
         <img
           className="like-button-icon"
-          src="./images/hearth_empty_icon.png"
+          src="./images/icon/hearth_empty_icon.png"
           alt="icon_coeur_vide"
           onClick={like}
         />
@@ -36,7 +36,7 @@ const LikeButton = ({ post }) => {
       {userId && liked && (
         <img
           className="like-button-icon"
-          src="./images/hearth_full_icon.png"
+          src="./images/icon/hearth_full_icon.png"
           alt="icon_coeur_rempli"
           onClick={unlike}
         />

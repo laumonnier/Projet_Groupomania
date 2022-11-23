@@ -9,7 +9,6 @@ import { dateParser } from "../../utils/date";
 const HeaderPost = ({ post }) => {
   //Will recover user data, both images, messages or other thanks to the "store"
   const usersData = useSelector((state) => state.usersReducer);
-  const userData = useSelector((state) => state.userReducer);
 
   return (
     <>

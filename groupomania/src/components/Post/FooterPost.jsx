@@ -12,7 +12,7 @@ const FooterPost = ({ post }) => {
       <div className="post-footer-comment-block">
         <img
           id="post-footer-icon-comment"
-          src="./images/icon-comment.png"
+          src="./images/icon/icon-comment.png"
           alt="icon_comment"
         />
         <div className="post-footer-number-comment">{post.comments.length}</div>

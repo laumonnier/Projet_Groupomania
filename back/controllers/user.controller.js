@@ -59,7 +59,7 @@ exports.updateRole = (req, res, next) => {// A refaire
             {_id: req.params.id},
             {
                 $set: {
-                    description: req.body.description
+                    description: req.body.role
                 }
             },
             { new: true, upsert: true, setDefaultsOnInsert: true}

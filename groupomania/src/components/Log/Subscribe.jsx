@@ -7,6 +7,7 @@ const Subscribe = () => {
   const [pseudo, setPseudo] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
   const [ctrlPassword, setCtrlPassword] = useState("");
   const [formSubmit, setFormSubmit] = useState(false);
 
@@ -32,6 +33,7 @@ const Subscribe = () => {
           pseudo,
           email,
           password,
+          role,
         },
       })
         .then((res) => {
@@ -119,6 +121,20 @@ const Subscribe = () => {
               value={ctrlPassword}
             />
             <div className="controlPasswordError"></div>
+          </div>
+          <div className="suscribe-role-container">
+            <label className="role-label" htmlFor="role">
+              Role
+            </label>
+            <input
+              className="subscribe-input"
+              type="text"
+              name="role"
+              id="role"
+              onChange={(e) => setRole(e.target.value)}
+              value={role}
+            />
+            {/* <div className="pseudoError"></div> */}
           </div>
           <button type="submit" className="submit-subscribe">
             S'inscrire

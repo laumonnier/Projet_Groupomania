@@ -19,7 +19,7 @@ const Navbar = () => {
           <Link to="/">
             <img
               id="groupomania-logo"
-              src="./images/icon-left-font-reframe.png"
+              src="./images/icon/icon-left-font-reframe.png"
               alt="icon de Groupomania"
             />
           </Link>
@@ -35,21 +35,21 @@ const Navbar = () => {
               <Link to="/">
                 <img
                   id="home-logo"
-                  src="./images/icon_accueil_2948025.png"
+                  src="./images/icon/icon_accueil_2948025.png"
                   alt="icon de Groupomania"
                 />
               </Link>
               <Link to="/followers">
                 <img
                   id="followers-logo"
-                  src="./images/icon_follower_5607047.png"
+                  src="./images/icon/icon_follower_5607047.png"
                   alt="icon_followers"
                 />
               </Link>
               <Link to="/profile">
                 <img
                   id="profile-logo"
-                  src="./images/Profile-icon_123.png"
+                  src="./images/icon/Profile-icon_123.png"
                   alt="icon_profil"
                 />
               </Link>
@@ -60,7 +60,7 @@ const Navbar = () => {
           <Link to="/profile">
             <img
               id="logo-login"
-              src="./images/depositphotos-stock-illustration-bouton-internet-graphic-histogramme-red.jpg"
+              src="./images/icon/depositphotos-stock-illustration-bouton-internet-graphic-histogramme-red.jpg"
               alt="icon_login"
             />
           </Link>
