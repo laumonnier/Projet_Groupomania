@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Login from "./Login";
-import "../../style/Subscribe.css";
+import "../../style/Log/Subscribe.css";
 
 const Subscribe = () => {
   const [pseudo, setPseudo] = useState("");

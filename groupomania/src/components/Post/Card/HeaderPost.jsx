@@ -1,10 +1,9 @@
 import React from "react";
-import "./../../style/LoadingSpinner.css";
-import "../../style/Card.css";
+import "../../../style/LoadingSpinner.css";
+import "../../../style/Post/Card/HeaderPost.css";
 import { useSelector } from "react-redux";
-import { isEmpty } from "../../utils/Empty";
-import "../../style/HeaderPost.css";
-import { dateParser } from "../../utils/date";
+import { isEmpty } from "../../../utils/Empty";
+import { dateParser } from "../../../utils/date";
 
 const HeaderPost = ({ post }) => {
   //Will recover user data, both images, messages or other thanks to the "store"

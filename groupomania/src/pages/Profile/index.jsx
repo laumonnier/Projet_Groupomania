@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import logo from "../../assets/images/icon-left-font-monochrome-white.png";
 import Log from "../../components/Log";
 import UpdateProfile from "../../components/Profile/UpdateProfile";
-import "../../style/Profile.css";
+import "../../style/pages/Profile.css";
 import { UserIdContext } from "../../utils/context";
 
 const Profile = () => {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Subscribe from "./Subscribe";
 import Login from "./Login";
-import "../../style/Log.css";
+import "../../style/Log/Log.css";
 
 const Log = () => {
   const [loginModal, setLoginModal] = useState(true);

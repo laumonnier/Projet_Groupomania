@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import LoadingSpinner from "./LoadingSpinner";
-import "./../../style/LoadingSpinner.css";
-import "../../style/Card.css";
+import LoadingSpinner from "../../LoadingSpinner";
+import "../../../style/LoadingSpinner.css";
+import "../../../style/Post/Card/Card.css";
 import { useSelector } from "react-redux";
-import { isEmpty } from "../../utils/Empty";
+import { isEmpty } from "../../../utils/Empty";
 import HeaderPost from "./HeaderPost";
 import BodyPost from "./BodyPost";
 import FooterPost from "./FooterPost";

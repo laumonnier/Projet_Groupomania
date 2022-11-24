@@ -1,9 +1,9 @@
 import React from "react";
-import "../../style/BodyPost.css";
+import "../../../style/Post/Card/BodyPost.css";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { updatePost } from "../../redux/actions/post.actions";
-import { deletePost } from "../../redux/actions/post.actions";
+import { updatePost } from "../../../redux/actions/post.actions";
+import { deletePost } from "../../../redux/actions/post.actions";
 
 const BodyPost = ({ post }) => {
   const [isUpdated, setIsUpdated] = useState(false);

@@ -117,16 +117,5 @@
     border: 0px solid black;
 }
 
-#logout-block {
-    font-size: 25px;
-    margin-top: -25px;
-}
 
-#logo-logout {
-    height: 80px;
-    width : 80px;
-    margin-top: 10px;
-    padding-left: 30px; 
-    border: 0px solid blue;
-    cursor: pointer;
-}
+

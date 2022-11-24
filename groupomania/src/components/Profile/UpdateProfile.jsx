@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateDescription } from "../../redux/actions/user.actions";
-import "../../style/UpdateProfile.css";
+import "../../style/Profile/UpdateProfile.css";
 import { dateParser } from "../../utils/date";
 import FollowHandler from "./FollowHandler";
 import UploadImg from "./UploadImg";

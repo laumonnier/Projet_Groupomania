@@ -2,6 +2,7 @@
 import React from "react";
 import axios from "axios";
 import cookie from "js-cookie";
+import "../../style/Log/Logout.css";
 
 function Logout() {
   //Removes the cookie if not removed at the front

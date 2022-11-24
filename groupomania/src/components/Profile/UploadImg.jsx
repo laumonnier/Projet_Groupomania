@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { uploadPicture } from "../../redux/actions/user.actions";
-import "../../style/UploadImg.css";
+import "../../style/Profile/UploadImg.css";
 
 //Will change the profile images
 const UploadImg = () => {
