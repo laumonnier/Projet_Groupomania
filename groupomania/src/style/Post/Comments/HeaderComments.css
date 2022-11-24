@@ -1,0 +1,35 @@
+.postComments-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.postComments-header-block-identifier {
+    display: flex;          
+    flex-direction: row;
+    justify-content: flex-start;
+}
+ 
+#postComments-header-user-picture {
+     width: 60px;
+     height: 60px;
+     border: 2px solid black;
+     border-radius: 12px;
+     margin: 10px 0 0 10px;
+ 
+ }
+
+ .postComments-header-post-userName {
+    font-size: 22px;
+    font-weight: 700;
+    text-decoration: underline;
+    margin: 10px 0 35px 15px;
+    padding-bottom: -15px;
+    border: 0px solid black;
+ }
+
+ .postComments-header-post-date{
+    font-size: 20px;
+    text-align: end;
+    margin: 15px 15px 0 0;
+ }
