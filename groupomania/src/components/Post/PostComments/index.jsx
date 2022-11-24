@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import "../../../style/Post/Comments/PostComments.css";
 import { dateParser } from "../../../utils/date";
 import { isEmpty } from "../../../utils/Empty";
-import BodyComments from "./BodyComments";
 import HeaderComments from "./HeaderComments";
 
 const PostComments = ({ post }) => {
@@ -20,17 +19,34 @@ const PostComments = ({ post }) => {
         return (
           <div
             className={
-              comment.commenterId === userData._id //A revoir comments ou comment
-                ? "postComments-container user"
-                : "postComments-container"
+              comment.commenterId !== userData._id
+                ? "postComment-container"
+                : "postComment-container-user"
             }
             key={comment._id}
           >
-            <HeaderComments post={post} comments={comment} key={comment._id} />
-            <BodyComments post={post} comments={comment} />
+            <HeaderComments post={post} comment={comment} key={comment._id} />
+            <p className="postComments-body">{comment.comment}</p>
           </div>
         );
       })}
+      {(userData._id || userData.role === "admin") && (
+        <form className="postComments-form" action="" onSubmit={handleComment}>
+          <input
+            className="postComments-form-comment"
+            type="text"
+            name="text"
+            onChange={(e) => setText(e.target.value)}
+            value={text}
+            placeholder="Commentaire pour ce post !!!"
+          />
+          <input
+            className="postComments-form-submit"
+            type="submit"
+            value="Envoyer"
+          />
+        </form>
+      )}
     </div>
   );
 };
