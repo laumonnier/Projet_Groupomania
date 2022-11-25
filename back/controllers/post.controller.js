@@ -107,14 +107,10 @@ exports.getOnePost = (req, res, next) => {
 exports.updatePost = (req, res, next) => {
     if (!ObjectId.isValid(req.params.id))
         return res.status(400)
-        .json("L'Id du Post n'existe pas : " + req.params.id)
-    
-    const updatedRecord = {
-        message: req.body.message
-    }    
+        .json("L'Id du Post n'existe pas : " + req.params.id)   
 
     try{
-        PostModel.findOneAndUpdate(
+        PostModel.findByIdAndUpdate(
             req.params.id,
             { $set: {message: req.body.message }},
             { new: true },

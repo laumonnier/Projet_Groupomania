@@ -12,7 +12,6 @@ const Card = ({ post }) => {
   const [isLoading, setIsLoading] = useState(true);
   //Will recover user data, both images, messages or other thanks to the "store"
   const usersData = useSelector((state) => state.usersReducer);
-  //   const userData = useSelector((state) => state.userReducer);
 
   useEffect(() => {
     !isEmpty(usersData[0]) && setIsLoading(false);

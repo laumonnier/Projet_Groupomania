@@ -62,7 +62,7 @@
     transform: scale(1);
 }
 
-.postComments-form-submit:hover {
+.postComments-form-submit:active {
     background-color: rgba(247, 10, 10, 0.6);
     transform: scale(0.95)
 }

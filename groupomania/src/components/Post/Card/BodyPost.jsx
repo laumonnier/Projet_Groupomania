@@ -8,13 +8,14 @@ import { deletePost } from "../../../redux/actions/post.actions";
 const BodyPost = ({ post }) => {
   const [isUpdated, setIsUpdated] = useState(false);
   const [textUpdate, setTextUpdate] = useState(null);
-  const usersData = useSelector((state) => state.usersReducer);
   const userData = useSelector((state) => state.userReducer);
   const dispatch = useDispatch();
 
   const handleUpdatePost = () => {
     if (textUpdate) {
       dispatch(updatePost(post._id, textUpdate));
+      console.log(post.posterId);
+      console.log(userData._id);
     }
     setIsUpdated(false);
   };
@@ -25,8 +26,8 @@ const BodyPost = ({ post }) => {
 
   return (
     <div className="post-body-container">
-      {(userData._id === post.posterId || userData.role === "admin") && (
-        <div className="post-body-update-delete-block">
+      <div className="post-body-update-delete-block">
+        {userData._id === post.posterId && (
           <div onClick={() => setIsUpdated(!isUpdated)}>
             <img
               className="post-body-update-button"
@@ -34,6 +35,8 @@ const BodyPost = ({ post }) => {
               alt="change_update_icon"
             />
           </div>
+        )}
+        {(userData._id === post.posterId || userData.role === "admin") && (
           <div
             onClick={() => {
               //Will trigger a message like an "alert"
@@ -48,8 +51,8 @@ const BodyPost = ({ post }) => {
               alt="delete_post"
             />
           </div>
-        </div>
-      )}
+        )}
+      </div>
       {isUpdated === false && (
         <p className="post-body-message">{post.message}</p>
       )}
@@ -66,7 +69,6 @@ const BodyPost = ({ post }) => {
               className="post-body-update-message-validate"
               onClick={handleUpdatePost}
             >
-              {" "}
               Validation modifications
             </button>
           </div>
