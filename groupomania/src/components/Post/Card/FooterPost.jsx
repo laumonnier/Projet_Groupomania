@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../../style/Post/Card/FooterPost.css";
-import LikeButton from "../../LikeButton";
+import LikeButton from "../../LikeButton/index.jsx";
 import PostComments from "../PostComments";
 
 const FooterPost = ({ post }) => {

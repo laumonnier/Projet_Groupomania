@@ -23,8 +23,16 @@ const LikeButton = ({ post }) => {
     if (post.usersLiked.includes(userId)) setLiked(true);
     else setLiked(false);
   }, [userId, post.usersLiked, liked]);
+
   return (
     <div className="like-button-container">
+      {userId === null && (
+        <img
+          className="like-button-icon"
+          src="./images/icon/hearth_empty_icon.png"
+          alt="icon_coeur_vide"
+        />
+      )}
       {userId && liked === false && (
         <img
           className="like-button-icon"

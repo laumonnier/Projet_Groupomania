@@ -155,7 +155,7 @@ exports.likedPostStatus = async (req, res) => {
              .catch((err) => {
                 res.status(400)
                 .json({ error: err })
-            })
+            });
         
         await UserModel.findByIdAndUpdate(
              req.body.id,
