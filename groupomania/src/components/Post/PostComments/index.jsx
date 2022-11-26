@@ -1,17 +1,25 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { addComment, getPosts } from "../../../redux/actions/post.actions";
 import "../../../style/Post/Comments/PostComments.css";
-import { dateParser } from "../../../utils/date";
-import { isEmpty } from "../../../utils/Empty";
+import DeleteComment from "./DeleteComment";
+import EditComment from "./EditComment";
 import HeaderComments from "./HeaderComments";
 
 const PostComments = ({ post }) => {
   const [text, setText] = useState("");
-  const usersData = useSelector((state) => state.usersReducer);
   const userData = useSelector((state) => state.userReducer);
   const dispatch = useDispatch();
 
-  const handleComment = () => {};
+  const handleComment = (e) => {
+    e.preventDefault();
+
+    if (text) {
+      dispatch(addComment(post._id, userData._id, text, userData.pseudo))
+        .then(() => dispatch(getPosts()))
+        .then(() => setText(""));
+    }
+  };
 
   return (
     <div className="postComments-container">
@@ -26,7 +34,11 @@ const PostComments = ({ post }) => {
             key={comment._id}
           >
             <HeaderComments post={post} comment={comment} key={comment._id} />
-            <p className="postComments-body">{comment.comment}</p>
+            <div className="postComment-edit-delete-block">
+              <p className="postComments-body">{comment.text}</p>
+              <EditComment comment={comment} postId={post._id} />
+              <DeleteComment comment={comment} postId={post._id} />
+            </div>
           </div>
         );
       })}

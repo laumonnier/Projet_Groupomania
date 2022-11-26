@@ -8,6 +8,7 @@ const StyledConnection = createGlobalStyle`
 
   body {
     background-image: linear-gradient(rgba(209, 13, 59,0.3),rgba(209, 13, 59,0.3)), url(./images/social-media.jpg) ;
+    background-attachment: fixed; 
   }
 `;
 

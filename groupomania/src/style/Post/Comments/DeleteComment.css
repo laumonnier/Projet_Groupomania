@@ -1,0 +1,9 @@
+.delete-comment-container {
+
+}
+
+#delete-comment-icon {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}

@@ -228,7 +228,7 @@ exports.commentPost = (req, res, next) => {
                     comments: {
                         commenterId: req.body.commenterId,
                         commenterPseudo: req.body.commenterPseudo,
-                        comment: req.body.comment,
+                        text: req.body.text,
                         timestamp: new Date().getTime()
                     }
                 }
@@ -265,7 +265,7 @@ exports.editCommentPost = (req, res, next) => {
                 )
 
                 if(!theComment) return res.status(400).json('Le commentaire n\'est pas trouvé')
-                theComment.comment = req.body.comment;
+                theComment.text = req.body.text;
 
                 return data.save()
                     .then((data) => {

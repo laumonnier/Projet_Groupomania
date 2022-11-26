@@ -21,6 +21,14 @@
     background-color: lightcoral;   
 }
 
+.postComment-edit-delete-block {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: auto;
+    border: 5px solid green;
+}
+
 .postComments-body {
     font-size: 18px;
     text-align: justify;
