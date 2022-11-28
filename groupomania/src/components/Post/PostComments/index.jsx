@@ -23,28 +23,38 @@ const PostComments = ({ post }) => {
 
   return (
     <div className="postComments-container">
-      {post.comments.map((comment) => {
-        return (
-          <div
-            className={
-              comment.commenterId !== userData._id
-                ? "postComment-container"
-                : "postComment-container-user"
-            }
-            key={comment._id}
-          >
-            <HeaderComments post={post} comment={comment} key={comment._id} />
-            <div className="postComment-edit-delete-block">
-              <p className="postComments-body">{comment.text}</p>
-              <EditComment comment={comment} postId={post._id} />
-              <DeleteComment comment={comment} postId={post._id} />
+      <div className="postComments-comments">
+        {post.comments.map((comment) => {
+          return (
+            <div
+              className={
+                comment.commenterId !== userData._id
+                  ? "postComment-container"
+                  : "postComment-container-user"
+              }
+              key={comment._id}
+            >
+              <HeaderComments post={post} comment={comment} key={comment._id} />
+              <div className="postComment-edit-delete-block">
+                <p className="postComments-body">{comment.text}</p>
+                <EditComment
+                  comment={comment}
+                  userData={userData}
+                  postId={post._id}
+                />
+                <DeleteComment
+                  comment={comment}
+                  userData={userData}
+                  postId={post._id}
+                />
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
       {(userData._id || userData.role === "admin") && (
         <form className="postComments-form" action="" onSubmit={handleComment}>
-          <input
+          <textarea
             className="postComments-form-comment"
             type="text"
             name="text"

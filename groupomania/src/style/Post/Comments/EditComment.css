@@ -3,21 +3,23 @@
     flex-direction: column;
     align-items: flex-end;
     width: 95%;
+    text-align: justify;
     margin: auto;
-    border: 3px solid red;
 }
 
 #edit-comment-icon {
     width: 25px;
     height: 25px;
     cursor: pointer;
+    position: absolute;
+    top: -30px;
+    right: 30px;
 }
 
 .edit-comment-form-container {
     display: flex;
     flex-direction: column;
     width: 100%;
-    border: 3px solid blue;
 }
 
 .edit-comment-form-block {
@@ -26,12 +28,18 @@
     align-items: flex-end;
 }
 
+.edit-comment-form-cancel-validate {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
 .edit-comment-form-label {
     font-size: 18px;
     font-weight: 650;
     border: 2px solid black;
     border-radius: 5px;
-    height: 24px;
+    height: 22px;
     padding: 5px 10px 0 10px;
     background-color: rgb(203, 205, 207);
     cursor: pointer;
@@ -39,18 +47,17 @@
 
 .edit-comment-form-change {
     width: 98%;
-    height: 28px;
+    height: 90px;
     font-size: 18px;
     border-radius: 12px;
     border: 2px solid transparent;
 }
 
 .edit-comment-form-validate {
-    height: 28px;
+    height: 31px;
     font-size: 18px;
     font-weight: 650;
     padding: 5px 30px 5px 30px;
     background-color: rgb(203, 205, 207);
     border-radius: 5px;
-    border: 2px solid black;
 }
