@@ -1,0 +1,119 @@
+.following {
+    color: white;
+    font-weight: 700;
+    height: 35px;
+    width: 250px;
+    padding-top: 13px;
+    background-color: rgba(247, 10, 10, 0.6);
+    border: 6px ridge #4E5166;
+    border-radius: 15px;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.following:hover {
+    background-color: rgb(247, 10, 10);
+}
+
+.following:active{
+    transform: scale(0.95);
+}
+
+ /* .newPost-following{
+    color: black;
+    font-weight: 700;
+    height: 35px;
+    width: 250px;
+    padding-top: 13px;
+    background-color: rgba(247, 10, 10, 0.6);
+    border: 6px ridge #4E5166;
+    border-radius: 15px;
+    transform: scale(1);
+    cursor: pointer; */
+
+
+.followers {
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    height: 35px;
+    width: 250px;
+    margin-top: -15px;
+    padding-top: 13px;
+    background-color: rgba(247, 10, 10, 0.6);
+    border: 6px ridge #4E5166;
+    border-radius: 15px;
+    transform: scale(1);
+    cursor: pointer;
+}
+
+.followers:hover{
+    background-color: rgb(247, 10, 10);
+}
+
+.followers:active{
+    transform: scale(0.95);
+}
+
+.popup-profile-container {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    border: 8px ridge #4E5166;
+    border-radius: 12px;
+    background-color: #ffd7d7;
+    z-index: 5;
+}
+
+.modal {
+    border: 2px solid purple;
+}
+
+.follow-profile-title{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.close {
+    position: absolute;
+    right: 28px;
+    top: 28px;
+    width: 28px;
+    height: 28px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: #c2c0c0;
+    cursor: pointer;
+    transform: scale(1);
+}
+
+.close:active{
+    transform: scale(0.95);
+}
+
+.user-summary{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 19px;
+
+}
+
+#user-image-profile{
+    height: 65px;
+    width: 65px;
+    border: 4px ridge rgb(247, 10, 10);
+    border-radius: 8px;
+}
+
+#pseudo-follow{
+    font-size: 25px;
+    font-weight: 700;
+}
+

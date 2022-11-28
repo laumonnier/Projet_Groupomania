@@ -1,0 +1,33 @@
+.newPost-post-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    background-color: antiquewhite;
+    border: 6px ridge #4e5166;
+    border-radius: 12px;
+}
+
+.newPost-post-follow {
+
+}
+
+.newPost-post-followers {
+    font-size: 22px;
+    color: black;
+    text-decoration:underline;
+}
+
+.newPost-post-followings {
+    font-size: 22px;
+    color: black;
+    text-decoration:underline;
+}
+
+.newPost-post-header-follow {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 0px solid red;
+    text-align: center;
+    font-size: 22px;
+}

@@ -59,14 +59,7 @@ h3 {
     border-radius: 18px;
     background-color: rgba(255,215,215, 0.88);
     border: 6px ridge rgba(247, 10, 10, 0.6);
-    /* 2px solid green */
 }
-
-/* .description-profile {
-    width: 90%;
-    background-color: white;
-    border: 5px solid blue;
-} */
 
 .description-block {
     font-size: 21px;
@@ -112,9 +105,13 @@ button:active {
     flex-direction: column;
     align-items: center;
     border: 0px solid red;
+    text-align: center;
+    font-size: 22px;
 }
 
-.following {
+
+
+/* .following {
     color: white;
     text-align: center;
     font-size: 22px;
@@ -224,7 +221,7 @@ button:active {
 
 .follow-handler{
     
-}
+} */
 
 #profile-time {
     display: flex;
