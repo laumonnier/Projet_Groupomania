@@ -7,6 +7,26 @@
     border-radius: 12px;
 }
 
+.newPost-post-header-user-picture {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.newPost-post-picture {
+    width: 150px;
+    height: 150px;
+    border: 5px ridge #4e5166;
+    border-radius: 12px;
+    margin: 20px 0 0 20px;
+    cursor: pointer;
+}
+
+.newPost-post-user-name {
+    font-size: 35px;
+    font-weight: 700;
+}
+
 .newPost-post-follow {
 
 }
@@ -27,7 +47,87 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-right: 50px;
     border: 0px solid red;
     text-align: center;
-    font-size: 22px;
+    font-size: 19px;
+}
+
+.newPost-post-body-container {
+
+}
+
+.newPost-post-body {
+
+}
+
+.newPost-post-card-container {
+    display: flex;
+    flex-direction: column;
+    border: 5px solid green;
+}
+
+.newPost-post-card-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.newPost-post-card-identifier-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.newPost-post-card-header-picture {
+    width: 110px;
+    height: 110px;
+    border: 4px ridge #4e5166;
+    border-radius: 12px;
+    margin: 20px 0 0 20px;
+}
+
+.newPost-post-card-header-pseudo {
+    font-size: 30px;
+    font-weight: 650;
+    margin: 20px 0 0 20px;
+}
+
+.newPost-post-card-header-date {
+    font-size: 20px;
+    text-align: end;
+    margin: 15px 15px 0 0;
+}
+
+.newPost-post-card-body {
+
+}
+
+.newPost-post-card-body-message {
+    
+}
+
+.newPost-post-footer-container {
+    border: 4px solid blue;
+}
+
+.newPost-post-footer-icon {
+    width: 35px;
+    height: 35px;
+}
+
+.newPost-post-footer-delete-image {
+
+}
+
+.newPost-post-footer-send {
+
+}
+
+.newPost-post-footer-button-canceled {
+
+}
+
+.newPost-post-footer-button-send {
+
 }

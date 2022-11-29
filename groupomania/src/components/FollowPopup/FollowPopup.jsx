@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
 import FollowHandler from "../Profile/FollowHandler";
 import "../../style/FollowPopup.css";
 
@@ -10,11 +9,26 @@ const FollowPopup = ({ userData, usersData }) => {
   return (
     <>
       {/* <div className="follow-profile"> */}
-      <p className="following" onClick={() => setFollowingPopup(true)}>
+
+      <p
+        className={
+          window.location.href === "http://localhost:3000/profile"
+            ? "following"
+            : "newPost-following"
+        }
+        onClick={() => setFollowingPopup(true)}
+      >
         {" "}
         Following(s): {userData.following ? userData.following.length : "0"}
       </p>
-      <p className="followers" onClick={() => setFollowersPopup(true)}>
+      <p
+        className={
+          window.location.href === "http://localhost:3000/profile"
+            ? "followers"
+            : "newPost-followers"
+        }
+        onClick={() => setFollowersPopup(true)}
+      >
         {" "}
         Follower(s): {userData.followers ? userData.followers.length : "0"}
       </p>
@@ -29,6 +43,7 @@ const FollowPopup = ({ userData, usersData }) => {
             <ul>
               {usersData.map((user) => {
                 for (let i = 0; i < userData.following.length; i++) {
+                  // console.log(window.location.href);
                   if (user._id === userData.following[i]) {
                     return (
                       <li className="user-summary" key={user._id}>
