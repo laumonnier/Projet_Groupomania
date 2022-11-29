@@ -1,14 +1,11 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import "../../../style/Post/Comments/HeaderComments.css";
-import { dateParser, timestampParser } from "../../../utils/date";
+import { timestampParser } from "../../../utils/date";
 import { isEmpty } from "../../../utils/Empty";
 
 const HeaderComments = ({ post, comment }) => {
   const usersData = useSelector((state) => state.usersReducer);
-  const [text, setText] = useState("");
-  const userData = useSelector((state) => state.userReducer);
-  const dispatch = useDispatch();
 
   return (
     <>

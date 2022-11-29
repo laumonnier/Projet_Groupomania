@@ -26,7 +26,7 @@ exports.createPost = async (req, res) => {
             const errors = uploadErrors(err);
             return res.status(201).json({ errors });
         }
-    }else{ 
+    } 
         console.log("Salut");
     console.log(req.body.posterId);
         // const MIME_TYPES = {
@@ -63,7 +63,7 @@ exports.createPost = async (req, res) => {
         } catch (err) {
             return res.status(401).json(err);
         }
-    }
+    
 };
     
 

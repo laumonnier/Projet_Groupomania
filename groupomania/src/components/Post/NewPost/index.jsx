@@ -3,23 +3,36 @@ import LoadingSpinner from "../../LoadingSpinner";
 import "../../../style/pages/Home/NewPost.css";
 import { isEmpty } from "../../../utils/Empty";
 import FollowPopup from "../../FollowPopup/FollowPopup";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { timestampParser } from "../../../utils/date";
+import { addPost, getPosts } from "../../../redux/actions/post.actions";
 
 const NewPost = ({ userData }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [message, setMessage] = useState("");
   const [postPicture, setPostPicture] = useState(null);
-  const [picture, setPicture] = useState("");
   const [file, setFile] = useState();
-  const [followingPopup, setFollowingPopup] = useState(false);
-  const [followersPopup, setFollowersPopup] = useState(false);
   const usersData = useSelector((state) => state.usersReducer);
+  const dispatch = useDispatch();
 
-  const handlePicture = () => {};
+  const handlePicture = (e) => {
+    setPostPicture(URL.createObjectURL(e.target.files[0]));
+    setFile(e.target.files[0]);
+  };
 
-  const handlePost = () => {};
+  const handlePost = async () => {
+    if (message || postPicture) {
+      const data = new FormData();
+      data.append("posterId", userData._id);
+      data.append("message", message);
+      if (file) data.append("file", file);
+
+      await dispatch(addPost(data));
+      dispatch(getPosts());
+      cancelPost();
+    }
+  };
 
   const cancelPost = () => {
     setMessage("");
@@ -29,7 +42,7 @@ const NewPost = ({ userData }) => {
 
   useEffect(() => {
     if (!isEmpty(userData)) setIsLoading(false);
-  }, [userData]);
+  }, [userData, message]);
 
   return (
     <div className="newPost-post-container">
@@ -55,6 +68,7 @@ const NewPost = ({ userData }) => {
             <div className="newPost-post-body-container">
               <div className="newPost-post-body">
                 <textarea
+                  className="newPost-post-body-text"
                   name="message"
                   id="message"
                   placeholder="Nouveau Post ?"
@@ -77,41 +91,51 @@ const NewPost = ({ userData }) => {
                       <span className="newPost-post-card-header-date">
                         {timestampParser(Date.now())}
                       </span>
-                      <div className="newPost-post-card-body">
-                        <p className="newPost-post-card-body-message">
-                          {message}
-                        </p>
-                        <img src={postPicture} alt="" />
-                      </div>
+                    </div>
+                    <div className="newPost-post-card-body">
+                      <p className="newPost-post-card-body-message">
+                        {message}
+                      </p>
+                      <img
+                        className="newPost-post-card-body-picture"
+                        src={postPicture}
+                        alt=""
+                      />
                     </div>
                   </div>
                 ) : null}
               </div>
               <div className="newPost-post-footer-container">
-                <div className="newPost-post-footer-icon-image">
-                  <>
-                    <img
-                      className="newPost-post-footer-icon"
-                      src="./images/icon/album-icon-photo-album-png-transparent-png.png"
-                      alt="image_icon"
-                    />
-                    <input
-                      type="file"
-                      id="file-upload"
-                      name="file"
-                      accept=".jpg, .jpeg, .png"
-                      onChange={(e) => handlePicture(e)}
-                    />
-                  </>
-                  {picture && (
+                <div className="newPost-footer-image-block">
+                  <div className="newPost-post-footer-icon-image">
+                    <>
+                      <input
+                        className="newPost-post-footer-icon-input"
+                        type="file"
+                        id="file-upload"
+                        name="file"
+                        accept=".jpg, .jpeg, .png"
+                        onChange={(e) => handlePicture(e)}
+                      />
+                      <label htmlFor="file-upload">
+                        <img
+                          className="newPost-post-footer-icon"
+                          src="./images/icon/album-icon-photo-album-png-transparent-png.png"
+                          alt="image_icon"
+                        />
+                      </label>
+                    </>
+                  </div>
+                  {postPicture && (
                     <button
                       className="newPost-post-footer-delete-image"
-                      onClick={() => setPicture("")}
+                      onClick={() => setPostPicture("")}
                     >
                       Supprimer Image
                     </button>
                   )}
                 </div>
+
                 <div className="newPost-post-footer-send">
                   {message || postPicture || file ? (
                     <>

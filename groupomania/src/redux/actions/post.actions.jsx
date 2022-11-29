@@ -3,6 +3,7 @@ import axios from "axios";
 
 //What about the posts
 export const GET_POSTS = "GET_POSTS";
+export const ADD_POST = "ADD_POST";
 export const LIKE_POST = "LIKE_POST";
 export const UNLIKE_POST = "UNLIKE_POST";
 export const UPDATE_POST = "UPDATE_POST";
@@ -24,6 +25,16 @@ export const getPosts = (num) => {
         dispatch({ type: GET_POSTS, payload: array });
       })
       .catch((err) => console.log(err));
+  };
+};
+
+export const addPost = (data) => {
+  return (dispatch) => {
+    return axios({
+      method: "post",
+      url: `${process.env.REACT_APP_API_URL}api/post/`,
+      data: data,
+    });
   };
 };
 

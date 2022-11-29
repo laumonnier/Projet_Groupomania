@@ -8,7 +8,7 @@ import HeaderPost from "./HeaderPost";
 import BodyPost from "./BodyPost";
 import FooterPost from "./FooterPost";
 
-const Card = ({ post }) => {
+const Card = ({ post, user }) => {
   const [isLoading, setIsLoading] = useState(true);
   //Will recover user data, both images, messages or other thanks to the "store"
   const usersData = useSelector((state) => state.usersReducer);
@@ -23,7 +23,7 @@ const Card = ({ post }) => {
         <LoadingSpinner />
       ) : (
         <>
-          <HeaderPost post={post} key={post._id} />
+          <HeaderPost post={post} key={post._id} user={user} />
           <BodyPost post={post} />
           <FooterPost post={post} />
         </>
