@@ -37,11 +37,13 @@ exports.signInErrors = (err) => {
 exports.uploadErrors = (err) => {
     let errors = { format: '', maxSize: ''};
 
-    if(err.message.includes('invalid file'))
-        errors.format = "Le format n'est pas compatible !";
+    if(err.message.includes('invalid file')){
+    // console.log(format)
+        errors.format = "Le format n'est pas compatible !";}
 
-    if(err.message.includes('max size'))
-        errors.maxSize = "Le fichier est trop grand (taille maximale: 600ko)!";
+    if(err.message.includes('max size')){
+        // console.log(size)
+        errors.maxSize = "Le fichier est trop grand (taille maximale: 600ko)!";}
 
     return errors;
 }

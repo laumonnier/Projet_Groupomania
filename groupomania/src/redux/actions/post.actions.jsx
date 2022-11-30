@@ -1,4 +1,3 @@
-import { Action } from "@remix-run/router";
 import axios from "axios";
 
 //What about the posts
@@ -13,6 +12,9 @@ export const DELETE_POST = "DELETE_POST";
 export const ADD_COMMENT = "ADD_COMMENT";
 export const EDIT_COMMENT = "EDIT_COMMENT";
 export const DELETE_COMMENT = "DELETE_COMMENT";
+
+//What about the errors
+export const GET_POST_ERRORS = "GET_POST_ERRORS";
 
 export const getPosts = (num) => {
   return (dispatch) => {
@@ -34,6 +36,10 @@ export const addPost = (data) => {
       method: "post",
       url: `${process.env.REACT_APP_API_URL}api/post/`,
       data: data,
+    }).then((res) => {
+      if (res.data.errors) {
+        dispatch({ type: GET_POST_ERRORS, payload: res.data.errors });
+      }
     });
   };
 };

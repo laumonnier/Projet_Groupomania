@@ -54,7 +54,10 @@ const FollowPopup = ({ userData, usersData }) => {
                         />
                         <p id="pseudo-follow">{user.pseudo}</p>
                         <div className="follow-handler">
-                          <FollowHandler idToFollow={user._id} />
+                          <FollowHandler
+                            idToFollow={user._id}
+                            type={"suggest"}
+                          />
                         </div>
                       </li>
                     );
@@ -86,7 +89,10 @@ const FollowPopup = ({ userData, usersData }) => {
                         />
                         <p id="pseudo-follow">{user.pseudo}</p>
                         <div className="follow-handler">
-                          <FollowHandler idToFollow={user._id} />
+                          <FollowHandler
+                            idToFollow={user._id}
+                            type={"suggest"}
+                          />
                         </div>
                       </li>
                     );

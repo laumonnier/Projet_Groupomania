@@ -14,6 +14,7 @@ const NewPost = ({ userData }) => {
   const [postPicture, setPostPicture] = useState(null);
   const [file, setFile] = useState();
   const usersData = useSelector((state) => state.usersReducer);
+  const error = useSelector((state) => state.errorReducer.postError);
   const dispatch = useDispatch();
 
   const handlePicture = (e) => {
@@ -135,6 +136,8 @@ const NewPost = ({ userData }) => {
                     </button>
                   )}
                 </div>
+                {/* {!isEmpty(error.format) && <p>{error.format}</p>} */}
+                {/* {!isEmpty(error.maxSize) && <p>{error.maxSize}</p>} */}
 
                 <div className="newPost-post-footer-send">
                   {message || postPicture || file ? (

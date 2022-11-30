@@ -91,6 +91,7 @@ exports.followUser = async (req, res) => {
     
     try{
         //Add a follower to your list
+        console.log("Salut toi");
         await UserModel.findByIdAndUpdate(
             req.params.id,
             { $addToSet: { following: req.body.idToFollow}},
@@ -131,7 +132,7 @@ exports.unfollowUser = async (req, res) => {
         return res.status(400).json("L'id ne correspond pas :" + req.params.id)
 
     try{
-
+        console.log("Salut pas toi");
         await UserModel.findByIdAndUpdate(
             req.params.id,
             { $pull: { following: req.body.idToUnfollow}},

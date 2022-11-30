@@ -4,12 +4,10 @@ import "../../../style/Post/Card/HeaderPost.css";
 import { useSelector } from "react-redux";
 import { isEmpty } from "../../../utils/Empty";
 import { dateParser } from "../../../utils/date";
-import FollowHandler from "../../Profile/FollowHandler";
 
 const HeaderPost = ({ post }) => {
   //Will recover user data, both images, messages or other thanks to the "store"
   const usersData = useSelector((state) => state.usersReducer);
-  const userData = useSelector((state) => state.userReducer);
 
   return (
     <>
@@ -30,18 +28,13 @@ const HeaderPost = ({ post }) => {
             }
             alt="user_picture"
           />
-          <div className="postComments-header-post-pseudo-follow-block">
-            <p className="card-header-post-userName">
-              {!isEmpty(usersData[0]) &&
-                usersData.map((user) => {
-                  if (user._id === post.posterId) return user.pseudo;
-                  else return null;
-                })}
-            </p>
-            {post.posterId !== userData._id && (
-              <FollowHandler idToFollow={post.posterId} type={"card"} />
-            )}
-          </div>
+          <p className="card-header-post-userName">
+            {!isEmpty(usersData[0]) &&
+              usersData.map((user) => {
+                if (user._id === post.posterId) return user.pseudo;
+                else return null;
+              })}
+          </p>
         </div>
         <div className="card-header-post-date">
           {dateParser(post.createdAt)}

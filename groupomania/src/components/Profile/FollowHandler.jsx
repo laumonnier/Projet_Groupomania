@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { followUser, unfollowUser } from "../../redux/actions/user.actions";
 import { isEmpty } from "../../utils/Empty";
+import "../../style/Profile/FollowHandler.css";
 
 const FollowHandler = ({ idToFollow, type }) => {
   const userData = useSelector((state) => state.userReducer);
@@ -34,7 +35,14 @@ const FollowHandler = ({ idToFollow, type }) => {
             <button className="following-unfollow">Suivi</button>
           )}
           {type === "card" && (
-            <img src="./images/icon/following.png" alt="following" />
+            <button className="following-follow-card-unfollow">
+              Suivi
+              <img
+                className="following-unfollow-card-icon"
+                src="./images/icon/follow.png"
+                alt="follow"
+              />
+            </button>
           )}
         </span>
       )}
@@ -44,7 +52,14 @@ const FollowHandler = ({ idToFollow, type }) => {
             <button className="following-follow">Suivre</button>
           )}
           {type === "card" && (
-            <img src="./images/icon/following.png" alt="follower" />
+            <button className="following-follow-card-following">
+              Suivre
+              <img
+                className="following-follow-card-icon"
+                src="./images/icon/following.png"
+                alt="following"
+              />
+            </button>
           )}
         </span>
       )}

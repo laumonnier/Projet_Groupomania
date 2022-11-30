@@ -13,8 +13,6 @@ const UpdateProfile = () => {
   const userData = useSelector((state) => state.userReducer);
   // Recovers all user data from the useSelector
   const usersData = useSelector((state) => state.usersReducer);
-  const [followingPopup, setFollowingPopup] = useState(false);
-  const [followersPopup, setFollowersPopup] = useState(false);
   const dispatch = useDispatch();
 
   const handleUpdate = () => {
@@ -64,16 +62,6 @@ const UpdateProfile = () => {
             )}
           </div>
           <div className="follow-profile">
-            {/*<p className="following" onClick={() => setFollowingPopup(true)}>
-              {" "}
-              Following(s):{" "}
-              {userData.following ? userData.following.length : "0"}
-            </p>
-            <p className="followers" onClick={() => setFollowersPopup(true)}>
-              {" "}
-              Follower(s):{" "}
-              {userData.followers ? userData.followers.length : "0"}
-            </p> */}
             <FollowPopup userData={userData} usersData={usersData} />
           </div>
           <div id="profile-time">
