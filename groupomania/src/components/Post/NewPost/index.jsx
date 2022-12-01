@@ -31,7 +31,7 @@ const NewPost = ({ userData }) => {
 
       await dispatch(addPost(data));
       dispatch(getPosts());
-      // cancelPost();
+      cancelPost();
     }
   };
 
