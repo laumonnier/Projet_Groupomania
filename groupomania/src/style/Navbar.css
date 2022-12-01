@@ -9,10 +9,10 @@
     flex-direction: row;
     justify-content: space-between;
     background-color: white;
-    border: 2px solid black;
+    border: 4px ridge black;
     border-radius: 14px;
     position: fixed;
-    width: 99%;
+    width: 98%;
     z-index: 6;
 }
 

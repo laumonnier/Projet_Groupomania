@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { updateDescription } from "../../redux/actions/user.actions";
 import "../../style/Profile/UpdateProfile.css";
 import { dateParser } from "../../utils/date";
+import { isEmpty } from "../../utils/Empty";
 import FollowPopup from "../FollowPopup/FollowPopup";
 import FollowHandler from "./FollowHandler";
 import UploadImg from "./UploadImg";
@@ -13,6 +14,7 @@ const UpdateProfile = () => {
   const userData = useSelector((state) => state.userReducer);
   // Recovers all user data from the useSelector
   const usersData = useSelector((state) => state.usersReducer);
+  const errorData = useSelector((state) => state.errorReducer.userErrors);
   const dispatch = useDispatch();
 
   const handleUpdate = () => {
@@ -28,8 +30,10 @@ const UpdateProfile = () => {
           <h3>Photo de profil</h3>
           <img id="user-photo" src={userData.picture} alt="user_photo" />
           <UploadImg />
-          {/* <p>{errors.maxSize}</p>
-        <p>{errors.format}</p> */}
+          <div className="profile-image-error">
+            {!isEmpty(errorData.format) && alert(errorData.format)}
+            {!isEmpty(errorData.maxSize) && alert(errorData.maxSize)}
+          </div>
         </div>
         <div className="description-container">
           <div className="text-description">

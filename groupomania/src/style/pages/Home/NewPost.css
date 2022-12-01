@@ -1,8 +1,10 @@
 .newPost-post-container {
     display: flex;
     flex-direction: column;
+    width: 70%;
+    margin: auto;
     margin-top: 20px;
-    background-color: antiquewhite;
+    background-color: rgb(251, 197, 184);
     border: 6px ridge #4e5166;
     border-radius: 12px;
 }
@@ -28,10 +30,6 @@
     text-decoration: underline;
 }
 
-.newPost-post-follow {
-
-}
-
 .newPost-post-followers {
     font-size: 22px;
     color: black;
@@ -52,14 +50,6 @@
     border: 0px solid red;
     text-align: center;
     font-size: 19px;
-}
-
-.newPost-post-body-container {
-
-}
-
-.newPost-post-body {
-
 }
 
 .newPost-post-body-text {
@@ -83,7 +73,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 3px solid red;
+    border: 0px solid red;
 }
 
 .newPost-post-card-identifier-block {
@@ -120,7 +110,7 @@
     margin: auto;
     margin-bottom: 35px;
     margin-top: 15px;
-    border: 4px solid yellow;
+    border: 0px solid yellow;
 
 }
 
@@ -140,11 +130,18 @@
     border-radius: 15px;
 }
 
+.newPost-post-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 0px solid red;
+}
+
 .newPost-post-footer-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 4px solid blue;
+    border: 0px solid blue;
     width: 94%;
     margin: auto;
     margin-bottom: 0;

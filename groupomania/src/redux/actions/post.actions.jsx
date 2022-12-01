@@ -36,11 +36,15 @@ export const addPost = (data) => {
       method: "post",
       url: `${process.env.REACT_APP_API_URL}api/post/`,
       data: data,
-    }).then((res) => {
-      if (res.data.errors) {
-        dispatch({ type: GET_POST_ERRORS, payload: res.data.errors });
-      }
-    });
+    })
+      .then((res) => {
+        if (res.data.errors) {
+          dispatch({ type: GET_POST_ERRORS, payload: res.data.errors });
+        } else {
+          dispatch({ type: GET_POST_ERRORS, payload: "" });
+        }
+      })
+      .catch((err) => console.log(err));
   };
 };
 

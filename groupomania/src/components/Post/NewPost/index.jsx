@@ -14,7 +14,7 @@ const NewPost = ({ userData }) => {
   const [postPicture, setPostPicture] = useState(null);
   const [file, setFile] = useState();
   const usersData = useSelector((state) => state.usersReducer);
-  const error = useSelector((state) => state.errorReducer.postError);
+  const errorData = useSelector((state) => state.errorReducer.postErrors);
   const dispatch = useDispatch();
 
   const handlePicture = (e) => {
@@ -31,7 +31,7 @@ const NewPost = ({ userData }) => {
 
       await dispatch(addPost(data));
       dispatch(getPosts());
-      cancelPost();
+      // cancelPost();
     }
   };
 
@@ -106,56 +106,60 @@ const NewPost = ({ userData }) => {
                   </div>
                 ) : null}
               </div>
-              <div className="newPost-post-footer-container">
-                <div className="newPost-footer-image-block">
-                  <div className="newPost-post-footer-icon-image">
-                    <>
-                      <input
-                        className="newPost-post-footer-icon-input"
-                        type="file"
-                        id="file-upload"
-                        name="file"
-                        accept=".jpg, .jpeg, .png"
-                        onChange={(e) => handlePicture(e)}
-                      />
-                      <label htmlFor="file-upload">
-                        <img
-                          className="newPost-post-footer-icon"
-                          src="./images/icon/album-icon-photo-album-png-transparent-png.png"
-                          alt="image_icon"
+              <div className="newPost-post-footer">
+                <div className="newPost-post-footer-container">
+                  <div className="newPost-footer-image-block">
+                    <div className="newPost-post-footer-icon-image">
+                      <>
+                        <input
+                          className="newPost-post-footer-icon-input"
+                          type="file"
+                          id="file-upload"
+                          name="file"
+                          accept=".jpg, .jpeg, .png"
+                          onChange={(e) => handlePicture(e)}
                         />
-                      </label>
-                    </>
+                        <label htmlFor="file-upload">
+                          <img
+                            className="newPost-post-footer-icon"
+                            src="./images/icon/album-icon-photo-album-png-transparent-png.png"
+                            alt="image_icon"
+                          />
+                        </label>
+                      </>
+                    </div>
+                    {postPicture && (
+                      <button
+                        className="newPost-post-footer-delete-image"
+                        onClick={() => setPostPicture("")}
+                      >
+                        Supprimer Image
+                      </button>
+                    )}
                   </div>
-                  {postPicture && (
-                    <button
-                      className="newPost-post-footer-delete-image"
-                      onClick={() => setPostPicture("")}
-                    >
-                      Supprimer Image
-                    </button>
-                  )}
-                </div>
-                {/* {!isEmpty(error.format) && <p>{error.format}</p>} */}
-                {/* {!isEmpty(error.maxSize) && <p>{error.maxSize}</p>} */}
 
-                <div className="newPost-post-footer-send">
-                  {message || postPicture || file ? (
-                    <>
-                      <button
-                        className="newPost-post-footer-button-canceled"
-                        onClick={cancelPost}
-                      >
-                        Annuler message
-                      </button>
-                      <button
-                        className="newPost-post-footer-button-send"
-                        onClick={handlePost}
-                      >
-                        Envoyer !
-                      </button>
-                    </>
-                  ) : null}
+                  <div className="newPost-post-footer-send">
+                    {message || postPicture || file ? (
+                      <>
+                        <button
+                          className="newPost-post-footer-button-canceled"
+                          onClick={cancelPost}
+                        >
+                          Annuler message
+                        </button>
+                        <button
+                          className="newPost-post-footer-button-send"
+                          onClick={handlePost}
+                        >
+                          Envoyer !
+                        </button>
+                      </>
+                    ) : null}
+                  </div>
+                </div>
+                <div className="newPost-post-footer-error">
+                  {!isEmpty(errorData.format) && alert(errorData.format)}
+                  {!isEmpty(errorData.maxSize) && alert(errorData.maxSize)}
                 </div>
               </div>
             </div>

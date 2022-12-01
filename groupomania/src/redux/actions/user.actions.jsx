@@ -5,7 +5,7 @@ export const UPLOAD_PICTURE = "UPLOAD_PICTURE";
 export const UPDATE_DESCRIPTION = "UPDATE_DESCRIPTION";
 export const FOLLOW_USER = "FOLLOW_USER";
 export const UNFOLLOW_USER = "UNFOLLOW_USER";
-// export const;
+export const GET_USER_ERRORS = "GET_USER_ERRORS";
 
 export const getUser = (userId) => {
   //"dispatch" will allow us to send the data to the "reducer"
@@ -26,11 +26,16 @@ export const uploadPicture = (data, id) => {
     return axios
       .post(`${process.env.REACT_APP_API_URL}api/user/upload`, data) //First part we will send the image data to the database
       .then((res) => {
-        return axios //Then during the second part we will warn the "reducer" to change the data accordingly
-          .get(`${process.env.REACT_APP_API_URL}api/user/${id}`)
-          .then((res) => {
-            dispatch({ type: UPLOAD_PICTURE, payload: res.data.picture }); //We will send to the "reducer" this part "UPLOAD_PICTURE", with as data "payload" "res.data.picture" for the "store"
-          });
+        if (res.data.errors) {
+          dispatch({ type: GET_USER_ERRORS, payload: res.data.errors });
+        } else {
+          dispatch({ type: GET_USER_ERRORS, payload: "" });
+          return axios //Then during the second part we will warn the "reducer" to change the data accordingly
+            .get(`${process.env.REACT_APP_API_URL}api/user/${id}`)
+            .then((res) => {
+              dispatch({ type: UPLOAD_PICTURE, payload: res.data.picture }); //We will send to the "reducer" this part "UPLOAD_PICTURE", with as data "payload" "res.data.picture" for the "store"
+            });
+        }
       })
       .catch((err) => console.log(err));
   };

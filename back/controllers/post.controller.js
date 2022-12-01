@@ -17,12 +17,11 @@ exports.createPost = async (req, res) => {
             req.file.mimetype !== "image/jpeg" &&
             req.file.mimetype !== "image/png" 
          )
-         throw Error('invalid file')
+         throw Error("invalid file");
             
          console.log("Salut");
-         if(req.file.size > 600000) throw Error('max size');
-        }
-        catch (err){
+         if(req.file.size > 600000) throw Error("max size");
+        }catch (err){
             const errors = uploadErrors(err);
             return res.status(201).json({ errors });
         }
@@ -52,7 +51,6 @@ exports.createPost = async (req, res) => {
         posterId: req.body.posterId,
         message: req.body.message,
         picture: req.file !== undefined ? `uploads/posts/${req.file.filename}` : "",
-        video: req.body.video,
         usersLiked: [],
         comments: []
     });

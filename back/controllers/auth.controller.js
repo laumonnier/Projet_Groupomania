@@ -36,7 +36,7 @@ exports.signIn = async (req, res) => {
     } catch (err){
         console.log(err);
         const errors = signInErrors(err)
-        res.status(200).json({ errors })
+        res.status(200).send({ errors })
     }
 };     
 

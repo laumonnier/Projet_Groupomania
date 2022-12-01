@@ -15,7 +15,7 @@ exports.signUpErrors = (err) => {
         errors.email = "Cet email a déjà été enregistré dans la base de données !";
     
     if (err.message.includes('password'))
-        errors.password = "Ce mot de passe ne correspond pas ('min 8 car. , max 35 car.') !"
+        errors.password = "Ce mot de passe ne correspond pas ('min 8 car. , max 35 car.') !";
         
 
     return errors;
@@ -37,13 +37,13 @@ exports.signInErrors = (err) => {
 exports.uploadErrors = (err) => {
     let errors = { format: '', maxSize: ''};
 
-    if(err.message.includes('invalid file')){
-    // console.log(format)
-        errors.format = "Le format n'est pas compatible !";}
-
-    if(err.message.includes('max size')){
-        // console.log(size)
-        errors.maxSize = "Le fichier est trop grand (taille maximale: 600ko)!";}
-
-    return errors;
+    if(err.message.includes("invalid file")){
+    // console.log(err.message)
+        errors.format = "Le format n'est pas compatible !"}
+    
+    if(err.message.includes("max size")){
+        // console.log(err.message)
+        errors.maxSize = "Le fichier est trop grand (taille maximale: 600ko)!"}
+    
+    return errors
 }
