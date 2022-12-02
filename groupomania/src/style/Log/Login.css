@@ -1,67 +1,279 @@
-.form-login-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: start;
-    width: 70%;
-    height: 330px;
-    margin: auto;
-    background-color: #c9c1c2;
-    border: 3px solid black;
-    border-radius: 12px;
+@media (max-width: 767px) {
+    .form-login-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: start;
+        width: 70%;
+        height: 330px;
+        margin: auto;
+        background-color: #c9c1c2;
+        border: 3px solid black;
+        border-radius: 12px;
+    }
+
+    .login-mail-container, .login-password-container {
+        display: flex;
+        flex-direction: column;  
+    }
+
+    .login-label {
+        display: flex;
+        text-align: start;
+        align-items: flex-end;
+        margin-left: 15px;
+        height: 40px;
+        font-size: 23px;
+    }
+
+    .login-input {
+        width: 96%;
+        height: 40px;
+        border-radius: 12px;
+        margin: auto;
+        font-size: 22px;
+        background-color: rgb(231, 225, 225);
+        cursor: pointer;
+    }
+
+    .login-input:focus {
+        background-color: white;
+    }
+
+    .login-input:hover {
+        border-color: #fd2d01;
+    }
+
+    .login-emailError, .login-passwordError {
+        height: 25px;
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+        font-style: italic;
+        margin-left: 12px;
+        margin-top: 8px;
+    }
+
+    .submit-form-login {
+        width: 98%;
+        height: 60px;
+        margin: auto;
+        font-size: 22px;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 15px;
+        border-radius: 9px;
+        background-color: #bd153c;
+        cursor: pointer;
+    }
 }
 
-.login-mail-container, .login-password-container {
-    display: flex;
-    flex-direction: column;  
+@media (max-width: 767px) {
+    .form-login-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: start;
+        width: 70%;
+        height: 330px;
+        margin: auto;
+        background-color: #c9c1c2;
+        border: 3px solid black;
+        border-radius: 12px;
+    }
+
+    .login-mail-container, .login-password-container {
+        display: flex;
+        flex-direction: column;  
+    }
+
+    .login-label {
+        display: flex;
+        text-align: start;
+        align-items: flex-end;
+        margin-left: 15px;
+        height: 40px;
+        font-size: 23px;
+    }
+
+    .login-input {
+        width: 96%;
+        height: 40px;
+        border-radius: 12px;
+        margin: auto;
+        font-size: 22px;
+        background-color: rgb(231, 225, 225);
+        cursor: pointer;
+    }
+
+    .login-input:focus {
+        background-color: white;
+    }
+
+    .login-input:hover {
+        border-color: #fd2d01;
+    }
+
+    .login-emailError, .login-passwordError {
+        height: 25px;
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+        font-style: italic;
+        margin-left: 12px;
+        margin-top: 8px;
+    }
+
+    .submit-form-login {
+        width: 98%;
+        height: 60px;
+        margin: auto;
+        font-size: 22px;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 15px;
+        border-radius: 9px;
+        background-color: #bd153c;
+        cursor: pointer;
+    }
 }
 
-.login-label {
-    display: flex;
-    text-align: start;
-    align-items: flex-end;
-    margin-left: 15px;
-    height: 40px;
-    font-size: 23px;
+@media (max-width: 767px) {
+    .form-login-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: start;
+        width: 70%;
+        height: 330px;
+        margin: auto;
+        background-color: #c9c1c2;
+        border: 3px solid black;
+        border-radius: 12px;
+    }
+
+    .login-mail-container, .login-password-container {
+        display: flex;
+        flex-direction: column;  
+    }
+
+    .login-label {
+        display: flex;
+        text-align: start;
+        align-items: flex-end;
+        margin-left: 15px;
+        height: 40px;
+        font-size: 23px;
+    }
+
+    .login-input {
+        width: 96%;
+        height: 40px;
+        border-radius: 12px;
+        margin: auto;
+        font-size: 22px;
+        background-color: rgb(231, 225, 225);
+        cursor: pointer;
+    }
+
+    .login-input:focus {
+        background-color: white;
+    }
+
+    .login-input:hover {
+        border-color: #fd2d01;
+    }
+
+    .login-emailError, .login-passwordError {
+        height: 25px;
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+        font-style: italic;
+        margin-left: 12px;
+        margin-top: 8px;
+    }
+
+    .submit-form-login {
+        width: 98%;
+        height: 60px;
+        margin: auto;
+        font-size: 22px;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 15px;
+        border-radius: 9px;
+        background-color: #bd153c;
+        cursor: pointer;
+    }
 }
 
-.login-input {
-    width: 96%;
-    height: 40px;
-    border-radius: 12px;
-    margin: auto;
-    font-size: 22px;
-    background-color: rgb(231, 225, 225);
-    cursor: pointer;
-}
+@media (max-width: 767px) {
+    .form-login-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: start;
+        width: 70%;
+        height: 330px;
+        margin: auto;
+        background-color: #c9c1c2;
+        border: 3px solid black;
+        border-radius: 12px;
+    }
 
-.login-input:focus {
-    background-color: white;
-}
+    .login-mail-container, .login-password-container {
+        display: flex;
+        flex-direction: column;  
+    }
 
-.login-input:hover {
-    border-color: #fd2d01;
-}
+    .login-label {
+        display: flex;
+        text-align: start;
+        align-items: flex-end;
+        margin-left: 15px;
+        height: 40px;
+        font-size: 23px;
+    }
 
-.login-emailError, .login-passwordError {
-    height: 25px;
-    font-size: 18px;
-    font-weight: bold;
-    color: red;
-    font-style: italic;
-    margin-left: 12px;
-    margin-top: 8px;
-}
+    .login-input {
+        width: 96%;
+        height: 40px;
+        border-radius: 12px;
+        margin: auto;
+        font-size: 22px;
+        background-color: rgb(231, 225, 225);
+        cursor: pointer;
+    }
 
-.submit-form-login {
-    width: 98%;
-    height: 60px;
-    margin: auto;
-    font-size: 22px;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 15px;
-    border-radius: 9px;
-    background-color: #bd153c;
-    cursor: pointer;
+    .login-input:focus {
+        background-color: white;
+    }
+
+    .login-input:hover {
+        border-color: #fd2d01;
+    }
+
+    .login-emailError, .login-passwordError {
+        height: 25px;
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+        font-style: italic;
+        margin-left: 12px;
+        margin-top: 8px;
+    }
+
+    .submit-form-login {
+        width: 98%;
+        height: 60px;
+        margin: auto;
+        font-size: 22px;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 15px;
+        border-radius: 9px;
+        background-color: #bd153c;
+        cursor: pointer;
+    }
 }

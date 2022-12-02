@@ -5,7 +5,6 @@ import "../../style/Profile/UpdateProfile.css";
 import { dateParser } from "../../utils/date";
 import { isEmpty } from "../../utils/Empty";
 import FollowPopup from "../FollowPopup/FollowPopup";
-import FollowHandler from "./FollowHandler";
 import UploadImg from "./UploadImg";
 
 const UpdateProfile = () => {

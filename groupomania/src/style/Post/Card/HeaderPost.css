@@ -1,46 +1,207 @@
-.card-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+   .card-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+   }
+
+   .card-header-block-identifier {
+      display: flex;          
+      flex-direction: row;
+      justify-content: flex-start;
+   }
+   
+   #card-header-user-picture {
+      width: 80px;
+      height: 80px;
+      border: 2px solid black;
+      border-radius: 12px;
+      margin: 10px 0 0 10px;
+   
+   }
+
+   .postComments-header-post-pseudo-follow-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+   }
+
+   .card-header-post-userName {
+      font-size: 22px;
+      font-weight: 700;
+      text-decoration: underline;
+      margin: 10px 0 0 15px;
+      padding-bottom: -15px;
+      border: 0px solid black;
+   }
+
+   .card-header-follow-handler {
+      width: 25px;
+      height: 25px;
+   }
+
+   .card-header-post-date{
+      font-size: 20px;
+      text-align: end;
+      margin: 15px 15px 0 0;
+   }
 }
 
-.card-header-block-identifier {
-    display: flex;          
-    flex-direction: row;
-    justify-content: flex-start;
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+   .card-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+   }
+
+   .card-header-block-identifier {
+      display: flex;          
+      flex-direction: row;
+      justify-content: flex-start;
+   }
+   
+   #card-header-user-picture {
+      width: 80px;
+      height: 80px;
+      border: 2px solid black;
+      border-radius: 12px;
+      margin: 10px 0 0 10px;
+   
+   }
+
+   .postComments-header-post-pseudo-follow-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+   }
+
+   .card-header-post-userName {
+      font-size: 22px;
+      font-weight: 700;
+      text-decoration: underline;
+      margin: 10px 0 0 15px;
+      padding-bottom: -15px;
+      border: 0px solid black;
+   }
+
+   .card-header-follow-handler {
+      width: 25px;
+      height: 25px;
+   }
+
+   .card-header-post-date{
+      font-size: 20px;
+      text-align: end;
+      margin: 15px 15px 0 0;
+   }
 }
- 
-#card-header-user-picture {
-     width: 80px;
-     height: 80px;
-     border: 2px solid black;
-     border-radius: 12px;
-     margin: 10px 0 0 10px;
- 
- }
 
- .postComments-header-post-pseudo-follow-block {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
- }
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+   .card-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+   }
 
- .card-header-post-userName {
-    font-size: 22px;
-    font-weight: 700;
-    text-decoration: underline;
-    margin: 10px 0 0 15px;
-    padding-bottom: -15px;
-    border: 0px solid black;
- }
+   .card-header-block-identifier {
+      display: flex;          
+      flex-direction: row;
+      justify-content: flex-start;
+   }
+   
+   #card-header-user-picture {
+      width: 80px;
+      height: 80px;
+      border: 2px solid black;
+      border-radius: 12px;
+      margin: 10px 0 0 10px;
+   
+   }
 
- .card-header-follow-handler {
-    width: 25px;
-    height: 25px;
- }
+   .postComments-header-post-pseudo-follow-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+   }
 
- .card-header-post-date{
-    font-size: 20px;
-    text-align: end;
-    margin: 15px 15px 0 0;
- }
+   .card-header-post-userName {
+      font-size: 22px;
+      font-weight: 700;
+      text-decoration: underline;
+      margin: 10px 0 0 15px;
+      padding-bottom: -15px;
+      border: 0px solid black;
+   }
+
+   .card-header-follow-handler {
+      width: 25px;
+      height: 25px;
+   }
+
+   .card-header-post-date{
+      font-size: 20px;
+      text-align: end;
+      margin: 15px 15px 0 0;
+   }
+}
+
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+   .card-header {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+   }
+
+   .card-header-block-identifier {
+      display: flex;          
+      flex-direction: row;
+      justify-content: flex-start;
+   }
+   
+   #card-header-user-picture {
+      width: 80px;
+      height: 80px;
+      border: 2px solid black;
+      border-radius: 12px;
+      margin: 10px 0 0 10px;
+   
+   }
+
+   .postComments-header-post-pseudo-follow-block {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+   }
+
+   .card-header-post-userName {
+      font-size: 22px;
+      font-weight: 700;
+      text-decoration: underline;
+      margin: 10px 0 0 15px;
+      padding-bottom: -15px;
+      border: 0px solid black;
+   }
+
+   .card-header-follow-handler {
+      width: 25px;
+      height: 25px;
+   }
+
+   .card-header-post-date{
+      font-size: 20px;
+      text-align: end;
+      margin: 15px 15px 0 0;
+   }
+}

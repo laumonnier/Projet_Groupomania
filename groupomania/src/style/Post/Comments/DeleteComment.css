@@ -1,11 +1,67 @@
-.delete-comment-container {
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+    .delete-comment-container {
+    }
+
+    #delete-comment-icon {
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        position: absolute;
+        top: -30px;
+        right: 0;
+    }
 }
 
-#delete-comment-icon {
-    width: 26px;
-    height: 26px;
-    cursor: pointer;
-    position: absolute;
-    top: -30px;
-    right: 0;
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+    .delete-comment-container {
+    }
+
+    #delete-comment-icon {
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        position: absolute;
+        top: -30px;
+        right: 0;
+    }
+}
+
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+    .delete-comment-container {
+    }
+
+    #delete-comment-icon {
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        position: absolute;
+        top: -30px;
+        right: 0;
+    }
+}
+
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+    .delete-comment-container {
+    }
+
+    #delete-comment-icon {
+        width: 26px;
+        height: 26px;
+        cursor: pointer;
+        position: absolute;
+        top: -30px;
+        right: 0;
+    }
 }

@@ -1,77 +1,331 @@
-#form-subscribe-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: start;
-    margin: auto;
-    width: 70%;
-    height: 550px;
-    padding-top: 15px;
-    background-color: #c9c1c2;
-    border: 3px solid black;
-    border-radius: 12px;
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+    #form-subscribe-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: start;
+        margin: auto;
+        width: 70%;
+        height: 550px;
+        padding-top: 15px;
+        background-color: #c9c1c2;
+        border: 3px solid black;
+        border-radius: 12px;
+    }
+
+    .success {
+        height: 30px;
+        font-size: 26px;
+        font-weight: bold;
+        color: black;
+        font-style: italic;
+        margin: auto;
+        margin-top: 8px;
+    }
+
+    .suscribe-pseudo-container, .suscribe-mail-container, .suscribe-password-container, .suscribe-ctrlPswrd-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .subscribe-label {
+        display: flex;
+        text-align: start;
+        align-items: flex-end;
+        margin-left: 15px;
+        height: 28px;
+        font-size: 23px;
+    }
+
+    .subscribe-input {
+        width: 96%;
+        height: 40px;
+        border-radius: 12px;
+        margin: auto;
+        background-color: rgb(231, 225, 225);
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .subscribe-input:focus{
+        background-color: white;
+    }
+
+    .subscribe-input:hover {    
+        border-color: #fd2d01;
+    }
+
+    .pseudoError, .emailError, .passwordError, .controlPasswordError {
+        height: 25px;
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+        font-style: italic;
+        margin: 8px 0 0 12px;
+    }
+
+    .submit-subscribe {
+        width: 98%;
+        height: 60px;
+        margin: auto;
+        font-size: 22px;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 15px;
+        border-radius: 9px;
+        background-color: #bd153c;
+        cursor: pointer;
+    }
 }
 
-.success {
-    height: 30px;
-    font-size: 26px;
-    font-weight: bold;
-    color: black;
-    font-style: italic;
-    margin: auto;
-    margin-top: 8px;
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+    #form-subscribe-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: start;
+        margin: auto;
+        width: 70%;
+        height: 550px;
+        padding-top: 15px;
+        background-color: #c9c1c2;
+        border: 3px solid black;
+        border-radius: 12px;
+    }
+
+    .success {
+        height: 30px;
+        font-size: 26px;
+        font-weight: bold;
+        color: black;
+        font-style: italic;
+        margin: auto;
+        margin-top: 8px;
+    }
+
+    .suscribe-pseudo-container, .suscribe-mail-container, .suscribe-password-container, .suscribe-ctrlPswrd-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .subscribe-label {
+        display: flex;
+        text-align: start;
+        align-items: flex-end;
+        margin-left: 15px;
+        height: 28px;
+        font-size: 23px;
+    }
+
+    .subscribe-input {
+        width: 96%;
+        height: 40px;
+        border-radius: 12px;
+        margin: auto;
+        background-color: rgb(231, 225, 225);
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .subscribe-input:focus{
+        background-color: white;
+    }
+
+    .subscribe-input:hover {    
+        border-color: #fd2d01;
+    }
+
+    .pseudoError, .emailError, .passwordError, .controlPasswordError {
+        height: 25px;
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+        font-style: italic;
+        margin: 8px 0 0 12px;
+    }
+
+    .submit-subscribe {
+        width: 98%;
+        height: 60px;
+        margin: auto;
+        font-size: 22px;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 15px;
+        border-radius: 9px;
+        background-color: #bd153c;
+        cursor: pointer;
+    }
 }
 
-.suscribe-pseudo-container, .suscribe-mail-container, .suscribe-password-container, .suscribe-ctrlPswrd-container {
-    display: flex;
-    flex-direction: column;
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+    #form-subscribe-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: start;
+        margin: auto;
+        width: 70%;
+        height: 550px;
+        padding-top: 15px;
+        background-color: #c9c1c2;
+        border: 3px solid black;
+        border-radius: 12px;
+    }
+
+    .success {
+        height: 30px;
+        font-size: 26px;
+        font-weight: bold;
+        color: black;
+        font-style: italic;
+        margin: auto;
+        margin-top: 8px;
+    }
+
+    .suscribe-pseudo-container, .suscribe-mail-container, .suscribe-password-container, .suscribe-ctrlPswrd-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .subscribe-label {
+        display: flex;
+        text-align: start;
+        align-items: flex-end;
+        margin-left: 15px;
+        height: 28px;
+        font-size: 23px;
+    }
+
+    .subscribe-input {
+        width: 96%;
+        height: 40px;
+        border-radius: 12px;
+        margin: auto;
+        background-color: rgb(231, 225, 225);
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .subscribe-input:focus{
+        background-color: white;
+    }
+
+    .subscribe-input:hover {    
+        border-color: #fd2d01;
+    }
+
+    .pseudoError, .emailError, .passwordError, .controlPasswordError {
+        height: 25px;
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+        font-style: italic;
+        margin: 8px 0 0 12px;
+    }
+
+    .submit-subscribe {
+        width: 98%;
+        height: 60px;
+        margin: auto;
+        font-size: 22px;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 15px;
+        border-radius: 9px;
+        background-color: #bd153c;
+        cursor: pointer;
+    }
 }
 
-.subscribe-label {
-    display: flex;
-    text-align: start;
-    align-items: flex-end;
-    margin-left: 15px;
-    height: 28px;
-    font-size: 23px;
-}
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+    #form-subscribe-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: start;
+        margin: auto;
+        width: 70%;
+        height: 550px;
+        padding-top: 15px;
+        background-color: #c9c1c2;
+        border: 3px solid black;
+        border-radius: 12px;
+    }
 
-.subscribe-input {
-    width: 96%;
-    height: 40px;
-    border-radius: 12px;
-    margin: auto;
-    background-color: rgb(231, 225, 225);
-    font-size: 22px;
-    cursor: pointer;
-}
+    .success {
+        height: 30px;
+        font-size: 26px;
+        font-weight: bold;
+        color: black;
+        font-style: italic;
+        margin: auto;
+        margin-top: 8px;
+    }
 
-.subscribe-input:focus{
-    background-color: white;
-}
+    .suscribe-pseudo-container, .suscribe-mail-container, .suscribe-password-container, .suscribe-ctrlPswrd-container {
+        display: flex;
+        flex-direction: column;
+    }
 
-.subscribe-input:hover {    
-    border-color: #fd2d01;
-}
+    .subscribe-label {
+        display: flex;
+        text-align: start;
+        align-items: flex-end;
+        margin-left: 15px;
+        height: 28px;
+        font-size: 23px;
+    }
 
-.pseudoError, .emailError, .passwordError, .controlPasswordError {
-    height: 25px;
-    font-size: 18px;
-    font-weight: bold;
-    color: red;
-    font-style: italic;
-    margin: 8px 0 0 12px;
-}
+    .subscribe-input {
+        width: 96%;
+        height: 40px;
+        border-radius: 12px;
+        margin: auto;
+        background-color: rgb(231, 225, 225);
+        font-size: 22px;
+        cursor: pointer;
+    }
 
-.submit-subscribe {
-    width: 98%;
-    height: 60px;
-    margin: auto;
-    font-size: 22px;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 15px;
-    border-radius: 9px;
-    background-color: #bd153c;
-    cursor: pointer;
+    .subscribe-input:focus{
+        background-color: white;
+    }
+
+    .subscribe-input:hover {    
+        border-color: #fd2d01;
+    }
+
+    .pseudoError, .emailError, .passwordError, .controlPasswordError {
+        height: 25px;
+        font-size: 18px;
+        font-weight: bold;
+        color: red;
+        font-style: italic;
+        margin: 8px 0 0 12px;
+    }
+
+    .submit-subscribe {
+        width: 98%;
+        height: 60px;
+        margin: auto;
+        font-size: 22px;
+        font-weight: bold;
+        color: white;
+        margin-bottom: 15px;
+        border-radius: 9px;
+        background-color: #bd153c;
+        cursor: pointer;
+    }
 }

@@ -1,54 +1,230 @@
-.button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: auto;
-    margin-top: -340px;
-    width: 71%;
-    padding-left: 10px;
-    border: 2px solid black;
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+        margin-top: -340px;
+        width: 71%;
+        padding-left: 10px;
+        border: 2px solid black;
+    }
+
+    #login {
+        width: 49%;
+        height: 60px;
+        font-size: 20px;
+        border-radius: 9px;
+        margin-bottom: 7px;
+        border: 2px solid black;
+    }
+    #subscribe {
+        width: 49%;
+        height: 60px;
+        font-size: 20px;
+        border-radius: 9px;
+        margin-bottom: 7px;
+        border: 2px solid black;
+    }
+    #login:active, #subscribe:active {
+        cursor: pointer;
+        background-color: #bd153c;
+    }
+
+    .choiceModal {
+        background-color: #bd153c;
+    }
+
+
+    .profile-container {
+        margin: auto;
+        margin-top: -250px;
+        border: 5px solid red;
+    }
+
+    .modal-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: start;
+        margin: auto;
+        width: 100%;
+        margin-top: 0px;
+        border: 0px solid rgb(235, 11, 11);
+        border-radius: 12px;
+    }
 }
 
-#login {
-    width: 49%;
-    height: 60px;
-    font-size: 20px;
-    border-radius: 9px;
-    margin-bottom: 7px;
-    border: 2px solid black;
-}
-#subscribe {
-    width: 49%;
-    height: 60px;
-    font-size: 20px;
-    border-radius: 9px;
-    margin-bottom: 7px;
-    border: 2px solid black;
-}
-#login:active, #subscribe:active {
-    cursor: pointer;
-    background-color: #bd153c;
+@media (max-width: 767px) {
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+        margin-top: -340px;
+        width: 71%;
+        padding-left: 10px;
+        border: 2px solid black;
+    }
+
+    #login {
+        width: 49%;
+        height: 60px;
+        font-size: 20px;
+        border-radius: 9px;
+        margin-bottom: 7px;
+        border: 2px solid black;
+    }
+    #subscribe {
+        width: 49%;
+        height: 60px;
+        font-size: 20px;
+        border-radius: 9px;
+        margin-bottom: 7px;
+        border: 2px solid black;
+    }
+    #login:active, #subscribe:active {
+        cursor: pointer;
+        background-color: #bd153c;
+    }
+
+    .choiceModal {
+        background-color: #bd153c;
+    }
+
+
+    .profile-container {
+        margin: auto;
+        margin-top: -250px;
+        border: 5px solid red;
+    }
+
+    .modal-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: start;
+        margin: auto;
+        width: 100%;
+        margin-top: 0px;
+        border: 0px solid rgb(235, 11, 11);
+        border-radius: 12px;
+    }
 }
 
-.choiceModal {
-    background-color: #bd153c;
+@media (max-width: 767px) {
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+        margin-top: -340px;
+        width: 71%;
+        padding-left: 10px;
+        border: 2px solid black;
+    }
+
+    #login {
+        width: 49%;
+        height: 60px;
+        font-size: 20px;
+        border-radius: 9px;
+        margin-bottom: 7px;
+        border: 2px solid black;
+    }
+    #subscribe {
+        width: 49%;
+        height: 60px;
+        font-size: 20px;
+        border-radius: 9px;
+        margin-bottom: 7px;
+        border: 2px solid black;
+    }
+    #login:active, #subscribe:active {
+        cursor: pointer;
+        background-color: #bd153c;
+    }
+
+    .choiceModal {
+        background-color: #bd153c;
+    }
+
+
+    .profile-container {
+        margin: auto;
+        margin-top: -250px;
+        border: 5px solid red;
+    }
+
+    .modal-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: start;
+        margin: auto;
+        width: 100%;
+        margin-top: 0px;
+        border: 0px solid rgb(235, 11, 11);
+        border-radius: 12px;
+    }
 }
 
+@media (max-width: 767px) {
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+        margin-top: -340px;
+        width: 71%;
+        padding-left: 10px;
+        border: 2px solid black;
+    }
 
-.profile-container {
-    margin: auto;
-    margin-top: -250px;
-    border: 5px solid red;
-}
+    #login {
+        width: 49%;
+        height: 60px;
+        font-size: 20px;
+        border-radius: 9px;
+        margin-bottom: 7px;
+        border: 2px solid black;
+    }
+    #subscribe {
+        width: 49%;
+        height: 60px;
+        font-size: 20px;
+        border-radius: 9px;
+        margin-bottom: 7px;
+        border: 2px solid black;
+    }
+    #login:active, #subscribe:active {
+        cursor: pointer;
+        background-color: #bd153c;
+    }
 
-.modal-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: start;
-    margin: auto;
-    width: 100%;
-    margin-top: 0px;
-    border: 0px solid rgb(235, 11, 11);
-    border-radius: 12px;
+    .choiceModal {
+        background-color: #bd153c;
+    }
+
+
+    .profile-container {
+        margin: auto;
+        margin-top: -250px;
+        border: 5px solid red;
+    }
+
+    .modal-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: start;
+        margin: auto;
+        width: 100%;
+        margin-top: 0px;
+        border: 0px solid rgb(235, 11, 11);
+        border-radius: 12px;
+    }
 }

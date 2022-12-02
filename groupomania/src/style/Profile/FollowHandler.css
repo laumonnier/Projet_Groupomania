@@ -1,47 +1,251 @@
-.following-unfollow {
-    
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+    .following-unfollow {
+        font-size: 20px;
+        font-weight: 600;
+        width: 150px;
+        height: 50px;
+        border-radius: 15px;
+        background: linear-gradient(0deg,rgb(68, 206, 60), rgb(181, 237, 178), rgb(68, 206, 60));
+    }
+
+    .following-follow {
+        font-size: 20px;
+        font-weight: 600;
+        width: 150px;
+        height: 50px;
+        border-radius: 15px;
+        background: linear-gradient(0deg,#f48f92,#f5390f, #f48f92);
+    }
+
+    .following-follow-card-unfollow {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 12px;
+        background-color: rgb(247, 155, 155);
+        font-size: 20px;
+        font-weight: 570;
+        width:120px;
+        height: 38px;
+        border: 2px solid black;
+        border-radius: 12px;
+    }
+
+    .following-follow-card-following {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 12px;
+        background-color: white;
+        font-size: 20px;
+        font-weight: 570;
+        width:120px;
+        height: 38px;
+        border: 2px solid black;
+        border-radius: 12px;
+    }
+
+    .following-follow-card-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .following-unfollow-card-icon {
+        width: 35px;
+        height: 35px;
+    }
 }
 
-.following-follow {
-    
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+    .following-unfollow {
+        font-size: 20px;
+        font-weight: 600;
+        width: 150px;
+        height: 50px;
+        border-radius: 15px;
+        background: linear-gradient(0deg,rgb(68, 206, 60), rgb(181, 237, 178), rgb(68, 206, 60));
+    }
+
+    .following-follow {
+        font-size: 20px;
+        font-weight: 600;
+        width: 150px;
+        height: 50px;
+        border-radius: 15px;
+        background: linear-gradient(0deg,#f48f92,#f5390f, #f48f92);
+    }
+
+    .following-follow-card-unfollow {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 12px;
+        background-color: rgb(247, 155, 155);
+        font-size: 20px;
+        font-weight: 570;
+        width:120px;
+        height: 38px;
+        border: 2px solid black;
+        border-radius: 12px;
+    }
+
+    .following-follow-card-following {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 12px;
+        background-color: white;
+        font-size: 20px;
+        font-weight: 570;
+        width:120px;
+        height: 38px;
+        border: 2px solid black;
+        border-radius: 12px;
+    }
+
+    .following-follow-card-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .following-unfollow-card-icon {
+        width: 35px;
+        height: 35px;
+    }
 }
 
-.following-follow-card-unfollow {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 12px;
-    background-color: rgb(247, 155, 155);
-    font-size: 20px;
-    font-weight: 570;
-    width:120px;
-    height: 38px;
-    border: 2px solid black;
-    border-radius: 12px;
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+    .following-unfollow {
+        font-size: 20px;
+        font-weight: 600;
+        width: 150px;
+        height: 50px;
+        border-radius: 15px;
+        background: linear-gradient(0deg,rgb(68, 206, 60), rgb(181, 237, 178), rgb(68, 206, 60));
+    }
+
+    .following-follow {
+        font-size: 20px;
+        font-weight: 600;
+        width: 150px;
+        height: 50px;
+        border-radius: 15px;
+        background: linear-gradient(0deg,#f48f92,#f5390f, #f48f92);
+    }
+
+    .following-follow-card-unfollow {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 12px;
+        background-color: rgb(247, 155, 155);
+        font-size: 20px;
+        font-weight: 570;
+        width:120px;
+        height: 38px;
+        border: 2px solid black;
+        border-radius: 12px;
+    }
+
+    .following-follow-card-following {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 12px;
+        background-color: white;
+        font-size: 20px;
+        font-weight: 570;
+        width:120px;
+        height: 38px;
+        border: 2px solid black;
+        border-radius: 12px;
+    }
+
+    .following-follow-card-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .following-unfollow-card-icon {
+        width: 35px;
+        height: 35px;
+    }
 }
 
-.following-follow-card-following {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 12px;
-    background-color: white;
-    font-size: 20px;
-    font-weight: 570;
-    width:120px;
-    height: 38px;
-    border: 2px solid black;
-    border-radius: 12px;
-}
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+    .following-unfollow {
+        font-size: 20px;
+        font-weight: 600;
+        width: 150px;
+        height: 50px;
+        border-radius: 15px;
+        background: linear-gradient(0deg,rgb(68, 206, 60), rgb(181, 237, 178), rgb(68, 206, 60));
+    }
 
-.following-follow-card-icon {
-    width: 35px;
-    height: 35px;
-}
+    .following-follow {
+        font-size: 20px;
+        font-weight: 600;
+        width: 150px;
+        height: 50px;
+        border-radius: 15px;
+        background: linear-gradient(0deg,#f48f92,#f5390f, #f48f92);
+    }
 
-.following-unfollow-card-icon {
-    width: 35px;
-    height: 35px;
+    .following-follow-card-unfollow {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 12px;
+        background-color: rgb(247, 155, 155);
+        font-size: 20px;
+        font-weight: 570;
+        width:120px;
+        height: 38px;
+        border: 2px solid black;
+        border-radius: 12px;
+    }
+
+    .following-follow-card-following {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 12px;
+        background-color: white;
+        font-size: 20px;
+        font-weight: 570;
+        width:120px;
+        height: 38px;
+        border: 2px solid black;
+        border-radius: 12px;
+    }
+
+    .following-follow-card-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .following-unfollow-card-icon {
+        width: 35px;
+        height: 35px;
+    }
 }

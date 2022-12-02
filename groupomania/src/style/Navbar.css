@@ -1,128 +1,529 @@
-.navbar-container {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 100px;
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+    .navbar-container {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 100px;
+    }
+
+    .nav-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+        border: 4px ridge black;
+        border-radius: 14px;
+        position: fixed;
+        width: 98%;
+        z-index: 6;
+    }
+
+    .home-block {
+        height: 100px;
+        width : 178px;
+        border: 0px solid red; 
+    }
+
+    #groupomania-logo {
+        height: 100px;
+        width : 178px;
+        margin-left: 10px;
+    }
+
+    #home-link {
+        height: 100px;
+        width : 178px;
+        border: 2px solid red;
+    }
+
+    #followers-link {
+        height: 100px;
+        width : 178px;
+        border: 3px solid yellow;
+    }
+
+    #home-logo {
+        height: 50px;
+        width : 50px;
+        margin-top : 20px; 
+        margin-right: 22px; 
+        border: 0px solid black;
+    }
+
+    #home-logo:active {
+        height: 50px;
+        width : 50px;
+        margin-top : 20px; 
+        margin-right: 22px; 
+        background-color: #bd153c;
+    }
+
+    #followers-logo {
+        height: 71px;
+        width : 71px;
+        margin-top : 10px; 
+        margin-right: 12px; 
+        border: 0px solid black;
+    }
+
+    #followers-logo:active {
+        height: 71px;
+        width : 71px;
+        margin-top : 10px; 
+        margin-right: 12px; 
+        background-color: #bd153c;
+    }
+
+    #profile-logo {
+        height: 50px;
+        width : 50px;
+        margin-top : 20px;  
+        border: 0px solid black;
+    }
+
+    #profile-logo:active {
+        height: 50px;
+        width : 50px;
+        margin-top : 20px;  
+        background-color: #bd153c;
+    }
+
+    #profile-link {
+        height: 100px;
+        width : 178px;
+        border: 3px solid black;
+    }
+
+    #profile-block {
+        font-size: 25px;
+        margin-top: -25px;
+    }
+
+    .log-block {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin: auto;
+        border: 3px solid blue;
+    }
+
+    .nav-block {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    #welcome-profile {
+        margin: auto;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    #logo-login {
+        height: 80px;
+        width : 80px;
+        margin-top: 10px; 
+        border: 0px solid black;
+    }
 }
 
-.nav-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: white;
-    border: 4px ridge black;
-    border-radius: 14px;
-    position: fixed;
-    width: 98%;
-    z-index: 6;
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+    .navbar-container {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 100px;
+    }
+
+    .nav-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+        border: 4px ridge black;
+        border-radius: 14px;
+        position: fixed;
+        width: 98%;
+        z-index: 6;
+    }
+
+    .home-block {
+        height: 100px;
+        width : 178px;
+        border: 0px solid red; 
+    }
+
+    #groupomania-logo {
+        height: 100px;
+        width : 178px;
+        margin-left: 10px;
+    }
+
+    #home-link {
+        height: 100px;
+        width : 178px;
+        border: 2px solid red;
+    }
+
+    #followers-link {
+        height: 100px;
+        width : 178px;
+        border: 3px solid yellow;
+    }
+
+    #home-logo {
+        height: 50px;
+        width : 50px;
+        margin-top : 20px; 
+        margin-right: 22px; 
+        border: 0px solid black;
+    }
+
+    #home-logo:active {
+        height: 50px;
+        width : 50px;
+        margin-top : 20px; 
+        margin-right: 22px; 
+        background-color: #bd153c;
+    }
+
+    #followers-logo {
+        height: 71px;
+        width : 71px;
+        margin-top : 10px; 
+        margin-right: 12px; 
+        border: 0px solid black;
+    }
+
+    #followers-logo:active {
+        height: 71px;
+        width : 71px;
+        margin-top : 10px; 
+        margin-right: 12px; 
+        background-color: #bd153c;
+    }
+
+    #profile-logo {
+        height: 50px;
+        width : 50px;
+        margin-top : 20px;  
+        border: 0px solid black;
+    }
+
+    #profile-logo:active {
+        height: 50px;
+        width : 50px;
+        margin-top : 20px;  
+        background-color: #bd153c;
+    }
+
+    #profile-link {
+        height: 100px;
+        width : 178px;
+        border: 3px solid black;
+    }
+
+    #profile-block {
+        font-size: 25px;
+        margin-top: -25px;
+    }
+
+    .log-block {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin: auto;
+        border: 3px solid blue;
+    }
+
+    .nav-block {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    #welcome-profile {
+        margin: auto;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    #logo-login {
+        height: 80px;
+        width : 80px;
+        margin-top: 10px; 
+        border: 0px solid black;
+    }
 }
 
-.home-block {
-    height: 100px;
-    width : 178px;
-    border: 0px solid red; 
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+    .navbar-container {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 100px;
+    }
+
+    .nav-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+        border: 4px ridge black;
+        border-radius: 14px;
+        position: fixed;
+        width: 98%;
+        z-index: 6;
+    }
+
+    .home-block {
+        height: 100px;
+        width : 178px;
+        border: 0px solid red; 
+    }
+
+    #groupomania-logo {
+        height: 100px;
+        width : 178px;
+        margin-left: 10px;
+    }
+
+    #home-link {
+        height: 100px;
+        width : 178px;
+        border: 2px solid red;
+    }
+
+    #followers-link {
+        height: 100px;
+        width : 178px;
+        border: 3px solid yellow;
+    }
+
+    #home-logo {
+        height: 50px;
+        width : 50px;
+        margin-top : 20px; 
+        margin-right: 22px; 
+        border: 0px solid black;
+    }
+
+    #home-logo:active {
+        height: 50px;
+        width : 50px;
+        margin-top : 20px; 
+        margin-right: 22px; 
+        background-color: #bd153c;
+    }
+
+    #followers-logo {
+        height: 71px;
+        width : 71px;
+        margin-top : 10px; 
+        margin-right: 12px; 
+        border: 0px solid black;
+    }
+
+    #followers-logo:active {
+        height: 71px;
+        width : 71px;
+        margin-top : 10px; 
+        margin-right: 12px; 
+        background-color: #bd153c;
+    }
+
+    #profile-logo {
+        height: 50px;
+        width : 50px;
+        margin-top : 20px;  
+        border: 0px solid black;
+    }
+
+    #profile-logo:active {
+        height: 50px;
+        width : 50px;
+        margin-top : 20px;  
+        background-color: #bd153c;
+    }
+
+    #profile-link {
+        height: 100px;
+        width : 178px;
+        border: 3px solid black;
+    }
+
+    #profile-block {
+        font-size: 25px;
+        margin-top: -25px;
+    }
+
+    .log-block {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin: auto;
+        border: 3px solid blue;
+    }
+
+    .nav-block {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    #welcome-profile {
+        margin: auto;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    #logo-login {
+        height: 80px;
+        width : 80px;
+        margin-top: 10px; 
+        border: 0px solid black;
+    }
 }
 
-#groupomania-logo {
-    height: 100px;
-    width : 178px;
-    margin-left: 10px;
-}
+@media (min-width:768px) and (max-width:991px)
+@media (min-width:992px) and (max-width:1200px)
+@media screen and (min-width: 1201px)
+@media (max-width: 767px) {
+    .navbar-container {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 100px;
+    }
 
-#home-link {
-    height: 100px;
-    width : 178px;
-    border: 2px solid red;
-}
+    .nav-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+        border: 4px ridge black;
+        border-radius: 14px;
+        position: fixed;
+        width: 98%;
+        z-index: 6;
+    }
 
-#followers-link {
-    height: 100px;
-    width : 178px;
-    border: 3px solid yellow;
-}
+    .home-block {
+        height: 100px;
+        width : 178px;
+        border: 0px solid red; 
+    }
 
-#home-logo {
-    height: 50px;
-    width : 50px;
-    margin-top : 20px; 
-    margin-right: 22px; 
-    border: 0px solid black;
-}
+    #groupomania-logo {
+        height: 100px;
+        width : 178px;
+        margin-left: 10px;
+    }
 
-#home-logo:active {
-    height: 50px;
-    width : 50px;
-    margin-top : 20px; 
-    margin-right: 22px; 
-    background-color: #bd153c;
-}
+    #home-link {
+        height: 100px;
+        width : 178px;
+        border: 2px solid red;
+    }
 
-#followers-logo {
-    height: 71px;
-    width : 71px;
-    margin-top : 10px; 
-    margin-right: 12px; 
-    border: 0px solid black;
-}
+    #followers-link {
+        height: 100px;
+        width : 178px;
+        border: 3px solid yellow;
+    }
 
-#followers-logo:active {
-    height: 71px;
-    width : 71px;
-    margin-top : 10px; 
-    margin-right: 12px; 
-    background-color: #bd153c;
-}
+    #home-logo {
+        height: 50px;
+        width : 50px;
+        margin-top : 20px; 
+        margin-right: 22px; 
+        border: 0px solid black;
+    }
 
-#profile-logo {
-    height: 50px;
-    width : 50px;
-    margin-top : 20px;  
-    border: 0px solid black;
-}
+    #home-logo:active {
+        height: 50px;
+        width : 50px;
+        margin-top : 20px; 
+        margin-right: 22px; 
+        background-color: #bd153c;
+    }
 
-#profile-logo:active {
-    height: 50px;
-    width : 50px;
-    margin-top : 20px;  
-    background-color: #bd153c;
-}
+    #followers-logo {
+        height: 71px;
+        width : 71px;
+        margin-top : 10px; 
+        margin-right: 12px; 
+        border: 0px solid black;
+    }
 
-#profile-link {
-    height: 100px;
-    width : 178px;
-    border: 3px solid black;
-}
+    #followers-logo:active {
+        height: 71px;
+        width : 71px;
+        margin-top : 10px; 
+        margin-right: 12px; 
+        background-color: #bd153c;
+    }
 
-#profile-block {
-    font-size: 25px;
-    margin-top: -25px;
-}
+    #profile-logo {
+        height: 50px;
+        width : 50px;
+        margin-top : 20px;  
+        border: 0px solid black;
+    }
 
-.log-block {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin: auto;
-    border: 3px solid blue;
-}
+    #profile-logo:active {
+        height: 50px;
+        width : 50px;
+        margin-top : 20px;  
+        background-color: #bd153c;
+    }
 
-.nav-block {
-    display: flex;
-    flex-direction: row;
+    #profile-link {
+        height: 100px;
+        width : 178px;
+        border: 3px solid black;
+    }
 
-}
+    #profile-block {
+        font-size: 25px;
+        margin-top: -25px;
+    }
 
-#welcome-profile {
-    margin: auto;
-    font-size: 25px;
-    font-weight: bold;
-    text-align: center;
-}
+    .log-block {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin: auto;
+        border: 3px solid blue;
+    }
 
-#logo-login {
-    height: 80px;
-    width : 80px;
-    margin-top: 10px; 
-    border: 0px solid black;
+    .nav-block {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    #welcome-profile {
+        margin: auto;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    #logo-login {
+        height: 80px;
+        width : 80px;
+        margin-top: 10px; 
+        border: 0px solid black;
+    }
 }
 
 
