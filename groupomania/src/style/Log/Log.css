@@ -7,24 +7,25 @@
         margin-top: -340px;
         width: 71%;
         padding-left: 10px;
-        border: 2px solid black;
     }
 
     #login {
         width: 49%;
         height: 60px;
-        font-size: 20px;
+        font-size: 21px;
+        font-weight: 700;
         border-radius: 9px;
         margin-bottom: 7px;
-        border: 2px solid black;
+        border: 3px ridge black;
     }
     #subscribe {
         width: 49%;
         height: 60px;
-        font-size: 20px;
+        font-size: 21px;
+        font-weight: 700;
         border-radius: 9px;
         margin-bottom: 7px;
-        border: 2px solid black;
+        border: 3px ridge black;
     }
     #login:active, #subscribe:active {
         cursor: pointer;
@@ -39,7 +40,6 @@
     .profile-container {
         margin: auto;
         margin-top: -250px;
-        border: 5px solid red;
     }
 
     .modal-container {
@@ -50,7 +50,6 @@
         margin: auto;
         width: 100%;
         margin-top: 0px;
-        border: 0px solid rgb(235, 11, 11);
         border-radius: 12px;
     }
 }
@@ -64,24 +63,25 @@
         margin-top: -340px;
         width: 71%;
         padding-left: 10px;
-        border: 2px solid black;
     }
 
     #login {
         width: 49%;
         height: 60px;
-        font-size: 20px;
+        font-size: 22px;
+        font-weight: 700;
         border-radius: 9px;
         margin-bottom: 7px;
-        border: 2px solid black;
+        border: 3px ridge black;
     }
     #subscribe {
         width: 49%;
         height: 60px;
-        font-size: 20px;
+        font-size: 22px;
+        font-weight: 700;
         border-radius: 9px;
         margin-bottom: 7px;
-        border: 2px solid black;
+        border: 3px ridge black;
     }
     #login:active, #subscribe:active {
         cursor: pointer;
@@ -96,7 +96,6 @@
     .profile-container {
         margin: auto;
         margin-top: -250px;
-        border: 5px solid red;
     }
 
     .modal-container {
@@ -121,24 +120,25 @@
         margin-top: -340px;
         width: 71%;
         padding-left: 10px;
-        border: 2px solid black;
     }
 
     #login {
         width: 49%;
         height: 60px;
-        font-size: 20px;
+        font-size: 23px;
+        font-weight: 700;
         border-radius: 9px;
         margin-bottom: 7px;
-        border: 2px solid black;
+        border: 3px ridge black;
     }
     #subscribe {
         width: 49%;
         height: 60px;
-        font-size: 20px;
+        font-size: 23px;
+        font-weight: 700;
         border-radius: 9px;
         margin-bottom: 7px;
-        border: 2px solid black;
+        border: 3px ridge black;
     }
     #login:active, #subscribe:active {
         cursor: pointer;
@@ -153,7 +153,6 @@
     .profile-container {
         margin: auto;
         margin-top: -250px;
-        border: 5px solid red;
     }
 
     .modal-container {
@@ -164,7 +163,6 @@
         margin: auto;
         width: 100%;
         margin-top: 0px;
-        border: 0px solid rgb(235, 11, 11);
         border-radius: 12px;
     }
 }
@@ -178,24 +176,25 @@
         margin-top: -340px;
         width: 71%;
         padding-left: 10px;
-        border: 2px solid black;
     }
 
     #login {
         width: 49%;
         height: 60px;
-        font-size: 20px;
+        font-size: 24px;
+        font-weight: 700;
         border-radius: 9px;
         margin-bottom: 7px;
-        border: 2px solid black;
+        border: 3px ridge black;
     }
     #subscribe {
         width: 49%;
         height: 60px;
-        font-size: 20px;
+        font-size: 24px;
+        font-weight: 700;
         border-radius: 9px;
         margin-bottom: 7px;
-        border: 2px solid black;
+        border: 3px ridge black;
     }
     #login:active, #subscribe:active {
         cursor: pointer;
@@ -210,7 +209,6 @@
     .profile-container {
         margin: auto;
         margin-top: -250px;
-        border: 5px solid red;
     }
 
     .modal-container {
@@ -221,7 +219,6 @@
         margin: auto;
         width: 100%;
         margin-top: 0px;
-        border: 0px solid rgb(235, 11, 11);
         border-radius: 12px;
     }
 }

@@ -116,9 +116,10 @@
     }
 
     #logo-login {
-        height: 80px;
-        width : 80px;
-        margin-top: 10px; 
+        height: 45px;
+        width : 45px;
+        margin: 21px 5px 0 0;
+        padding-left: 40px; 
         border: 0px solid black;
     }
 }
@@ -138,6 +139,7 @@
         border: 4px ridge black;
         border-radius: 14px;
         width: 99%;
+        height: 90px;
         z-index: 6;
     }
 
@@ -148,8 +150,8 @@
     }
 
     #groupomania-logo {
-        height: 100px;
-        width : 178px;
+        height: 90px;
+        width : 145px;
         margin-left: 10px;
     }
 
@@ -239,10 +241,10 @@
     }
 
     #logo-login {
-        height: 80px;
-        width : 80px;
-        margin-top: 10px; 
-        border: 0px solid black;
+        height: 60px;
+        width : 60px;
+        margin: 17px 5px 0 0;
+        padding-left: 50px; 
     }
 }
 
@@ -359,10 +361,10 @@
     }
 
     #logo-login {
-        height: 80px;
-        width : 80px;
-        margin-top: 10px; 
-        border: 0px solid black;
+        height: 70px;
+        width : 70px;
+        margin: 13px 5px 0 0;
+        padding-left: 60px; 
     }
 }
 
@@ -484,8 +486,8 @@
     #logo-login {
         height: 80px;
         width : 80px;
-        margin-top: 10px; 
-        border: 0px solid black;
+        margin: 10px 5px 0 0;
+        padding-left: 70px; 
     }
 }
 

@@ -5,8 +5,9 @@
         justify-content: space-between;
         text-align: start;
         width: 70%;
-        height: 330px;
+        height: 280px;
         margin: auto;
+        padding-right: 3px;
         background-color: #c9c1c2;
         border: 3px solid black;
         border-radius: 12px;
@@ -22,16 +23,18 @@
         text-align: start;
         align-items: flex-end;
         margin-left: 15px;
-        height: 40px;
-        font-size: 23px;
+        height: 28px;
+        font-size: 19px;
+        font-weight: 600;
     }
 
     .login-input {
-        width: 96%;
-        height: 40px;
+        width: 94%;
+        height: 32px;
         border-radius: 12px;
         margin: auto;
-        font-size: 22px;
+        padding-left: 10px;
+        font-size: 19px;
         background-color: rgb(231, 225, 225);
         cursor: pointer;
     }
@@ -45,13 +48,12 @@
     }
 
     .login-emailError, .login-passwordError {
-        height: 25px;
-        font-size: 18px;
+        height: 21px;
+        font-size: 14px;
         font-weight: bold;
         color: red;
         font-style: italic;
-        margin-left: 12px;
-        margin-top: 8px;
+        margin: 8px 0 9px 12px;
     }
 
     .submit-form-login {
@@ -75,7 +77,7 @@
         justify-content: space-between;
         text-align: start;
         width: 70%;
-        height: 330px;
+        height: 280px;
         margin: auto;
         background-color: #c9c1c2;
         border: 3px solid black;
@@ -92,16 +94,18 @@
         text-align: start;
         align-items: flex-end;
         margin-left: 15px;
-        height: 40px;
-        font-size: 23px;
+        height: 31px;
+        font-size: 21px;
+        font-weight: 600;
     }
 
     .login-input {
         width: 96%;
-        height: 40px;
+        height: 34px;
         border-radius: 12px;
         margin: auto;
-        font-size: 22px;
+        padding-left: 10px;
+        font-size: 19px;
         background-color: rgb(231, 225, 225);
         cursor: pointer;
     }
@@ -115,13 +119,12 @@
     }
 
     .login-emailError, .login-passwordError {
-        height: 25px;
-        font-size: 18px;
+        height: 23px;
+        font-size: 16px;
         font-weight: bold;
         color: red;
         font-style: italic;
-        margin-left: 12px;
-        margin-top: 8px;
+        margin: 8px 0 7px 12px;
     }
 
     .submit-form-login {
@@ -145,7 +148,7 @@
         justify-content: space-between;
         text-align: start;
         width: 70%;
-        height: 330px;
+        height: 310px;
         margin: auto;
         background-color: #c9c1c2;
         border: 3px solid black;
@@ -162,16 +165,18 @@
         text-align: start;
         align-items: flex-end;
         margin-left: 15px;
-        height: 40px;
-        font-size: 23px;
+        height: 35px;
+        font-size: 22px;
+        font-weight: 600;
     }
 
     .login-input {
         width: 96%;
-        height: 40px;
+        height: 37px;
         border-radius: 12px;
         margin: auto;
-        font-size: 22px;
+        padding-left: 10px;
+        font-size: 21px;
         background-color: rgb(231, 225, 225);
         cursor: pointer;
     }
@@ -190,8 +195,7 @@
         font-weight: bold;
         color: red;
         font-style: italic;
-        margin-left: 12px;
-        margin-top: 8px;
+        margin: 8px 0 4px 12px;
     }
 
     .submit-form-login {
@@ -234,13 +238,15 @@
         margin-left: 15px;
         height: 40px;
         font-size: 23px;
+        font-weight: 600;
     }
 
     .login-input {
         width: 96%;
-        height: 40px;
+        height: 37px;
         border-radius: 12px;
         margin: auto;
+        padding-left: 10px;
         font-size: 22px;
         background-color: rgb(231, 225, 225);
         cursor: pointer;
@@ -260,8 +266,7 @@
         font-weight: bold;
         color: red;
         font-style: italic;
-        margin-left: 12px;
-        margin-top: 8px;
+        margin: 8px 0 0 12px;
     }
 
     .submit-form-login {
