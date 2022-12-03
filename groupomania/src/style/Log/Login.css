@@ -68,7 +68,7 @@
     }
 }
 
-@media (max-width: 767px) {
+@media (min-width:768px) and (max-width:991px) {
     .form-login-container {
         display: flex;
         flex-direction: column;
@@ -138,7 +138,7 @@
     }
 }
 
-@media (max-width: 767px) {
+@media (min-width:992px) and (max-width:1200px) {
     .form-login-container {
         display: flex;
         flex-direction: column;
@@ -208,7 +208,7 @@
     }
 }
 
-@media (max-width: 767px) {
+@media screen and (min-width: 1201px) {
     .form-login-container {
         display: flex;
         flex-direction: column;

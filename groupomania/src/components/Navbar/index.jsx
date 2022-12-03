@@ -27,7 +27,7 @@ const Navbar = () => {
           </div>
 
           <p id="welcome-profile">
-            Bienvenue {userData.pseudo} sur
+            Bienvenue {userData.pseudo}
             <br /> "Groupévoumania"
           </p>
           {userId ? (

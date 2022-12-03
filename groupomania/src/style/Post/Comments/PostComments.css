@@ -1,6 +1,3 @@
-@media (min-width:768px) and (max-width:991px)
-@media (min-width:992px) and (max-width:1200px)
-@media screen and (min-width: 1201px)
 @media (max-width: 767px) {
     .postComments-container {
         display: flex;
@@ -89,10 +86,7 @@
     }
 }
 
-@media (min-width:768px) and (max-width:991px)
-@media (min-width:992px) and (max-width:1200px)
-@media screen and (min-width: 1201px)
-@media (max-width: 767px) {
+@media (min-width:768px) and (max-width:991px) {
     .postComments-container {
         display: flex;
         flex-direction: column;
@@ -180,10 +174,7 @@
     }
 }
 
-@media (min-width:768px) and (max-width:991px)
-@media (min-width:992px) and (max-width:1200px)
-@media screen and (min-width: 1201px)
-@media (max-width: 767px) {
+@media (min-width:992px) and (max-width:1200px) {
     .postComments-container {
         display: flex;
         flex-direction: column;
@@ -271,10 +262,7 @@
     }
 }
 
-@media (min-width:768px) and (max-width:991px)
-@media (min-width:992px) and (max-width:1200px)
-@media screen and (min-width: 1201px)
-@media (max-width: 767px) {
+@media screen and (min-width: 1201px) {
     .postComments-container {
         display: flex;
         flex-direction: column;
