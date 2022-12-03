@@ -35,6 +35,18 @@ const NewPost = ({ userData }) => {
     }
   };
 
+  const cancelPicture = () => {
+    if (message && postPicture) {
+      setMessage(message);
+      setPostPicture("");
+      setFile("");
+    } else {
+      setMessage("");
+      setPostPicture("");
+      setFile("");
+    }
+  };
+
   const cancelPost = () => {
     setMessage("");
     setPostPicture("");
@@ -131,7 +143,7 @@ const NewPost = ({ userData }) => {
                     {postPicture && (
                       <button
                         className="newPost-post-footer-delete-image"
-                        onClick={() => setPostPicture("")}
+                        onClick={cancelPicture}
                       >
                         Supprimer Image
                       </button>

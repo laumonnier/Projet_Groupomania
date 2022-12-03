@@ -2,7 +2,7 @@
     .newPost-post-container {
         display: flex;
         flex-direction: column;
-        width: 70%;
+        width: 86%;
         margin: auto;
         margin-top: 20px;
         background: linear-gradient(0deg,#f48f92,#d1f74a, #f4474d);
@@ -101,7 +101,7 @@
     }
 
     .newPost-post-card-header-date {
-        font-size: 20px;
+        font-size: 15px;
         text-align: end;
         margin: 15px 15px 0 0;
     }
@@ -118,7 +118,7 @@
     }
 
     .newPost-post-card-body-message {
-        font-size: 28px;
+        font-size: 21px;
         font-weight: 450;
         width: 97%;
         margin: auto;
@@ -137,25 +137,23 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 0px solid red;
     }
 
     .newPost-post-footer-container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        border: 0px solid blue;
-        width: 94%;
+        width: 100%;
         margin: auto;
         margin-bottom: 0;
     }
 
     .newPost-footer-image-block {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: flex-start;
-        align-items: flex-end;
-        margin-top: -25px;
+        align-items: flex-start;
+        margin: -25px 0px 0 10px;
     }
 
     .newPost-post-footer-icon-image {
@@ -164,10 +162,9 @@
     }
 
     .newPost-post-footer-icon {
-        width: 35px;
-        height: 35px;
-        margin-right: 35px;
-        margin-bottom: 10px;
+        width: 30px;
+        height: 30px;
+        margin: 0 35px 0 0;
         border: 1px solid transparent;
         border-radius: 6px;
         cursor: pointer;
@@ -183,20 +180,19 @@
     }
 
     .newPost-post-footer-icon-input {
-        margin-bottom: 15px;
+        margin-bottom: 13px;
         width: 1px;
         opacity: 0;
     }
 
     .newPost-post-footer-delete-image {
         width: 97%;
-        margin-bottom: 15px;
-        margin-left: -20px;
+        margin: 5px 0 10px 0;
         text-align: center;
-        font-size: 22px;
-        font-weight: 600;
-        height: 35px;
-        width: 250px;
+        font-size: 15px;
+        font-weight: 700;
+        height: 30px;
+        width: 142px;
         background-color: rgba(247, 10, 10, 0.6);
         border: 3px ridge #4E5166;
         border-radius: 10px;
@@ -215,15 +211,15 @@
 
     .newPost-post-footer-send {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
     }
 
     .newPost-post-footer-button-canceled {
         text-align: center;
-        font-size: 22px;
+        font-size: 15px;
         font-weight: 700;
-        height: 35px;
-        width: 250px;
+        height: 30px;
+        width: 145px;
         background-color: rgba(247, 10, 10, 0.6);
         border: 3px ridge #4E5166;
         border-radius: 10px;
@@ -244,10 +240,10 @@
 
     .newPost-post-footer-button-send {
         text-align: center;
-        font-size: 22px;
+        font-size: 15px;
         font-weight: 700;
-        height: 35px;
-        width: 250px;
+        height: 30px;
+        width: 145px;
         background-color: rgba(158, 244, 135, 0.6);
         border: 3px ridge #4E5166;
         border-radius: 10px;
@@ -270,7 +266,7 @@
     .newPost-post-container {
         display: flex;
         flex-direction: column;
-        width: 70%;
+        width: 80%;
         margin: auto;
         margin-top: 20px;
         background: linear-gradient(0deg,#f48f92,#d1f74a, #f4474d);
@@ -369,7 +365,7 @@
     }
 
     .newPost-post-card-header-date {
-        font-size: 20px;
+        font-size: 17px;
         text-align: end;
         margin: 15px 15px 0 0;
     }
@@ -381,12 +377,10 @@
         margin: auto;
         margin-bottom: 35px;
         margin-top: 15px;
-        border: 0px solid yellow;
-
     }
 
     .newPost-post-card-body-message {
-        font-size: 28px;
+        font-size: 24px;
         font-weight: 450;
         width: 97%;
         margin: auto;
@@ -405,14 +399,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 0px solid red;
     }
 
     .newPost-post-footer-container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        border: 0px solid blue;
         width: 94%;
         margin: auto;
         margin-bottom: 0;
@@ -420,9 +412,9 @@
 
     .newPost-footer-image-block {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: flex-start;
-        align-items: flex-end;
+        align-items: flex-start;
         margin-top: -25px;
     }
 
@@ -434,8 +426,7 @@
     .newPost-post-footer-icon {
         width: 35px;
         height: 35px;
-        margin-right: 35px;
-        margin-bottom: 10px;
+        margin: 0 35px 0 0;
         border: 1px solid transparent;
         border-radius: 6px;
         cursor: pointer;
@@ -458,13 +449,13 @@
 
     .newPost-post-footer-delete-image {
         width: 97%;
-        margin-bottom: 15px;
-        margin-left: -20px;
+        margin: 5px 0 10px 0;
+        padding-bottom: 5px;
         text-align: center;
-        font-size: 22px;
-        font-weight: 600;
+        font-size: 19px;
+        font-weight: 700;
         height: 35px;
-        width: 250px;
+        width: 190px;
         background-color: rgba(247, 10, 10, 0.6);
         border: 3px ridge #4E5166;
         border-radius: 10px;
@@ -483,15 +474,15 @@
 
     .newPost-post-footer-send {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
     }
 
     .newPost-post-footer-button-canceled {
         text-align: center;
-        font-size: 22px;
+        font-size: 19px;
         font-weight: 700;
         height: 35px;
-        width: 250px;
+        width: 190px;
         background-color: rgba(247, 10, 10, 0.6);
         border: 3px ridge #4E5166;
         border-radius: 10px;
@@ -512,10 +503,10 @@
 
     .newPost-post-footer-button-send {
         text-align: center;
-        font-size: 22px;
+        font-size: 19px;
         font-weight: 700;
         height: 35px;
-        width: 250px;
+        width: 190px;
         background-color: rgba(158, 244, 135, 0.6);
         border: 3px ridge #4E5166;
         border-radius: 10px;
@@ -601,7 +592,7 @@
     .newPost-post-card-container {
         display: flex;
         flex-direction: column;
-        width: 95%;
+        width: 86%;
         margin: auto;
         background-color: white;
         border: 5px ridge #4e5166;
@@ -622,22 +613,22 @@
     }
 
     .newPost-post-card-header-picture {
-        width: 110px;
-        height: 110px;
-        border: 4px ridge #4e5166;
+        width: 90px;
+        height: 90px;
+        border: 3px ridge #4e5166;
         border-radius: 12px;
-        margin: 20px 0 0 20px;
+        margin: 10px 0 0 10px;
     }
 
     .newPost-post-card-header-pseudo {
-        font-size: 30px;
+        font-size: 28px;
         font-weight: 650;
         text-decoration: underline;
         margin: 20px 0 0 20px;
     }
 
     .newPost-post-card-header-date {
-        font-size: 20px;
+        font-size: 19px;
         text-align: end;
         margin: 15px 15px 0 0;
     }
@@ -647,14 +638,12 @@
         flex-direction: column;
         width: 93%;
         margin: auto;
-        margin-bottom: 35px;
+        margin-bottom: 50px;
         margin-top: 15px;
-        border: 0px solid yellow;
-
     }
 
     .newPost-post-card-body-message {
-        font-size: 28px;
+        font-size: 26px;
         font-weight: 450;
         width: 97%;
         margin: auto;
@@ -662,7 +651,7 @@
     }
 
     .newPost-post-card-body-picture {
-        width: 97%;
+        width: 94%;
         margin: auto;
         margin-top: 20px;
         border: 2px solid transparent;
@@ -673,24 +662,22 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 0px solid red;
     }
 
     .newPost-post-footer-container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        border: 0px solid blue;
-        width: 94%;
+        width: 87%;
         margin: auto;
         margin-bottom: 0;
     }
 
     .newPost-footer-image-block {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: flex-start;
-        align-items: flex-end;
+        align-items: flex-start;
         margin-top: -25px;
     }
 
@@ -702,8 +689,7 @@
     .newPost-post-footer-icon {
         width: 35px;
         height: 35px;
-        margin-right: 35px;
-        margin-bottom: 10px;
+        margin: 0 35px 0 0;
         border: 1px solid transparent;
         border-radius: 6px;
         cursor: pointer;
@@ -719,20 +705,19 @@
     }
 
     .newPost-post-footer-icon-input {
-        margin-bottom: 15px;
+        margin-bottom: 10px;
         width: 1px;
         opacity: 0;
     }
 
     .newPost-post-footer-delete-image {
         width: 97%;
-        margin-bottom: 15px;
-        margin-left: -20px;
+        margin: 5px 0 10px 0;
         text-align: center;
-        font-size: 22px;
-        font-weight: 600;
+        font-size: 21px;
+        font-weight: 700;
         height: 35px;
-        width: 250px;
+        width: 200px;
         background-color: rgba(247, 10, 10, 0.6);
         border: 3px ridge #4E5166;
         border-radius: 10px;
@@ -751,15 +736,15 @@
 
     .newPost-post-footer-send {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
     }
 
     .newPost-post-footer-button-canceled {
         text-align: center;
-        font-size: 22px;
+        font-size: 21px;
         font-weight: 700;
         height: 35px;
-        width: 250px;
+        width: 200px;
         background-color: rgba(247, 10, 10, 0.6);
         border: 3px ridge #4E5166;
         border-radius: 10px;
@@ -780,10 +765,10 @@
 
     .newPost-post-footer-button-send {
         text-align: center;
-        font-size: 22px;
+        font-size: 21px;
         font-weight: 700;
         height: 35px;
-        width: 250px;
+        width: 200px;
         background-color: rgba(158, 244, 135, 0.6);
         border: 3px ridge #4E5166;
         border-radius: 10px;
@@ -917,8 +902,6 @@
         margin: auto;
         margin-bottom: 35px;
         margin-top: 15px;
-        border: 0px solid yellow;
-
     }
 
     .newPost-post-card-body-message {
@@ -941,14 +924,12 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 0px solid red;
     }
 
     .newPost-post-footer-container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        border: 0px solid blue;
         width: 94%;
         margin: auto;
         margin-bottom: 0;
@@ -998,7 +979,7 @@
         margin-left: -20px;
         text-align: center;
         font-size: 22px;
-        font-weight: 600;
+        font-weight: 700;
         height: 35px;
         width: 210px;
         background-color: rgba(247, 10, 10, 0.6);
