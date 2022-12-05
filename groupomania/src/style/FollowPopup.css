@@ -27,6 +27,7 @@
         width: 110%;
         padding-top: 6px;
         background-color: rgba(248, 108, 108, 0.6);
+        box-shadow: 0.8rem 0.8rem 1.8rem black;
         border: 4px ridge #4E5166;
         border-radius: 15px;
         transform: scale(1);
@@ -74,6 +75,7 @@
         margin-top: -15px;
         padding-top: 6px;
         background-color: rgba(248, 108, 108, 0.6);
+        box-shadow: 0.8rem 0.8rem 1.8rem black;
         border: 4px ridge #4E5166;
         border-radius: 15px;
         transform: scale(1);
@@ -179,6 +181,7 @@
         width: 110%;
         padding-top: 6px;
         background-color: rgba(248, 108, 108, 0.6);
+        box-shadow: 0.8rem 0.8rem 1.8rem black;
         border: 4px ridge #4E5166;
         border-radius: 15px;
         transform: scale(1);
@@ -227,6 +230,7 @@
         padding-top: 6px;
         background-color: rgba(248, 108, 108, 0.6);
         border: 4px ridge #4E5166;
+        box-shadow: 0.8rem 0.8rem 1.8rem black;
         border-radius: 15px;
         transform: scale(1);
         cursor: pointer;
@@ -331,6 +335,7 @@
         width: 110%;
         padding-top: 6px;
         background-color: rgba(248, 108, 108, 0.6);
+        box-shadow: 0.8rem 0.8rem 1.8rem black;
         border: 4px ridge #4E5166;
         border-radius: 15px;
         transform: scale(1);
@@ -378,6 +383,7 @@
         margin-top: -15px;
         padding-top: 6px;
         background-color: rgba(248, 108, 108, 0.6);
+        box-shadow: 0.8rem 0.8rem 1.8rem black;
         border: 4px ridge #4E5166;
         border-radius: 15px;
         transform: scale(1);
@@ -483,6 +489,7 @@
         width: 110%;
         padding-top: 6px;
         background-color: rgba(248, 108, 108, 0.6);
+        box-shadow: 0.8rem 0.8rem 1.8rem black;
         border: 4px ridge #4E5166;
         border-radius: 15px;
         transform: scale(1);
@@ -527,9 +534,10 @@
         font-weight: 700;
         height: 28px;
         width: 110%;
-        margin-top: -15px;
+        margin: -5px 0 0 0;
         padding-top: 6px;
         background-color: rgba(248, 108, 108, 0.6);
+        box-shadow: 0.8rem 0.8rem 1.8rem black;
         border: 4px ridge #4E5166;
         border-radius: 15px;
         transform: scale(1);

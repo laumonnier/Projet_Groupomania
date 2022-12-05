@@ -1,0 +1,55 @@
+@media (max-width: 767px) {
+    .newPost-post-container {
+        display: flex;
+        flex-direction: column;
+        width: 86%;
+        margin: auto;
+        margin-top: 20px;
+        background: linear-gradient(0deg,#f48f92,#d1f74a, #f4474d);
+        background-color: rgb(251, 197, 184);
+        border: 6px ridge #4e5166;
+        border-radius: 12px;
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    .newPost-post-container {
+        display: flex;
+        flex-direction: column;
+        width: 85%;
+        margin: auto;
+        margin-top: 20px;
+        background: linear-gradient(0deg,#f48f92,#d1f74a, #f4474d);
+        background-color: rgb(251, 197, 184);
+        border: 6px ridge #4e5166;
+        border-radius: 12px;
+    }
+}
+
+@media (min-width:992px) and (max-width:1200px) {
+    .newPost-post-container {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin: auto;
+        margin-top: 20px;
+        background: linear-gradient(0deg,#f48f92,#d1f74a, #f4474d);
+        background-color: rgb(251, 197, 184);
+        border: 6px ridge #4e5166;
+        border-radius: 12px;
+    }
+}
+
+@media screen and (min-width: 1201px) {
+    .newPost-post-container {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        margin: auto;
+        margin-top: 20px;
+        background: linear-gradient(0deg,#f48f92,#d1f74a, #f4474d);
+        background-color: rgb(251, 197, 184);
+        border: 6px ridge #4e5166;
+        border-radius: 12px;
+    }
+}
