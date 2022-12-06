@@ -40,7 +40,7 @@ const App = () => {
         <GlobalStyleRegister />
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/followers" element={<Followers />} />
           <Route path="*" element={<Error />} />

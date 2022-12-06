@@ -82,6 +82,7 @@ const NewPost = ({ userData }) => {
             handlePicture={handlePicture}
             handlePost={handlePost}
             cancelPicture={cancelPicture}
+            cancelPost={cancelPost}
           />
         </>
       )}

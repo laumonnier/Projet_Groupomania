@@ -2,8 +2,8 @@ import React, { useContext } from "react";
 // import { useState } from "react";
 import logo from "../../assets/images/icon-left-font-monochrome-white.png";
 import Log from "../../components/Log";
-import UpdateProfile from "../../components/Profile/UpdateProfile";
-import "../../style/pages/Profile.css";
+import UpdateProfile from "./UpdateProfile";
+import "../../style/pages/Profile/Profile.css";
 import { UserIdContext } from "../../utils/context";
 
 const Profile = () => {

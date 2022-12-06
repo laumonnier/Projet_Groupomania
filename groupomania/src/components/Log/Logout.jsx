@@ -22,7 +22,7 @@ function Logout() {
       .then(() => removeCookie("jwt"))
       .catch((err) => console.log(err));
 
-    window.location = "/";
+    window.location = "/home";
   };
 
   return (

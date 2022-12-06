@@ -4,7 +4,7 @@ import { updateDescription } from "../../redux/actions/user.actions";
 import "../../style/Profile/UpdateProfile.css";
 import { dateParser } from "../../utils/date";
 import { isEmpty } from "../../utils/Empty";
-import FollowPopup from "../FollowPopup/FollowPopup";
+import FollowPopup from "../../components/FollowPopup/FollowPopup.jsx";
 import UploadImg from "./UploadImg";
 
 const UpdateProfile = () => {

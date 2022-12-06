@@ -33,7 +33,7 @@ const Navbar = () => {
           {userId ? (
             <>
               <div className="nav-block">
-                <Link to="/">
+                <Link to="/home">
                   <img
                     id="home-logo"
                     src="./images/icon/icon_accueil_2948025.png"

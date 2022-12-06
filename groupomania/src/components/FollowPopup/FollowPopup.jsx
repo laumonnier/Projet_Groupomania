@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FollowHandler from "../Profile/FollowHandler";
+import FollowHandler from "./FollowHandler";
 import "../../style/FollowPopup.css";
 
 const FollowPopup = ({ userData, usersData }) => {

@@ -4,7 +4,7 @@ import "../../../style/Post/Card/HeaderPost.css";
 import { useSelector } from "react-redux";
 import { isEmpty } from "../../../utils/Empty";
 import { dateParser } from "../../../utils/date";
-import FollowHandler from "../../Profile/FollowHandler";
+import FollowHandler from "../../FollowPopup/FollowHandler";
 
 const HeaderPost = ({ post }) => {
   //Will recover user data, both images, messages or other thanks to the "store"
