@@ -24,14 +24,14 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin-left: 12px;
+        margin-left: 10px;
         background-color: rgb(247, 155, 155);
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 570;
-        width:120px;
-        height: 38px;
+        width: 85px;
+        height: 28px;
         border: 2px solid black;
-        border-radius: 12px;
+        border-radius: 7px;
     }
 
     .following-follow-card-following {
@@ -39,30 +39,30 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin-left: 12px;
+        margin-left: 10px;
         background-color: white;
-        font-size: 20px;
+        font-size: 16px;
         font-weight: 570;
-        width:120px;
-        height: 38px;
+        width: 85px;
+        height: 28px;
         border: 2px solid black;
-        border-radius: 12px;
+        border-radius: 7px;
     }
 
     .following-follow-card-icon {
-        width: 35px;
-        height: 35px;
+        width: 25px;
+        height: 25px;
     }
 
     .following-unfollow-card-icon {
-        width: 35px;
-        height: 35px;
+        width: 22px;
+        height: 22px;
     }
 }
 
 @media (min-width:768px) and (max-width:991px) {
     .following-unfollow {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 600;
         width: 130px;
         height: 45px;
@@ -86,14 +86,14 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin-left: 12px;
+        margin-left: 10px;
         background-color: rgb(247, 155, 155);
         font-size: 20px;
         font-weight: 570;
-        width:120px;
-        height: 38px;
+        width: 95px;
+        height: 36px;
         border: 2px solid black;
-        border-radius: 12px;
+        border-radius: 9px;
     }
 
     .following-follow-card-following {
@@ -101,24 +101,24 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin-left: 12px;
+        margin-left: 10px;
         background-color: white;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 570;
-        width:120px;
-        height: 38px;
+        width: 95px;
+        height: 36px;
         border: 2px solid black;
-        border-radius: 12px;
+        border-radius: 9px;
     }
 
     .following-follow-card-icon {
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
     }
 
     .following-unfollow-card-icon {
-        width: 35px;
-        height: 35px;
+        width: 27px;
+        height: 27px;
     }
 }
 
@@ -152,7 +152,7 @@
         background-color: rgb(247, 155, 155);
         font-size: 20px;
         font-weight: 570;
-        width:120px;
+        width: 120px;
         height: 38px;
         border: 2px solid black;
         border-radius: 12px;
@@ -167,20 +167,20 @@
         background-color: white;
         font-size: 20px;
         font-weight: 570;
-        width:120px;
+        width: 120px;
         height: 38px;
         border: 2px solid black;
         border-radius: 12px;
     }
 
     .following-follow-card-icon {
-        width: 35px;
-        height: 35px;
+        width: 36px;
+        height: 36px;
     }
 
     .following-unfollow-card-icon {
-        width: 35px;
-        height: 35px;
+        width: 30px;
+        height: 30px;
     }
 }
 
@@ -214,10 +214,10 @@
         align-items: center;
         margin-left: 12px;
         background-color: rgb(247, 155, 155);
-        font-size: 20px;
+        font-size: 22px;
         font-weight: 570;
-        width:120px;
-        height: 38px;
+        width: 130px;
+        height: 42px;
         border: 2px solid black;
         border-radius: 12px;
     }
@@ -229,17 +229,17 @@
         align-items: center;
         margin-left: 12px;
         background-color: white;
-        font-size: 20px;
+        font-size: 22px;
         font-weight: 570;
-        width:120px;
-        height: 38px;
+        width: 130px;
+        height: 42px;
         border: 2px solid black;
         border-radius: 12px;
     }
 
     .following-follow-card-icon {
-        width: 35px;
-        height: 35px;
+        width: 41px;
+        height: 41px;
     }
 
     .following-unfollow-card-icon {

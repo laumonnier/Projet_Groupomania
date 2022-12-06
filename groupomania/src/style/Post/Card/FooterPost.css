@@ -3,7 +3,6 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        border: 0px solid green;
     }
 
     .post-footer-icons-container {
@@ -22,32 +21,32 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        margin: 5px 20px 20px 0;
+        margin: 7px 20px 7px 0;
     }
 
     #post-footer-icon-comment {
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
         cursor: pointer;
     }
 
     .post-footer-number-comment {
-        font-size: 21px;
+        font-size: 15px;
         text-align: center;
-        margin: 3px 0 0 5px;
+        margin: 1px 0 0 5px;
     }
 
     .post-footer-like-block {
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        margin: 5px 0 0 5%;
+        margin: 7px 0 0 5%;
     }
 
     .post-footer-like-number {
-        font-size: 21px;
+        font-size: 15px;
         text-align: center;
-        margin: 3px 0 0 5px;
+        margin: 1px 0 0 5px;
     }
 }
 
@@ -56,7 +55,6 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        border: 0px solid green;
     }
 
     .post-footer-icons-container {
@@ -75,17 +73,17 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        margin: 5px 20px 20px 0;
+        margin: 5px 20px 7px 0;
     }
 
     #post-footer-icon-comment {
-        width: 25px;
-        height: 25px;
+        width: 24px;
+        height: 24px;
         cursor: pointer;
     }
 
     .post-footer-number-comment {
-        font-size: 21px;
+        font-size: 19px;
         text-align: center;
         margin: 3px 0 0 5px;
     }
@@ -98,7 +96,7 @@
     }
 
     .post-footer-like-number {
-        font-size: 21px;
+        font-size: 19px;
         text-align: center;
         margin: 3px 0 0 5px;
     }
@@ -109,7 +107,6 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        border: 0px solid green;
     }
 
     .post-footer-icons-container {
@@ -128,7 +125,7 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        margin: 5px 20px 20px 0;
+        margin: 5px 20px 7px 0;
     }
 
     #post-footer-icon-comment {
@@ -162,7 +159,6 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        border: 0px solid green;
     }
 
     .post-footer-icons-container {
@@ -181,17 +177,17 @@
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
-        margin: 5px 20px 20px 0;
+        margin: 5px 20px 10px 0;
     }
 
     #post-footer-icon-comment {
-        width: 25px;
-        height: 25px;
+        width: 27px;
+        height: 27px;
         cursor: pointer;
     }
 
     .post-footer-number-comment {
-        font-size: 21px;
+        font-size: 22px;
         text-align: center;
         margin: 3px 0 0 5px;
     }

@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import NewPost from "../../components/Post/NewPost";
-import Thread from "../../components/Thread";
+import Thread from "../../components/Thread/Thread";
 
 function Home() {
   const userData = useSelector((state) => state.userReducer);

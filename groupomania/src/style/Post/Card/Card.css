@@ -1,10 +1,11 @@
 @media (max-width: 767px) {
     .card-container {
-        width: 60%;
+        width: 80%;
         margin: auto;
+        margin-top : 20px;
         margin-bottom: 20px;
         background-color: white;
-        border: 4px ridge black;
+        border: 3px ridge black;
         border-radius: 15px;
         z-index: 1;
     }
@@ -12,11 +13,12 @@
 
 @media (min-width:768px) and (max-width:991px) {
     .card-container {
-        width: 60%;
+        width: 70%;
         margin: auto;
         margin-bottom: 20px;
+        margin-top: 20px;
         background-color: white;
-        border: 4px ridge black;
+        border: 3px ridge black;
         border-radius: 15px;
         z-index: 1;
     }
@@ -24,8 +26,9 @@
 
 @media (min-width:992px) and (max-width:1200px) {
     .card-container {
-        width: 60%;
+        width: 65%;
         margin: auto;
+        margin-top: 20px;
         margin-bottom: 20px;
         background-color: white;
         border: 4px ridge black;
@@ -36,8 +39,9 @@
 
 @media screen and (min-width: 1201px) {
     .card-container {
-        width: 60%;
+        width: 58%;
         margin: auto;
+        margin-top: 20px;
         margin-bottom: 20px;
         background-color: white;
         border: 4px ridge black;
