@@ -2,12 +2,12 @@
     .newPost-post-container {
         display: flex;
         flex-direction: column;
-        width: 86%;
+        width: 90%;
         margin: auto;
         margin-top: 20px;
         background: linear-gradient(0deg,#f48f92,#d1f74a, #f4474d);
         background-color: rgb(251, 197, 184);
-        border: 6px ridge #4e5166;
+        border: 5px ridge #4e5166;
         border-radius: 12px;
     }
 }
@@ -30,7 +30,7 @@
     .newPost-post-container {
         display: flex;
         flex-direction: column;
-        width: 70%;
+        width: 78%;
         margin: auto;
         margin-top: 20px;
         background: linear-gradient(0deg,#f48f92,#d1f74a, #f4474d);

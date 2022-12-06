@@ -10,7 +10,7 @@ const HeaderNewPost = ({ userData, usersData }) => {
   return (
     <>
       <div className="newPost-post-header">
-        <div className="newPost-post-header-user-picture">
+        <div className="newPost-post-header-user-picture-popup">
           <Link to="/profile">
             <img
               className="newPost-post-picture"

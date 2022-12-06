@@ -1,19 +1,21 @@
 @media (max-width: 767px) {
     .following-unfollow {
-        font-size: 20px;
+        font-size: 17px;
         font-weight: 600;
-        width: 150px;
-        height: 50px;
-        border-radius: 15px;
+        width: 80px;
+        height: 35px;
+        border: 2px ridge #4E5166;
+        border-radius: 12px;
         background: linear-gradient(0deg,rgb(68, 206, 60), rgb(181, 237, 178), rgb(68, 206, 60));
     }
 
     .following-follow {
-        font-size: 20px;
+        font-size: 17px;
         font-weight: 600;
-        width: 150px;
-        height: 50px;
-        border-radius: 15px;
+        width: 80px;
+        height: 35px;
+        border: 2px ridge #4E5166;
+        border-radius: 12px;
         background: linear-gradient(0deg,#f48f92,#f5390f, #f48f92);
     }
 
@@ -62,8 +64,9 @@
     .following-unfollow {
         font-size: 20px;
         font-weight: 600;
-        width: 150px;
-        height: 50px;
+        width: 130px;
+        height: 45px;
+        border: 2px ridge #4E5166;
         border-radius: 15px;
         background: linear-gradient(0deg,rgb(68, 206, 60), rgb(181, 237, 178), rgb(68, 206, 60));
     }
@@ -71,8 +74,9 @@
     .following-follow {
         font-size: 20px;
         font-weight: 600;
-        width: 150px;
-        height: 50px;
+        width: 130px;
+        height: 45px;
+        border: 2px ridge #4E5166;
         border-radius: 15px;
         background: linear-gradient(0deg,#f48f92,#f5390f, #f48f92);
     }
@@ -124,6 +128,7 @@
         font-weight: 600;
         width: 150px;
         height: 50px;
+        border: 3px ridge #4E5166;
         border-radius: 15px;
         background: linear-gradient(0deg,rgb(68, 206, 60), rgb(181, 237, 178), rgb(68, 206, 60));
     }
@@ -133,6 +138,7 @@
         font-weight: 600;
         width: 150px;
         height: 50px;
+        border: 3px ridge #4E5166;
         border-radius: 15px;
         background: linear-gradient(0deg,#f48f92,#f5390f, #f48f92);
     }
@@ -182,8 +188,10 @@
     .following-unfollow {
         font-size: 20px;
         font-weight: 600;
+        margin-right: 20px;
         width: 150px;
         height: 50px;
+        border: 3px ridge #4E5166;
         border-radius: 15px;
         background: linear-gradient(0deg,rgb(68, 206, 60), rgb(181, 237, 178), rgb(68, 206, 60));
     }
@@ -191,8 +199,10 @@
     .following-follow {
         font-size: 20px;
         font-weight: 600;
+        margin-right: 20px;
         width: 150px;
         height: 50px;
+        border: 3px ridge #4E5166;
         border-radius: 15px;
         background: linear-gradient(0deg,#f48f92,#f5390f, #f48f92);
     }
