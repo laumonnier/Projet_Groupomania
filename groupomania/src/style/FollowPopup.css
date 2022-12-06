@@ -334,9 +334,9 @@
         width: 110%;
         padding-top: 6px;
         background-color: rgba(248, 108, 108, 0.6);
-        box-shadow: 0.8rem 0.8rem 1.8rem black;
-        border: 4px ridge #4E5166;
-        border-radius: 15px;
+        box-shadow: 0.8rem 0.8rem 1.6rem black;
+        border: 3px ridge #4E5166;
+        border-radius: 13px;
         transform: scale(1);
         cursor: pointer;
     }
@@ -380,12 +380,12 @@
         font-weight: 700;
         height: 28px;
         width: 110%;
-        margin-top: -15px;
+        margin: -15px 0 0 0;
         padding-top: 6px;
         background-color: rgba(248, 108, 108, 0.6);
-        box-shadow: 0.8rem 0.8rem 1.8rem black;
-        border: 4px ridge #4E5166;
-        border-radius: 15px;
+        box-shadow: 0.8rem 0.8rem 1.6rem black;
+        border: 3px ridge #4E5166;
+        border-radius: 13px;
         transform: scale(1);
         cursor: pointer;
     }
@@ -488,7 +488,7 @@
         background-color: rgba(248, 108, 108, 0.6);
         box-shadow: 0.8rem 0.8rem 1.8rem black;
         border: 4px ridge #4E5166;
-        border-radius: 15px;
+        border-radius: 14px;
         transform: scale(1);
         cursor: pointer;
     }
@@ -537,7 +537,7 @@
         background-color: rgba(248, 108, 108, 0.6);
         box-shadow: 0.8rem 0.8rem 1.8rem black;
         border: 4px ridge #4E5166;
-        border-radius: 15px;
+        border-radius: 14px;
         transform: scale(1);
         cursor: pointer;
     }

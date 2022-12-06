@@ -158,21 +158,21 @@
 
 @media (min-width:992px) and (max-width:1200px) {
     .newPost-post-body-text {
-        font-size: 25px;
+        font-size: 23px;
         height: 100px;
-        margin: 20px 0 5px 10px;
+        margin: 20px 0 -10px 10px;
         padding: 15px 0 15px 15px;
     }
 
     .newPost-post-card-container {
         display: flex;
         flex-direction: column;
-        width: 86%;
+        width: 82%;
         margin: auto;
-        margin-top: 20px;
+        margin-top: 17px;
         background-color: rgb(225, 223, 223);
-        border: 5px ridge #4e5166;
-        border-radius: 15px;
+        border: 4px ridge #4e5166;
+        border-radius: 13px;
     }
 
     .newPost-post-card-header {
@@ -200,13 +200,13 @@
         font-size: 28px;
         font-weight: 650;
         text-decoration: underline;
-        margin: 20px 0 0 20px;
+        margin: 10px 0 0 18px;
     }
 
     .newPost-post-card-header-date {
         font-size: 19px;
         text-align: end;
-        margin: 15px 15px 0 0;
+        margin: 10px 15px 0 0;
     }
 
     .newPost-post-card-body {
@@ -214,12 +214,12 @@
         flex-direction: column;
         width: 93%;
         margin: auto;
-        margin-bottom: 50px;
+        margin-bottom: 35px;
         margin-top: 15px;
     }
 
     .newPost-post-card-body-message {
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 450;
         width: 97%;
         margin: auto;
@@ -227,7 +227,7 @@
     }
 
     .newPost-post-card-body-picture {
-        width: 94%;
+        width: 93%;
         margin: auto;
         margin-top: 20px;
         border: 2px solid transparent;
@@ -239,18 +239,18 @@
     .newPost-post-body-text {
         font-size: 25px;
         height: 100px;
-        margin: 20px 0 5px 15px;
+        margin: 20px 0 -10px 15px;
         padding: 15px 0 15px 15px;
     }
 
     .newPost-post-card-container {
         display: flex;
         flex-direction: column;
-        width: 86%;
+        width: 82%;
         margin: auto;
         margin-top: 20px;
         background-color: rgb(225, 223, 223);
-        border: 5px ridge #4e5166;
+        border: 4px ridge #4e5166;
         border-radius: 15px;
     }
 
@@ -258,7 +258,6 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        border: 0px solid red;
     }
 
     .newPost-post-card-identifier-block {
@@ -276,14 +275,14 @@
     }
 
     .newPost-post-card-header-pseudo {
-        font-size: 28px;
+        font-size: 26px;
         font-weight: 650;
         text-decoration: underline;
-        margin: 20px 0 0 20px;
+        margin: 10px 0 0 20px;
     }
 
     .newPost-post-card-header-date {
-        font-size: 19px;
+        font-size: 18px;
         text-align: end;
         margin: 15px 15px 0 0;
     }
@@ -293,12 +292,12 @@
         flex-direction: column;
         width: 93%;
         margin: auto;
-        margin-bottom: 50px;
+        margin-bottom: 35px;
         margin-top: 15px;
     }
 
     .newPost-post-card-body-message {
-        font-size: 26px;
+        font-size: 23px;
         font-weight: 450;
         width: 97%;
         margin: auto;
@@ -306,7 +305,7 @@
     }
 
     .newPost-post-card-body-picture {
-        width: 94%;
+        width: 92%;
         margin: auto;
         margin-top: 20px;
         border: 2px solid transparent;
