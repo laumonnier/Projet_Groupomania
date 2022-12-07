@@ -10,29 +10,14 @@ const FollowPopup = ({ userData, usersData }) => {
     <>
       {/* <div className="follow-profile"> */}
 
-      <p
-        className={
-          window.location.href === "http://localhost:3000/profile"
-            ? "following"
-            : "newPost-following"
-        }
-        onClick={() => setFollowingPopup(true)}
-      >
+      <p className="newPost-following" onClick={() => setFollowingPopup(true)}>
         {" "}
         Following(s): {userData.following ? userData.following.length : "0"}
       </p>
-      <p
-        className={
-          window.location.href === "http://localhost:3000/profile"
-            ? "followers"
-            : "newPost-followers"
-        }
-        onClick={() => setFollowersPopup(true)}
-      >
+      <p className="newPost-followers" onClick={() => setFollowersPopup(true)}>
         {" "}
         Follower(s): {userData.followers ? userData.followers.length : "0"}
       </p>
-      {/* </div> */}
       {followingPopup && (
         <div className="popup-profile-container">
           <div className="modal">
@@ -54,10 +39,7 @@ const FollowPopup = ({ userData, usersData }) => {
                         />
                         <p id="pseudo-follow">{user.pseudo}</p>
                         <div className="follow-handler">
-                          <FollowHandler
-                            idToFollow={user._id}
-                            type={"suggest"}
-                          />
+                          <FollowHandler idToFollow={user._id} />
                         </div>
                       </li>
                     );
@@ -89,10 +71,7 @@ const FollowPopup = ({ userData, usersData }) => {
                         />
                         <p id="pseudo-follow">{user.pseudo}</p>
                         <div className="follow-handler">
-                          <FollowHandler
-                            idToFollow={user._id}
-                            type={"suggest"}
-                          />
+                          <FollowHandler idToFollow={user._id} />
                         </div>
                       </li>
                     );

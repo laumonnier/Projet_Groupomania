@@ -4,7 +4,6 @@ import { updateDescription } from "../../redux/actions/user.actions";
 import "../../style/Profile/UpdateProfile.css";
 import { dateParser } from "../../utils/date";
 import { isEmpty } from "../../utils/Empty";
-import FollowPopup from "../../components/FollowPopup/FollowPopup.jsx";
 import UploadImg from "./UploadImg";
 
 const UpdateProfile = () => {
@@ -12,7 +11,6 @@ const UpdateProfile = () => {
   const [updateForm, setUpdateForm] = useState(false);
   const userData = useSelector((state) => state.userReducer);
   // Recovers all user data from the useSelector
-  const usersData = useSelector((state) => state.usersReducer);
   const errorData = useSelector((state) => state.errorReducer.userErrors);
   const dispatch = useDispatch();
 
@@ -35,8 +33,29 @@ const UpdateProfile = () => {
           </div>
         </div>
         <div className="description-container">
-          <div className="text-description">
-            <h3> Description </h3>
+          <h3> Description </h3>
+          <div className="summary-description-block">
+            <div id="profile-time">
+              <p className="text-time">Membre depuis le: </p>
+              <p className="date-time">{dateParser(userData.createdAt)}</p>
+            </div>
+            <div className="profile-description">
+              <div className="profile-user">
+                <p className="description-script">Pseudo : </p>
+                <p className="description-dynamic"> {userData.pseudo} </p>
+              </div>
+              <div className="profile-user">
+                <p className="description-script">Adresse email : </p>
+                <p className="description-dynamic"> {userData.email}</p>
+              </div>
+              <div className="profile-user">
+                <p className="description-script">Droit d'accès : </p>
+                <p className="description-dynamic"> "{userData.role}"</p>
+              </div>
+              <p className="description-script">Description personnelle : </p>
+            </div>
+          </div>
+          <div>
             {updateForm === false && (
               <>
                 <p
@@ -63,13 +82,6 @@ const UpdateProfile = () => {
                 </button>
               </>
             )}
-          </div>
-          <div className="follow-profile">
-            <FollowPopup userData={userData} usersData={usersData} />
-          </div>
-          <div id="profile-time">
-            <p className="text-time">Membre depuis le: </p>
-            <p className="date-time">{dateParser(userData.createdAt)}</p>
           </div>
         </div>
       </div>

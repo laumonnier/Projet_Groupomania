@@ -4,7 +4,7 @@ import { followUser, unfollowUser } from "../../redux/actions/user.actions";
 import { isEmpty } from "../../utils/Empty";
 import "../../style/Profile/FollowHandler.css";
 
-const FollowHandler = ({ idToFollow, type }) => {
+const FollowHandler = ({ idToFollow }) => {
   const userData = useSelector((state) => state.userReducer);
   const [isFollowed, setIsFollowed] = useState(false);
   const dispatch = useDispatch();
@@ -31,36 +31,26 @@ const FollowHandler = ({ idToFollow, type }) => {
     <>
       {isFollowed && !isEmpty(userData) && (
         <span onClick={handleUnfollow}>
-          {type === "suggest" && (
-            <button className="following-unfollow">Suivi</button>
-          )}
-          {type === "card" && (
-            <button className="following-follow-card-unfollow">
-              Suivi
-              <img
-                className="following-unfollow-card-icon"
-                src="./images/icon/follow.png"
-                alt="follow"
-              />
-            </button>
-          )}
+          <button className="following-follow-card-unfollow">
+            Suivi
+            <img
+              className="following-unfollow-card-icon"
+              src="./images/icon/follow.png"
+              alt="follow"
+            />
+          </button>
         </span>
       )}
       {isFollowed === false && !isEmpty(userData) && (
         <span onClick={handleFollow}>
-          {type === "suggest" && (
-            <button className="following-follow">Suivre</button>
-          )}
-          {type === "card" && (
-            <button className="following-follow-card-following">
-              Suivre
-              <img
-                className="following-follow-card-icon"
-                src="./images/icon/following.png"
-                alt="following"
-              />
-            </button>
-          )}
+          <button className="following-follow-card-following">
+            Suivre
+            <img
+              className="following-follow-card-icon"
+              src="./images/icon/following.png"
+              alt="following"
+            />
+          </button>
         </span>
       )}
     </>

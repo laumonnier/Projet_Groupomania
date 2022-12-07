@@ -19,7 +19,7 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        margin: 10px 0px 0 10px;
+        margin: 0px 0px 0 10px;
     }
 
     .newPost-post-footer-icon-image {
@@ -46,7 +46,7 @@
     }
 
     .newPost-post-footer-icon-input {
-        margin-bottom: 13px;
+        margin-bottom: 0px;
         width: 1px;
         opacity: 0;
     }
@@ -54,7 +54,7 @@
     .newPost-post-footer-delete-image {
         height: 30px;
         width: 135px;
-        margin: 5px 0 7px 0;
+        margin: 0px 0 7px 0;
         text-align: center;
         font-size: 14px;
         font-weight: 700;

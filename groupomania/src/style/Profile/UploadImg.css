@@ -1,8 +1,4 @@
 @media (max-width: 767px) {
-    .upload-picture-container {
-        border: 0px solid purple;
-    }
-
     .file-change {
         display: flex;
         flex-direction: column;
@@ -11,21 +7,21 @@
     .file-change-choice {
         display: block;
         position: relative;
-        font-size: 20px;
+        font-size: 16px;
         color: white;
         font-weight: bold;
-        width: 315px;
-        height: 35px;
+        width: 215px;
+        height: 29px;
         text-align: center;
         margin: auto;
-        margin-top: 30px;
+        margin-top: 18px;
         padding-top: 10px;
         border-radius: 20px;
         background-color: #bd153c;
         cursor: pointer;
         z-index: 2;
         transform: scale(1);
-        border: 3px solid red;
+        border: 2px solid red;
     }
 
     .file-change-choice:hover {
@@ -33,36 +29,21 @@
     }
 
     .file-change-choice:active {
-        transform: scale(0.98);
+        transform: scale(0.95);
     }
 
     #file {
-        display: block;
-        font-size: 16px;
-        position: relative;
-        bottom: 0px;
-        /* left: 171px; */
-        width: 295px;
-        height: 35px;
-        text-align: center;
-        margin: auto;
-        margin-top: 0px;
-        padding-top: 11px;
-        padding-right: 3px;
-        border-radius: 20px;
-        background-color: rgba(255,215,215, 0.88);
-        z-index: 1;
-        border: 0px solid #4E5166;
+        width: 1px;
         opacity: 0;
     }
 
     .profile-picture-change {
         display: block;
         color: white;
-        font-size: 22px;
+        font-size: 16px;
         font-weight: 700;
-        width: 315px;
-        height: 50px;
+        width: 215px;
+        height: 43px;
         text-align: center;
         margin: auto;
         margin-top: -10px;
@@ -71,48 +52,20 @@
         border-radius: 20px;
         background-color: rgb(155, 32, 61);
         transform: scale(1);
+        cursor: pointer;
         border: 3px solid red;
     }
 
     .profile-picture-change:hover {
-        display: block;
-        color: white;
-        font-weight: 700;
-        width: 315px;
-        height: 50px;
-        text-align: center;
-        margin: auto;
-        margin-top: -10px;
-        margin-bottom: 10px;
-        padding-top: 4px;
-        border-radius: 20px;
-        background-color: rgba(155, 32, 61, 0.83);
-        border: 3px solid red;
+        background-color: rgba(155, 32, 61, 0.83); 
     }
 
     .profile-picture-change:active {
-        display: block;
-        color: white;
-        font-weight: 700;
-        width: 315px;
-        height: 50px;
-        text-align: center;
-        margin: auto;
-        margin-top: -10px;
-        margin-bottom: 10px;
-        padding-top: 4px;
-        border-radius: 20px;
-        background-color: rgba(155, 32, 61, 0.83);
         transform: scale(0.92);
-        border: 3px solid red;
     }
 }
 
 @media (min-width:767.01px) and (max-width:991px) {
-    .upload-picture-container {
-        border: 0px solid purple;
-    }
-
     .file-change {
         display: flex;
         flex-direction: column;
@@ -121,10 +74,10 @@
     .file-change-choice {
         display: block;
         position: relative;
-        font-size: 20px;
+        font-size: 18px;
         color: white;
         font-weight: bold;
-        width: 315px;
+        width: 285px;
         height: 35px;
         text-align: center;
         margin: auto;
@@ -147,31 +100,16 @@
     }
 
     #file {
-        display: block;
-        font-size: 16px;
-        position: relative;
-        bottom: 0px;
-        /* left: 171px; */
-        width: 295px;
-        height: 35px;
-        text-align: center;
-        margin: auto;
-        margin-top: 0px;
-        padding-top: 11px;
-        padding-right: 3px;
-        border-radius: 20px;
-        background-color: rgba(255,215,215, 0.88);
-        z-index: 1;
-        border: 0px solid #4E5166;
+        height: 45px;
         opacity: 0;
     }
 
     .profile-picture-change {
         display: block;
         color: white;
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 700;
-        width: 315px;
+        width: 285px;
         height: 50px;
         text-align: center;
         margin: auto;
@@ -181,48 +119,20 @@
         border-radius: 20px;
         background-color: rgb(155, 32, 61);
         transform: scale(1);
+        cursor: pointer;
         border: 3px solid red;
     }
 
     .profile-picture-change:hover {
-        display: block;
-        color: white;
-        font-weight: 700;
-        width: 315px;
-        height: 50px;
-        text-align: center;
-        margin: auto;
-        margin-top: -10px;
-        margin-bottom: 10px;
-        padding-top: 4px;
-        border-radius: 20px;
         background-color: rgba(155, 32, 61, 0.83);
-        border: 3px solid red;
     }
 
     .profile-picture-change:active {
-        display: block;
-        color: white;
-        font-weight: 700;
-        width: 315px;
-        height: 50px;
-        text-align: center;
-        margin: auto;
-        margin-top: -10px;
-        margin-bottom: 10px;
-        padding-top: 4px;
-        border-radius: 20px;
-        background-color: rgba(155, 32, 61, 0.83);
-        transform: scale(0.92);
-        border: 3px solid red;
+        transform: scale(0.95);
     }
 }
 
 @media (min-width:991.01px) and (max-width:1200px) {
-    .upload-picture-container {
-        border: 0px solid purple;
-    }
-
     .file-change {
         display: flex;
         flex-direction: column;
@@ -257,22 +167,7 @@
     }
 
     #file {
-        display: block;
-        font-size: 16px;
-        position: relative;
-        bottom: 0px;
-        /* left: 171px; */
-        width: 295px;
-        height: 35px;
-        text-align: center;
-        margin: auto;
-        margin-top: 0px;
-        padding-top: 11px;
-        padding-right: 3px;
-        border-radius: 20px;
-        background-color: rgba(255,215,215, 0.88);
-        z-index: 1;
-        border: 0px solid #4E5166;
+        height: 50px;
         opacity: 0;
     }
 
@@ -291,48 +186,20 @@
         border-radius: 20px;
         background-color: rgb(155, 32, 61);
         transform: scale(1);
+        cursor: pointer;
         border: 3px solid red;
     }
 
     .profile-picture-change:hover {
-        display: block;
-        color: white;
-        font-weight: 700;
-        width: 315px;
-        height: 50px;
-        text-align: center;
-        margin: auto;
-        margin-top: -10px;
-        margin-bottom: 10px;
-        padding-top: 4px;
-        border-radius: 20px;
         background-color: rgba(155, 32, 61, 0.83);
-        border: 3px solid red;
     }
 
     .profile-picture-change:active {
-        display: block;
-        color: white;
-        font-weight: 700;
-        width: 315px;
-        height: 50px;
-        text-align: center;
-        margin: auto;
-        margin-top: -10px;
-        margin-bottom: 10px;
-        padding-top: 4px;
-        border-radius: 20px;
-        background-color: rgba(155, 32, 61, 0.83);
-        transform: scale(0.92);
-        border: 3px solid red;
+        transform: scale(0.95);
     }
 }
 
 @media screen and (min-width: 1200.01px) {
-    .upload-picture-container {
-        border: 0px solid purple;
-    }
-
     .file-change {
         display: flex;
         flex-direction: column;
@@ -367,22 +234,7 @@
     }
 
     #file {
-        display: block;
-        font-size: 16px;
-        position: relative;
-        bottom: 0px;
-        /* left: 171px; */
-        width: 295px;
-        height: 35px;
-        text-align: center;
-        margin: auto;
-        margin-top: 0px;
-        padding-top: 11px;
-        padding-right: 3px;
-        border-radius: 20px;
-        background-color: rgba(255,215,215, 0.88);
-        z-index: 1;
-        border: 0px solid #4E5166;
+        height: 55px;
         opacity: 0;
     }
 
@@ -405,35 +257,10 @@
     }
 
     .profile-picture-change:hover {
-        display: block;
-        color: white;
-        font-weight: 700;
-        width: 315px;
-        height: 50px;
-        text-align: center;
-        margin: auto;
-        margin-top: -10px;
-        margin-bottom: 10px;
-        padding-top: 4px;
-        border-radius: 20px;
         background-color: rgba(155, 32, 61, 0.83);
-        border: 3px solid red;
     }
 
     .profile-picture-change:active {
-        display: block;
-        color: white;
-        font-weight: 700;
-        width: 315px;
-        height: 50px;
-        text-align: center;
-        margin: auto;
-        margin-top: -10px;
-        margin-bottom: 10px;
-        padding-top: 4px;
-        border-radius: 20px;
-        background-color: rgba(155, 32, 61, 0.83);
-        transform: scale(0.92);
-        border: 3px solid red;
+        transform: scale(0.95);
     }
 }
