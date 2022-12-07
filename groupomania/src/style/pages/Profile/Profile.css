@@ -22,7 +22,7 @@
     }
 }
 
-@media (min-width:768px) and (max-width:991px) {
+@media (min-width:767.01px) and (max-width:991px) {
     .general-profile {
         display: flex;
         flex-direction: column;
@@ -46,7 +46,7 @@
     }
 }
 
-@media (min-width:992px) and (max-width:1200px) {
+@media (min-width:991.01px) and (max-width:1200px) {
     .general-profile {
         display: flex;
         flex-direction: column;
@@ -70,7 +70,7 @@
     }
 }
 
-@media screen and (min-width: 1201px) {
+@media screen and (min-width: 1200.01px) {
     .general-profile {
         display: flex;
         flex-direction: column;

@@ -121,7 +121,7 @@
     }
 }
 
-@media (min-width:768px) and (max-width:991px) {
+@media (min-width:767.01px) and (max-width:991px) {
     h1 {
         margin: auto;
         font-size: 40px;
@@ -244,7 +244,7 @@
     }
 }
 
-@media (min-width:992px) and (max-width:1200px) {
+@media (min-width:991.01px) and (max-width:1200px) {
     h1 {
         margin: auto;
         font-size: 40px;
@@ -367,7 +367,7 @@
     }
 }
 
-@media screen and (min-width: 1201px) {
+@media screen and (min-width: 1200.01px) {
     h1 {
         margin: auto;
         font-size: 40px;

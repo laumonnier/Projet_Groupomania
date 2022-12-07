@@ -60,7 +60,7 @@
     }
 }
 
-@media (min-width:768px) and (max-width:991px) {
+@media (min-width:767.01px) and (max-width:991px) {
     .following-unfollow {
         font-size: 18px;
         font-weight: 600;
@@ -122,7 +122,7 @@
     }
 }
 
-@media (min-width:992px) and (max-width:1200px) {
+@media (min-width:991.01px) and (max-width:1200px) {
     .following-unfollow {
         font-size: 20px;
         font-weight: 600;
@@ -184,7 +184,7 @@
     }
 }
 
-@media screen and (min-width: 1201px) {
+@media screen and (min-width: 1200.01px) {
     .following-unfollow {
         font-size: 20px;
         font-weight: 600;

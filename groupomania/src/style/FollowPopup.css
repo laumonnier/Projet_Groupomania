@@ -151,7 +151,7 @@
     }
 }
 
-@media (min-width:768px) and (max-width:991px) {
+@media (min-width:767.01px) and (max-width:991px) {
     .following {
         color: white;
         font-weight: 700;
@@ -304,7 +304,7 @@
     }
 }
 
-@media (min-width:992px) and (max-width:1200px) {
+@media (min-width:991.01px) and (max-width:1200px) {
     .following {
         color: white;
         font-weight: 700;
@@ -456,7 +456,7 @@
     }
 }
 
-@media screen and (min-width: 1201px) {
+@media screen and (min-width: 1200.01px) {
     .following {
         color: white;
         font-weight: 700;
