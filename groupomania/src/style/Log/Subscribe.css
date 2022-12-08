@@ -170,7 +170,7 @@
         text-align: start;
         margin: auto;
         width: 70%;
-        height: 500px;
+        height: 485px;
         padding-top: 15px;
         background-color: #c9c1c2;
         border: 3px solid black;
@@ -204,7 +204,7 @@
 
     .subscribe-input {
         width: 96%;
-        height: 37px;
+        height: 35px;
         border-radius: 12px;
         margin: auto;
         padding-left: 10px;
@@ -232,7 +232,7 @@
 
     .submit-subscribe {
         width: 98%;
-        height: 60px;
+        height: 55px;
         margin: auto;
         font-size: 22px;
         font-weight: bold;
@@ -252,7 +252,7 @@
         text-align: start;
         margin: auto;
         width: 70%;
-        height: 520px;
+        height: 482px;
         padding-top: 15px;
         background-color: #c9c1c2;
         border: 3px solid black;
@@ -279,14 +279,14 @@
         text-align: start;
         align-items: flex-end;
         margin-left: 15px;
-        height: 28px;
+        height: 26px;
         font-size: 23px;
         font-weight: 600;
     }
 
     .subscribe-input {
         width: 96%;
-        height: 40px;
+        height: 34px;
         border-radius: 12px;
         margin: auto;
         padding-left: 10px;
@@ -314,7 +314,7 @@
 
     .submit-subscribe {
         width: 98%;
-        height: 60px;
+        height: 54px;
         margin: auto;
         font-size: 22px;
         font-weight: bold;
