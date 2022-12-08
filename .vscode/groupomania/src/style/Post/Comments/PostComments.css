@@ -1,0 +1,345 @@
+@media (max-width: 767px) {
+    .postComments-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .postComments-comments {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .postComment-container {
+        display: flex;
+        flex-direction: column;
+        border: 2px ridge black;
+        border-radius: 10px;
+        margin-top: 2px;
+        background-color: rgb(250, 221, 215);
+    }
+
+    .postComment-container-user {
+        display: flex;
+        flex-direction: column;
+        border: 3px ridge black;
+        border-radius: 10px;
+        margin-top: 2px;
+        background-color: lightcoral;   
+    }
+
+    .postComment-edit-delete-block {
+        display: flex;
+        flex-direction: column;
+        width: 96%;
+        margin: auto;
+        position: relative;
+    }
+
+    .postComments-body {
+        font-size: 15px;
+        text-align: justify;
+        margin: auto;
+        width: 97%;
+        margin-top: 5px;
+        padding: 0 0 10px 0;
+    }
+
+    .postComments-form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .postComments-form-comment {
+        border: 3px ridge rgb(40, 36, 31);
+        border-radius: 12px;
+        margin-top: 3px;
+        background-color: rgb(249, 237, 237); 
+        font-size: 17px;
+        text-align: justify;
+        margin: auto;
+        margin-top: 5px;
+        width: 96%;
+        height: 70px;
+        padding: 5px 5px 5px 5px;
+    }
+
+    .postComments-form-submit {
+        display: block;
+        float: right;
+        right: 0px;
+        bottom: 0px;
+        font-size: 15px;
+        font-weight: 600;
+        height: 35px;
+        width: 150px;
+        margin: 2px 0 4px 0;
+        border: 3px ridge #4E5166;
+        border-radius: 7px;
+        cursor: pointer;
+        transform: scale(1);
+    }
+
+    .postComments-form-submit:active {
+        background-color: rgba(117, 224, 135, 0.6);
+        transform: scale(0.95)
+    }
+}
+
+@media (min-width:767.01px) and (max-width:991px) {
+    .postComments-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .postComments-comments {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .postComment-container {
+        display: flex;
+        flex-direction: column;
+        border: 2px ridge black;
+        border-radius: 10px;
+        margin-top: 2px;
+        background-color: rgb(250, 221, 215);
+    }
+
+    .postComment-container-user {
+        display: flex;
+        flex-direction: column;
+        border: 3px ridge black;
+        border-radius: 12px;
+        margin-top: 2px;
+        background-color: lightcoral;   
+    }
+
+    .postComment-edit-delete-block {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        margin: auto;
+        position: relative;
+    }
+
+    .postComments-body {
+        font-size: 16px;
+        text-align: justify;
+        margin: auto;
+        width: 95%;
+        padding: 5px 0 10px 0;
+    }
+
+    .postComments-form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .postComments-form-comment {
+        border: 3px ridge rgb(40, 36, 31);
+        border-radius: 12px;
+        background-color: rgb(249, 237, 237); 
+        font-size: 16px;
+        text-align: justify;
+        margin: auto;
+        margin-top: 5px;
+        padding: 5px;
+        width: 97%;
+        height: 70px;
+    }
+
+    .postComments-form-submit {
+        display: block;
+        float: right;
+        right: 0px;
+        bottom: 0px;
+        font-size: 18px;
+        font-weight: 600;
+        height: 40px;
+        width: 180px;
+        margin: 5px 0 7px 0;
+        border: 3px ridge #4E5166;
+        border-radius: 7px;
+        cursor: pointer;
+        transform: scale(1);
+    }
+
+    .postComments-form-submit:active {
+        background-color: rgba(117, 224, 135, 0.6);
+        transform: scale(0.95)
+    }
+}
+
+@media (min-width:991.01px) and (max-width:1200px) {
+    .postComments-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .postComments-comments {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .postComment-container {
+        display: flex;
+        flex-direction: column;
+        border: 3px ridge black;
+        border-radius: 10px;
+        margin-top: 2px;
+        background-color: rgb(250, 221, 215);
+    }
+
+    .postComment-container-user {
+        display: flex;
+        flex-direction: column;
+        border: 3px ridge black;
+        border-radius: 10px;
+        margin-top: 2px;
+        background-color: lightcoral;   
+    }
+
+    .postComment-edit-delete-block {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        margin: auto;
+        position: relative;
+    }
+
+    .postComments-body {
+        font-size: 17px;
+        text-align: justify;
+        margin: auto;
+        width: 95%;
+        padding: 7px 0 10px 0;
+    }
+
+    .postComments-form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .postComments-form-comment {
+        border: 4px ridge rgb(40, 36, 31);
+        border-radius: 12px;
+        background-color: rgb(249, 237, 237); 
+        font-size: 17px;
+        text-align: justify;
+        margin: auto;
+        margin-top: 5px;
+        padding: 5px;
+        width: 97%;
+        height: 80px;
+    }
+
+    .postComments-form-submit {
+        display: block;
+        float: right;
+        right: 0px;
+        bottom: 0px;
+        font-size: 18px;
+        font-weight: 600;
+        height: 40px;
+        width: 200px;
+        margin: 5px 0 7px 0;
+        border: 3px ridge #4E5166;
+        border-radius: 7px;
+        cursor: pointer;
+        transform: scale(1);
+    }
+
+    .postComments-form-submit:active {
+        background-color: rgba(117, 224, 135, 0.6);
+        transform: scale(0.95)
+    }
+}
+
+@media screen and (min-width: 1200.01px) {
+    .postComments-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .postComments-comments {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .postComment-container {
+        display: flex;
+        flex-direction: column;
+        border: 3px ridge black;
+        border-radius: 10px;
+        margin-top: 2px;
+        background-color: rgb(250, 221, 215);
+    }
+
+    .postComment-container-user {
+        display: flex;
+        flex-direction: column;
+        border: 3px ridge black;
+        border-radius: 12px;
+        margin-top: 2px;
+        background-color: lightcoral;   
+    }
+
+    .postComment-edit-delete-block {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        margin: auto;
+        position: relative;
+    }
+
+    .postComments-body {
+        font-size: 19px;
+        text-align: justify;
+        margin: auto;
+        width: 95%;
+        padding: 7px 0 10px 0;
+    }
+
+    .postComments-form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .postComments-form-comment {
+        border: 4px ridge rgb(40, 36, 31);
+        border-radius: 12px;
+        background-color: rgb(249, 237, 237); 
+        font-size: 19px;
+        text-align: justify;
+        margin: auto;
+        margin-top: 5px;
+        padding: 5px;
+        width: 97%;
+        height: 90px;
+    }
+
+    .postComments-form-submit {
+        display: block;
+        float: right;
+        right: 0px;
+        bottom: 0px;
+        font-size: 20px;
+        font-weight: 600;
+        height: 44px;
+        width: 230px;
+        margin: 5px 0 7px 0;
+        border: 3px ridge #4E5166;
+        border-radius: 7px;
+        cursor: pointer;
+        transform: scale(1);
+    }
+
+    .postComments-form-submit:active {
+        background-color: rgba(117, 224, 135, 0.6);
+        transform: scale(0.95)
+    }
+}

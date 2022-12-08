@@ -1,0 +1,35 @@
+@media (max-width: 767px) {
+    .like-button-icon {
+        width: 20px;
+        height: 20px;
+        margin-bottom: 7px;
+        cursor: pointer;
+    }
+}
+
+@media (min-width:767.01px) and (max-width:991px) {
+    .like-button-icon {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 7px;
+        cursor: pointer;
+    }
+}
+
+@media (min-width:991.01px) and (max-width:1200px) {
+    .like-button-icon {
+        width: 25px;
+        height: 25px;
+        margin-bottom: 7px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width: 1200.01px) {
+    .like-button-icon {
+        width: 27px;
+        height: 27px;
+        margin-bottom: 10px;
+        cursor: pointer;
+    }
+}
