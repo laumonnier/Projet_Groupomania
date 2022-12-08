@@ -73,7 +73,7 @@
         font-weight: 600;
         height: 35px;
         width: 150px;
-        margin: 2px 0 4px 0;
+        margin: 2px 2px 4px 0;
         border: 3px ridge #4E5166;
         border-radius: 7px;
         cursor: pointer;
@@ -159,7 +159,7 @@
         font-weight: 600;
         height: 40px;
         width: 180px;
-        margin: 5px 0 7px 0;
+        margin: 5px 1px 7px 0;
         border: 3px ridge #4E5166;
         border-radius: 7px;
         cursor: pointer;
@@ -245,7 +245,7 @@
         font-weight: 600;
         height: 40px;
         width: 200px;
-        margin: 5px 0 7px 0;
+        margin: 5px 1px 7px 0;
         border: 3px ridge #4E5166;
         border-radius: 7px;
         cursor: pointer;
@@ -331,7 +331,7 @@
         font-weight: 600;
         height: 44px;
         width: 230px;
-        margin: 5px 0 7px 0;
+        margin: 5px 2px 7px 0;
         border: 3px ridge #4E5166;
         border-radius: 7px;
         cursor: pointer;
