@@ -4,7 +4,12 @@ import "../../style/Error.css";
 const Error = () => {
   return (
     <div className="error-container">
-      <h1> Désolé, cette page n'existe pas !</h1>
+      <h1 className="error-text"> Désolé, cette page n'existe pas !</h1>
+      <img
+        src="./images/enfant_qui_pleure.png"
+        alt="enfant_pleure"
+        className="error-picture"
+      />
     </div>
   );
 };

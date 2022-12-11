@@ -28,24 +28,6 @@ exports.createPost = async (req, res) => {
     } 
         console.log("Salut");
     console.log(req.body.posterId);
-        // const MIME_TYPES = {
-        // 'image/jpg': 'jpg',
-        // 'image/jpeg': 'jpg',
-        // 'image/png': 'png'
-        // };
-    
-        // fileName = (req, file, callback) => {
-        //         const name = file.originalname.split(' ').join('_');
-        //         const extension = MIME_TYPES[file.mimetype];
-        //         callback(null, name + Date.now() + '.' + extension);
-        // }
-
-        // await pipeline(
-        //         req.file.stream,
-        //         fs.createWriteStream(
-        //             `${__dirname}/../groupomania/public/uploads/posts/${fileName}`
-        //         )
-        // );
     
     const newPost = new PostModel({
         posterId: req.body.posterId,
@@ -108,7 +90,7 @@ exports.updatePost = (req, res, next) => {
         .json("L'Id du Post n'existe pas : " + req.params.id)   
 
     try{
-        PostModel.findByIdAndUpdate(
+        PostModel.findById(
             req.params.id,
             { $set: {message: req.body.message }},
             { new: true },
@@ -255,7 +237,7 @@ exports.editCommentPost = (req, res, next) => {
         return res.status(400).json("L'Id du Post n'existe pas : " + req.params.id)
 
     try{
-        return PostModel.findById(
+        return PostModel.findByIdAndUpdate(
             req.params.id,
             (err, data) => {
                 const theComment = data.comments.find((comment) => 

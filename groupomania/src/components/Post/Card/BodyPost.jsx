@@ -27,7 +27,7 @@ const BodyPost = ({ post }) => {
   return (
     <div className="post-body-container">
       <div className="post-body-update-delete-block">
-        {userData._id === post.posterId && (
+        {(userData._id === post.posterId || userData.role === "admin") && (
           <div onClick={() => setIsUpdated(!isUpdated)}>
             <img
               className="post-body-update-button"

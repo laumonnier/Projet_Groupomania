@@ -1,11 +1,11 @@
 // Dependency used and tools of library concerning the server
 const express = require('express');// Ability to access the body of the query
 const helmet = require('helmet');
+const cors = require('cors');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path =require('path');
 const { checkUser, requireAuth } = require('./middleware/auth.middleware');
-const cors = require('cors');
 const app = express();
 
 // router require

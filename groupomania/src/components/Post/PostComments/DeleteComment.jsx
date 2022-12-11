@@ -1,13 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { deleteComment } from "../../../redux/actions/post.actions";
 import "../../../style/Post/Comments/DeleteComment.css";
-import { UserIdContext } from "../../../utils/context";
 
-const DeleteComment = ({ postId, userData, comment }) => {
-  const [isAuthor, setIsAuthor] = useState(false);
-  const [edit, setEdit] = useState(false);
-  const [text, setText] = useState("");
+const DeleteComment = ({ postId, userData, comment, edit }) => {
   const dispatch = useDispatch();
 
   const handleDelete = () => {

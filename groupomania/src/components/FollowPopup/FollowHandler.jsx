@@ -4,6 +4,7 @@ import { followUser, unfollowUser } from "../../redux/actions/user.actions";
 import { isEmpty } from "../../utils/Empty";
 import "../../style/Profile/FollowHandler.css";
 
+//Allows to have a button for a user, when clicked, it allows us to "Suivre" or remove the "Suivi"
 const FollowHandler = ({ idToFollow }) => {
   const userData = useSelector((state) => state.userReducer);
   const [isFollowed, setIsFollowed] = useState(false);

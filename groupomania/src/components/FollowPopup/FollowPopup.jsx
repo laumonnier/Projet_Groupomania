@@ -8,8 +8,6 @@ const FollowPopup = ({ userData, usersData }) => {
 
   return (
     <>
-      {/* <div className="follow-profile"> */}
-
       <p className="newPost-following" onClick={() => setFollowingPopup(true)}>
         {" "}
         Following(s): {userData.following ? userData.following.length : "0"}

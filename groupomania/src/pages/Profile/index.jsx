@@ -9,7 +9,7 @@ import Copyrigth from "../../components/Copyrigth";
 
 const Profile = () => {
   const userId = useContext(UserIdContext);
-  // const [inputValue, setInputValue] = useState("");
+
   return (
     <>
       <div className="general-profile">

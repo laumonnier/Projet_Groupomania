@@ -1,20 +1,6 @@
 const jwt = require ('jsonwebtoken');
 const UserModel = require('../models/user.model');
 
-
-// Verifying a user's authentification on the account
-// exports.auth = (req, res, next) => {
-//     try{ 
-//     const token = req.headers.authorization.split(' ')[1];
-//     const decodedToken = jwt.verify(token, process.env.TOKEN);
-//     const userId = decodedToken.userId;
-//     req.auth = { userId: userId };
-//     next();
-//     }catch(error){
-//         res.status(401).json({error:error});
-//     }
-// };
-
 // Verifying a user's authentification on the account
 exports.checkUser = (req, res, next) => { 
     const token = req.cookies.jwt;
@@ -22,7 +8,6 @@ exports.checkUser = (req, res, next) => {
         jwt.verify(token, process.env.TOKEN, async (err, decodedToken) => {
             if(err) {
                 res.locals.user = null;
-                // res.cookie('jwt', '', { maxAge: 1});
                 next();
             }else{
                 let user = await UserModel.findById(decodedToken.id);

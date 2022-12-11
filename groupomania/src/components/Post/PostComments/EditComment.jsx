@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-// import { UserIdContext } from "../../../utils/context";
 import "../../../style/Post/Comments/EditComment.css";
 import { editComment } from "../../../redux/actions/post.actions";
 
-const EditComment = ({ comment, userData, postId }) => {
-  //   const [isAuthor, setIsAuthor] = useState(false);
-  const [edit, setEdit] = useState(false);
+const EditComment = ({ comment, edit, setEdit, userData, postId }) => {
   const [text, setText] = useState("");
-  //   const userData = useSelector((state) => state.userReducer());
-  //   const userId = useContext(UserIdContext);
+
   const dispatch = useDispatch();
 
   const handleEdit = (e) => {
@@ -22,18 +18,10 @@ const EditComment = ({ comment, userData, postId }) => {
     }
   };
 
-  //   useEffect(() => {
-  //     const checkAuthor = () => {
-  //       if (userData._id === comment.commenterId) {
-  //         setIsAuthor(true);
-  //       }
-  //     };
-  //     checkAuthor();
-  //   }, [userData._id, comment.commenterId]);
-
   return (
     <div className="edit-comment-container">
-      {userData._id === comment.commenterId && edit === false && (
+      {((userData._id === comment.commenterId && edit === false) ||
+        (userData.role === "admin" && edit === false)) && (
         <div onClick={() => setEdit(!edit)}>
           <img
             id="edit-comment-icon"
@@ -42,7 +30,8 @@ const EditComment = ({ comment, userData, postId }) => {
           />
         </div>
       )}
-      {userData._id === comment.commenterId && edit && (
+      {((userData._id === comment.commenterId && edit) ||
+        (userData.role === "admin" && edit)) && (
         <form
           className="edit-comment-form-container"
           action=""

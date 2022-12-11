@@ -14,7 +14,7 @@ const Thread = () => {
 
   const loadMore = () => {
     if (
-      //Corresponds to the total scrollable screen size + 1
+      // Corresponds to the total scrollable screen size + 1
       window.innerHeight + document.documentElement.scrollTop + 1 >
       // Corresponds to the total scrollable screen size
       document.scrollingElement.scrollHeight

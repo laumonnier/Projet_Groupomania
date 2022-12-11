@@ -6,8 +6,8 @@ import "../../style/Log/Log.css";
 const Log = () => {
   const [loginModal, setLoginModal] = useState(true);
   const [subscribeModal, setSubscribeModal] = useState(false);
-  // let colorModal = "#bd153c";
 
+  //Allows to have a form "Connect" or "Register"
   const handleModals = (e) => {
     if (e.target.id === "subscribe") {
       setSubscribeModal(true);

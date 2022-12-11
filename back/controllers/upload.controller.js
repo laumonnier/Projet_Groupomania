@@ -24,7 +24,6 @@ exports.uploadUserProfile = async (req, res, next) => {
             await UserModel.findByIdAndUpdate(
                 req.body.userId,
                 {
-                    // $set:{picture:`${req.protocol}://${req.get("host")}/images/${req.file.filename}`}
                     $set:{picture:`uploads/profile/${req.file.filename}`}
                 },
                 { new: true, upsert: true, setDefaultsOnInsert: true }
