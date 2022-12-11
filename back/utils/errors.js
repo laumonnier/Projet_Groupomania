@@ -38,11 +38,9 @@ exports.uploadErrors = (err) => {
     let errors = { format: '', maxSize: ''};
 
     if(err.message.includes("invalid file")){
-    // console.log(err.message)
         errors.format = "Le format n'est pas compatible !"}
     
     if(err.message.includes("max size")){
-        // console.log(err.message)
         errors.maxSize = "Le fichier est trop grand (taille maximale: 600ko)!"}
     
     return errors

@@ -29,7 +29,6 @@
         border-radius: 50%;
         left: calc(50% - 0.75rem);
         top: calc(50% - 0.79rem);
-        /* background: linear-gradient(0deg, var(--third_color), var(--secondary_color), var(--primary_color)); */
         border: 0.8rem solid transparent;
         mix-blend-mode: overlay;    
     }
@@ -133,7 +132,6 @@
         border-radius: 50%;
         left: calc(50% - 0.75rem);
         top: calc(50% - 0.79rem);
-        /* background: linear-gradient(0deg, var(--third_color), var(--secondary_color), var(--primary_color)); */
         border: 0.8rem solid transparent;
         mix-blend-mode: overlay;    
     }
@@ -237,7 +235,6 @@
         border-radius: 50%;
         left: calc(50% - 0.75rem);
         top: calc(50% - 0.79rem);
-        /* background: linear-gradient(0deg, var(--third_color), var(--secondary_color), var(--primary_color)); */
         border: 0.8rem solid transparent;
         mix-blend-mode: overlay;    
     }
@@ -341,7 +338,6 @@
         border-radius: 50%;
         left: calc(50% - 0.75rem);
         top: calc(50% - 0.79rem);
-        /* background: linear-gradient(0deg, var(--third_color), var(--secondary_color), var(--primary_color)); */
         border: 0.8rem solid transparent;
         mix-blend-mode: overlay;    
     }

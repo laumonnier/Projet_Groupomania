@@ -8,6 +8,7 @@ import HeaderComments from "./HeaderComments";
 
 const PostComments = ({ post }) => {
   const [text, setText] = useState("");
+  const [edit, setEdit] = useState(false);
   const userData = useSelector((state) => state.userReducer);
   const dispatch = useDispatch();
 
@@ -41,11 +42,14 @@ const PostComments = ({ post }) => {
                   comment={comment}
                   userData={userData}
                   postId={post._id}
+                  edit={edit}
+                  setEdit={setEdit}
                 />
                 <DeleteComment
                   comment={comment}
                   userData={userData}
                   postId={post._id}
+                  edit={edit}
                 />
               </div>
             </div>

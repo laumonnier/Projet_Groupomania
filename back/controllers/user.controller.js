@@ -112,10 +112,6 @@ exports.followUser = async (req, res) => {
             { new: true, upsert: true}
         )
         //We cannot make 2 response status in 201 as this would provide an error
-            // .then((data) => {
-            //     res.status(201)
-            //     .json(data)
-            // })
             .catch((err) => {
                 res.status(400)
                 .json({ error: err })
@@ -151,10 +147,6 @@ exports.unfollowUser = async (req, res) => {
             { $pull: { followers: req.params.id}},
             { new: true, upsert: true}
         )
-            // .then((data) => {
-            //     res.status(201)
-            //     .json(data)
-            // })
             .catch((err) => {
                 res.status(400)
                 .json({ error: err })

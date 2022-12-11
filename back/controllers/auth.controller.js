@@ -2,7 +2,6 @@
 const UserModel = require('../models/user.model.js');
 const { signUpErrors, signInErrors } = require('../utils/errors');
 const jwt = require ('jsonwebtoken');
-const bcrypt = require ('bcrypt');
 
 const createToken = (id) => {
     return jwt.sign({id}, process.env.TOKEN, {})

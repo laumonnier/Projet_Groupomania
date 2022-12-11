@@ -4,7 +4,7 @@ import "../../../style/Post/Comments/HeaderComments.css";
 import { timestampParser } from "../../../utils/date";
 import { isEmpty } from "../../../utils/Empty";
 
-const HeaderComments = ({ post, comment }) => {
+const HeaderComments = ({ comment }) => {
   const usersData = useSelector((state) => state.usersReducer);
 
   return (
