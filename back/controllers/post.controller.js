@@ -28,6 +28,7 @@ exports.createPost = async (req, res) => {
     } 
         console.log("Salut");
     console.log(req.body.posterId);
+        
     
     const newPost = new PostModel({
         posterId: req.body.posterId,
@@ -90,7 +91,7 @@ exports.updatePost = (req, res, next) => {
         .json("L'Id du Post n'existe pas : " + req.params.id)   
 
     try{
-        PostModel.findById(
+        PostModel.findByIdAndUpdate(
             req.params.id,
             { $set: {message: req.body.message }},
             { new: true },
@@ -237,7 +238,7 @@ exports.editCommentPost = (req, res, next) => {
         return res.status(400).json("L'Id du Post n'existe pas : " + req.params.id)
 
     try{
-        return PostModel.findByIdAndUpdate(
+        return PostModel.findById(
             req.params.id,
             (err, data) => {
                 const theComment = data.comments.find((comment) => 

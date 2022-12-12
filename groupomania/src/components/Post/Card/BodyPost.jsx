@@ -61,7 +61,6 @@ const BodyPost = ({ post }) => {
           <div className="post-body-message-container">
             <textarea
               className="post-body-update-message"
-              type="text"
               defaultValue={post.message}
               onChange={(e) => setTextUpdate(e.target.value)}
             ></textarea>
