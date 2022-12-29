@@ -2,29 +2,10 @@
 const express = require('express');
 const router = express.Router();
 const postController = require('../controllers/post.controller');
-const multer = require ('multer');
-
-const MIME_TYPES = {
-    'image/jpg': 'jpg',
-    'image/jpeg': 'jpg',
-    'image/png': 'png'
-}; 
-
-const storage = multer.diskStorage({
-    destination: (req, file, callback) => {
-        callback(null, "../groupomania/public/uploads/posts");
-    },
-    filename: (req, file, callback) => {
-        console.log(file);
-        const name = file.originalname.split(' ').join('_');
-        const extension = MIME_TYPES[file.mimetype];
-        callback(null, name + '.' + extension);
-    }
-});
-const upload = multer({ storage: storage });
+const multer = require ('../middleware/multer-config.js');
 
 // Additions of the various endpoints
-router.post('/', upload.single('file'), postController.createPost);
+router.post('/', multer, postController.createPost);
 router.get('/', postController.getAllPost);
 router.get('/:id', postController.getOnePost);
 router.put('/:id', postController.updatePost);

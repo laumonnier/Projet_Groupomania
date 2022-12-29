@@ -9,6 +9,7 @@ exports.getAllUsers = async (req, res) => {
 
 // Business logic for obtaining a single User
 exports.getOneUser = (req, res) => {
+    console.log(req.params.id);
     if (!ObjectId.isValid(req.params.id)){
         return res.status(400).json("L'id ne correspond pas :" + req.params.id)    
     }

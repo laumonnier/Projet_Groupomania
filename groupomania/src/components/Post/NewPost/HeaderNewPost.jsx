@@ -11,7 +11,7 @@ const HeaderNewPost = ({ userData, usersData }) => {
     <>
       <div className="newPost-post-header">
         <div className="newPost-post-header-user-picture-popup">
-          <Link to="/profile">
+          <Link to="/">
             <img
               className="newPost-post-picture"
               src={userData.picture}

@@ -8,7 +8,7 @@ const path =require('path');
 const { checkUser, requireAuth } = require('./middleware/auth.middleware');
 const app = express();
 
-// router require
+// router imports
 const userRoutes = require('./routes/user.routes');
 const postRoutes = require('./routes/post.routes');
 
@@ -23,7 +23,9 @@ app.use(express.json());
 
 //Helmet helps us secure our Express applications by defining various HTTP headers
 //Helmet helps us secure our applications against XSS attacks
-app.use(helmet());
+app.use(helmet({
+    crossOriginResourcePolicy: false,
+}));
 
 // Accepts all clients at the site
 // Addition of "headers" allowing communication between different port servers
@@ -48,6 +50,9 @@ app.get('*', checkUser);
 app.get('/jwtid', requireAuth, (req, res) => {
     res.status(201).send(res.locals.user._id)
 });
+
+// This tells Express how to statically manage the "uploads" resource each time it receives a query to the "/uploads" route.
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 // Additions of the various endpoints (Additions the differents routes)
 app.use('/api/user', userRoutes);
