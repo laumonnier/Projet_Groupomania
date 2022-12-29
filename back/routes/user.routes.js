@@ -4,26 +4,7 @@ const router = express.Router();
 const authController = require ('../controllers/auth.controller');
 const uploadController = require ('../controllers/upload.controller');
 const userController = require ('../controllers/user.controller');
-const multer = require ('multer');
-
-const MIME_TYPES = {
-    'image/jpg': 'jpg',
-    'image/jpeg': 'jpg',
-    'image/png': 'png'
-}; 
-
-const storage = multer.diskStorage({
-    destination: (req, file, callback) => {
-        callback(null, "../groupomania/public/uploads/profile");
-    },
-    filename: (req, file, callback) => {
-        console.log(file);
-        const name = file.originalname.split(' ').join('_');
-        const extension = MIME_TYPES[file.mimetype];
-        callback(null, name + '.' + extension);
-    }
-});
-const upload = multer({ storage: storage });
+const multer = require ('../middleware/multer-config.js');
 
 // Importing the password middleware
 const password = require ('../middleware/password');
@@ -43,6 +24,6 @@ router.patch('/follow/:id', userController.followUser);
 router.patch('/unfollow/:id', userController.unfollowUser);
 
 // Additions of different parameters for image download routes
-router.post('/upload', upload.single('file'), uploadController.uploadUserProfile);
+router.post('/upload', multer, uploadController.uploadUserProfile);
 
 module.exports = router;

@@ -17,7 +17,7 @@ const Navbar = () => {
       <nav>
         <div className="nav-container">
           <div className="home-block">
-            <Link to="/">
+            <Link to="/home">
               <img
                 id="groupomania-logo"
                 src="./images/icon/icon-left-font-reframe.png"
@@ -47,7 +47,7 @@ const Navbar = () => {
                     alt="icon_followers"
                   />
                 </Link>
-                <Link to="/profile">
+                <Link to="/">
                   <img
                     id="profile-logo"
                     src="./images/icon/Profile-icon_123.png"
@@ -58,7 +58,7 @@ const Navbar = () => {
               <Logout />
             </>
           ) : (
-            <Link to="/profile">
+            <Link to="/">
               <img
                 id="logo-login"
                 src="./images/icon/depositphotos-stock-illustration-bouton-internet-graphic-histogramme-red.jpg"

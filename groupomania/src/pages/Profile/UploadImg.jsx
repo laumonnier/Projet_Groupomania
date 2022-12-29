@@ -15,7 +15,7 @@ const UploadImg = () => {
     formData.append("name", userData.pseudo);
     formData.append("userId", userData._id);
     formData.append("file", file);
-    dispatch(uploadPicture(formData, formData._id)); //After getting our new case, it will change our URL in the "store", and so we can call our function recently.
+    dispatch(uploadPicture(formData, userData._id)); //After getting our new case, it will change our URL in the "store", and so we can call our function recently.
   };
   return (
     <form

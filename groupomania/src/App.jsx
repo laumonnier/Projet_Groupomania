@@ -41,7 +41,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/home" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/" element={<Profile />} />
           <Route path="/followers" element={<Followers />} />
           <Route path="*" element={<Error />} />
         </Routes>

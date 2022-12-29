@@ -6,6 +6,7 @@ const ObjectId = require('mongoose').Types.ObjectId;
 // Additions of the various endpoints
 // business logic for creating a post account
 exports.createPost = async (req, res) => {
+    // Test
     console.log(req.file)
     console.log("Salut");
     console.log(req.body.posterId);
@@ -25,15 +26,20 @@ exports.createPost = async (req, res) => {
             const errors = uploadErrors(err);
             return res.status(201).json({ errors });
         }
-    } 
-        console.log("Salut");
+    }
+    // const picture = req.file ? req.file.filename : null;
+    // const message = req.body.message;
+    
+    // if(!message && !picture) return res.status(400).json("Publication vide !");
+
+    console.log("Salut");
     console.log(req.body.posterId);
         
     
     const newPost = new PostModel({
         posterId: req.body.posterId,
         message: req.body.message,
-        picture: req.file !== undefined ? `uploads/posts/${req.file.filename}` : "",
+        picture: req.file ? `${req.protocol}://${req.get("host")}/images/${req.file.filename}` : "",
         usersLiked: [],
         comments: []
     });
@@ -121,7 +127,7 @@ exports.deletePost = (req, res) => {
         })
 }
 
-// business logic concerning the liking of a Status Like of posts
+// Business logic concerning the liking of a Status Like of posts
 exports.likedPostStatus = async (req, res) => {
     if(!ObjectId.isValid(req.params.id))
         return res.status(400).json("L'Id du Post n'existe pas : " + req.params.id)
@@ -159,7 +165,7 @@ exports.likedPostStatus = async (req, res) => {
     }
 } 
 
-// business logic concerning the unliking of a Status Like of posts
+// Business logic concerning the unliking of a Status Like of posts
 exports.unlikedPostStatus = async (req, res) => {
     if(!ObjectId.isValid(req.params.id))
         return res.status(400).json("L'Id du Post n'existe pas : " + req.params.id)
